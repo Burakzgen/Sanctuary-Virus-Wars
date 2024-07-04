@@ -10,50 +10,66 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Transform followTarget;
     [SerializeField] float rotationSpeed = 2f;
-    [SerializeField] float distance = 5f;
-    [SerializeField] float minVerticalAngle = -45f;
-    [SerializeField] float maxVerticalAngle = 45f;
     [SerializeField] Vector2 framingOffset;
     [SerializeField] bool invertCameraX;
     [SerializeField] bool invertCameraY;
+
+    [SerializeField] CameraSettingsData thirdPersonSettings;
+    [SerializeField] CameraSettingsData firstPersonSettings;
+
     public CameraMode cameraMode = CameraMode.ThirdPerson;
-    [SerializeField] Vector3 firstPersonOffset = new Vector3(0f, 0.6f, 0f);
 
     float rotationY;
     float rotationX;
     float invertXVal;
     float invertYVal;
+    private Camera cam;
+    private CameraSettingsData currentSettings;
 
     private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        cam = GetComponent<Camera>();
+        UpdateCameraSettings();
     }
 
     private void Update()
     {
+        HandleRotation();
+        UpdateCameraPosition();
+        HandleCameraModeToggle();
+    }
+
+    void HandleRotation()
+    {
         invertXVal = (invertCameraX) ? -1 : 1;
         invertYVal = (invertCameraY) ? -1 : 1;
-
         rotationX += Input.GetAxis("Mouse Y") * invertYVal * rotationSpeed;
-        rotationX = Mathf.Clamp(rotationX, minVerticalAngle, maxVerticalAngle);
-
+        rotationX = Mathf.Clamp(rotationX, currentSettings.minVerticalAngle, currentSettings.maxVerticalAngle);
         rotationY += Input.GetAxis("Mouse X") * invertXVal * rotationSpeed;
+    }
 
+    void UpdateCameraPosition()
+    {
         var targetRotation = Quaternion.Euler(rotationX, rotationY, 0);
 
         if (cameraMode == CameraMode.ThirdPerson)
         {
             var focusPosition = followTarget.position + new Vector3(framingOffset.x, framingOffset.y);
-            transform.position = focusPosition - targetRotation * new Vector3(0, 0, distance);
-            transform.rotation = targetRotation;
+            transform.position = focusPosition - targetRotation * new Vector3(0, 0, currentSettings.distance);
         }
         else
         {
-            transform.position = followTarget.position + followTarget.TransformDirection(firstPersonOffset);
-            transform.rotation = targetRotation;
+            transform.position = followTarget.position + followTarget.TransformDirection(currentSettings.cameraOffset);
         }
 
+        transform.rotation = targetRotation;
+        cam.fieldOfView = currentSettings.fieldOfView;
+    }
+
+    void HandleCameraModeToggle()
+    {
         if (Input.GetKeyDown(KeyCode.V))
         {
             ToggleCameraMode();
@@ -62,14 +78,13 @@ public class CameraController : MonoBehaviour
 
     void ToggleCameraMode()
     {
-        if (cameraMode == CameraMode.ThirdPerson)
-        {
-            cameraMode = CameraMode.FirstPerson;
-        }
-        else
-        {
-            cameraMode = CameraMode.ThirdPerson;
-        }
+        cameraMode = (cameraMode == CameraMode.ThirdPerson) ? CameraMode.FirstPerson : CameraMode.ThirdPerson;
+        UpdateCameraSettings();
+    }
+
+    void UpdateCameraSettings()
+    {
+        currentSettings = (cameraMode == CameraMode.ThirdPerson) ? thirdPersonSettings : firstPersonSettings;
     }
 
     public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY, 0);

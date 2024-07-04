@@ -120,7 +120,7 @@ ModelImporter:
       takeName: Creep|Bite_Action
       internalID: -815216388795826607
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -273,7 +273,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -294,7 +294,7 @@ ModelImporter:
       takeName: Creep|Idle2_Action
       internalID: -8401044390300943484
       firstFrame: 0
-      lastFrame: 121
+      lastFrame: 60.5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -410,7 +410,7 @@ ModelImporter:
       takeName: Creep|Punch_Action
       internalID: 7344986953279484206
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -418,7 +418,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -562,8 +562,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -591,7 +591,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
