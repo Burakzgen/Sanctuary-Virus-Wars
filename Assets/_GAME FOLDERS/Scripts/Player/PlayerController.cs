@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJump();
         UpdateAnimator();
+        HandleAttack();
     }
 
     void GroundCheck()
@@ -90,6 +91,14 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("moveSpeed", moveAmount, 0.05f, Time.deltaTime);
             animator.SetBool("isGrounded", isGrounded);
             animator.SetBool("isRunning", isRunning);
+        }
+    }
+
+    void HandleAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("attack");
         }
     }
 }
