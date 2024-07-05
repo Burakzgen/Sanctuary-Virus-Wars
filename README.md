@@ -93,7 +93,18 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
   Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
 - Engel: Bazı teknik zorluklar (Unity versiyonu uyumsuzluğu) yaşandı.
   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
+  
+### Ekran Görüntüleri
+<details>
+<summary>Ekran Görüntüleri</summary>
+  
+![2](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/27fb009d-e032-40a7-ad3f-47b418605d74)
+![3](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/39730194-076e-4318-97ce-ba130585543d)
+![4](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/eb38c104-35b2-4518-8f38-13e63b0e6f51)
+![EnemyControls](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/fd09c2b7-cbd1-4be2-9d9a-d26c36596d1e)
+![sanctuary_virus_wars_roadmap_diagram drawio](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/dcb72f8e-7aae-479b-8591-4ec9e91b672e)
 
+</details>
 ## 🔸 Sonraki Sprint Planı
 Sprint 2'de (8 Temmuz 2024 - 21 Temmuz 2024) odaklanılacak ana konular:
 1. Düşman AI sisteminin geliştirilmesi
