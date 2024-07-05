@@ -94,9 +94,8 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 - Engel: Bazı teknik zorluklar (Unity versiyonu uyumsuzluğu) yaşandı.
   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
 
+### Ekran Görüntüleri
 <details>
-<summary>### Ekran Görüntüleri</summary>
-
 ![sanctuary_virus_wars_roadmap_diagram drawio](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/dcb72f8e-7aae-479b-8591-4ec9e91b672e)  
 ![2](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/27fb009d-e032-40a7-ad3f-47b418605d74)
 ![3](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/39730194-076e-4318-97ce-ba130585543d)
