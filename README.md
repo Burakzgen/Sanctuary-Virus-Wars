@@ -1,5 +1,5 @@
 # Sanctuary: Virus Wars
-
+![Banner](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/1fe64552-a5c5-482b-aa94-f1a32a71d71b)
 ## 🔸 Takım Bilgileri
 
 ### Takım İsmi
