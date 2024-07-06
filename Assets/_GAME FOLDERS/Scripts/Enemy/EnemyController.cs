@@ -4,22 +4,27 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header("Genel Ayarlar")]
+    [Header("General Settings")]
     [SerializeField] float detectionRadius = 10f;
+
+    [Header("Attack Settings")]
     [SerializeField] float attackRadius = 1.5f;
     [SerializeField] float attackDamage = 20f;
     [SerializeField] float attackCooldown = 2f;
+
+    [Header("Movement Settings")]
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float runSpeed = 4f;
-    [SerializeField] float returnToPatrolDelay = 5f; // Oyuncu kaybolduktan sonra devriyeye dönme gecikmesi
 
-    [Header("Devriye Ayarlarý")]
+    [Header("Patrol Settings")]
     [SerializeField] Transform[] patrolPoints;
+    [SerializeField] float returnToPatrolDelay = 5f; // Oyuncu kaybolduktan sonra devriyeye dönme gecikmesi
     [SerializeField] float patrolWaitTime = 5f; // Devriye noktalara vardýðýnda bekleme süresi
 
     private NavMeshAgent _agent;
     private Animator _animator;
     private Transform _player;
+    private PlayerHealth _playerHealth;
     private Vector3 _startPosition;
     private bool _isPlayerDetected = false;
     private bool _isAttacking = false;
@@ -32,14 +37,24 @@ public class EnemyController : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponentInChildren<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _playerHealth = _player.GetComponent<PlayerHealth>();
         _startPosition = transform.position;
         _agent.speed = moveSpeed;
+        _agent.stoppingDistance = attackRadius + 0.4f;
 
         StartPatrolling();
     }
 
     private void Update()
     {
+        if (_playerHealth.IsDead)
+        {
+            _isPlayerDetected = false;
+            _agent.isStopped = false;
+            StartCoroutine(ReturnToPatrolAfterDelay());
+            return;
+        }
+
         DetectPlayer();
         AttackPlayer();
         UpdateAnimations();
@@ -49,7 +64,7 @@ public class EnemyController : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
-        if (distanceToPlayer <= detectionRadius)
+        if (distanceToPlayer <= detectionRadius && !_playerHealth.IsDead)
         {
             if (!_isPlayerDetected)
             {
@@ -74,7 +89,6 @@ public class EnemyController : MonoBehaviour
     private void AttackPlayer()
     {
         if (!_isPlayerDetected) return;
-
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
         if (distanceToPlayer <= attackRadius)
@@ -101,9 +115,9 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
-        if (distanceToPlayer <= attackRadius)
+        if (distanceToPlayer <= attackRadius && !_playerHealth.IsDead)
         {
-            PlayerHealth playerHealth = _player.GetComponent<PlayerHealth>();
+            IHealth playerHealth = _player.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(attackDamage);

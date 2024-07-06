@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] bool invertCameraX;
     [SerializeField] bool invertCameraY;
 
-    [SerializeField] CameraSettingsData thirdPersonSettings;
+    [SerializeField] public CameraSettingsData thirdPersonSettings;
     [SerializeField] CameraSettingsData firstPersonSettings;
 
     public CameraMode cameraMode = CameraMode.ThirdPerson;

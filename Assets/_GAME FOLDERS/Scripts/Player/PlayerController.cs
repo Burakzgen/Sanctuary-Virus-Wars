@@ -13,18 +13,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 groundCheckOffset;
     [SerializeField] LayerMask groundLayer;
 
-    private bool isGrounded;
-    private float ySpeed;
-    private bool isRunning;
-    private CharacterController characterController;
-    private CameraController cameraController;
-    private Animator animator;
+    private bool _isGrounded;
+    private float _ySpeed;
+    private bool _isRunning;
+    private CharacterController _characterController;
+    private CameraController _cameraController;
+    private Animator _animator;
 
     private void Awake()
     {
-        characterController = GetComponent<CharacterController>();
-        cameraController = Camera.main.GetComponent<CameraController>();
-        animator = GetComponentInChildren<Animator>();
+        _characterController = GetComponent<CharacterController>();
+        _cameraController = Camera.main.GetComponent<CameraController>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -33,26 +33,25 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJump();
         UpdateAnimator();
-        HandleAttack();
     }
 
     void GroundCheck()
     {
-        isGrounded = Physics.CheckSphere(transform.TransformPoint(groundCheckOffset), groundCheckRadius, groundLayer);
+        _isGrounded = Physics.CheckSphere(transform.TransformPoint(groundCheckOffset), groundCheckRadius, groundLayer);
     }
 
     void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        isRunning = Input.GetKey(KeyCode.LeftShift);
-        float currentSpeed = isRunning ? runSpeed : walkSpeed;
+        _isRunning = Input.GetKey(KeyCode.LeftShift);
+        float currentSpeed = _isRunning ? runSpeed : walkSpeed;
 
-        Vector3 movement = cameraController.PlanarRotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
+        Vector3 movement = _cameraController.PlanarRotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
 
-        if (cameraController.cameraMode == CameraController.CameraMode.FirstPerson)
+        if (_cameraController.cameraMode == CameraController.CameraMode.FirstPerson)
         {
-            transform.rotation = Quaternion.Euler(0, cameraController.transform.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Euler(0, _cameraController.transform.eulerAngles.y, 0);
         }
         else if (movement.magnitude > 0.1f)
         {
@@ -61,44 +60,36 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        if (isGrounded && ySpeed < 0)
+        if (_isGrounded && _ySpeed < 0)
         {
-            ySpeed = -0.5f;
+            _ySpeed = -0.5f;
         }
         else
         {
-            ySpeed += Physics.gravity.y * Time.deltaTime;
+            _ySpeed += Physics.gravity.y * Time.deltaTime;
         }
 
-        movement.y = ySpeed;
-        characterController.Move(movement * currentSpeed * Time.deltaTime);
+        movement.y = _ySpeed;
+        _characterController.Move(movement * currentSpeed * Time.deltaTime);
     }
 
     void HandleJump()
     {
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (_isGrounded && Input.GetButtonDown("Jump"))
         {
-            ySpeed = jumpForce;
+            _ySpeed = jumpForce;
         }
     }
 
     void UpdateAnimator()
     {
-        if (animator != null)
+        if (_animator != null)
         {
-            float currentSpeed = isRunning ? runSpeed : walkSpeed;
-            float moveAmount = new Vector3(characterController.velocity.x, 0, characterController.velocity.z).magnitude / currentSpeed;
-            animator.SetFloat("moveSpeed", moveAmount, 0.05f, Time.deltaTime);
-            animator.SetBool("isGrounded", isGrounded);
-            animator.SetBool("isRunning", isRunning);
-        }
-    }
-
-    void HandleAttack()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            animator.SetTrigger("attack");
+            float currentSpeed = _isRunning ? runSpeed : walkSpeed;
+            float moveAmount = new Vector3(_characterController.velocity.x, 0, _characterController.velocity.z).magnitude / currentSpeed;
+            _animator.SetFloat("moveSpeed", moveAmount, 0.05f, Time.deltaTime);
+            _animator.SetBool("isGrounded", _isGrounded);
+            _animator.SetBool("isRunning", _isRunning);
         }
     }
 }

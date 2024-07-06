@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfView: 65
   minVerticalAngle: -30
-  maxVerticalAngle: 30
+  maxVerticalAngle: 60
   cameraOffset: {x: 0, y: 0, z: 0}
   distance: 2
