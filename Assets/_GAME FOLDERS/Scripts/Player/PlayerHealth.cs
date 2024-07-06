@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private float maxHealth = 100f;
     private float _currentHealth;
 
+    [SerializeField] Image healthBarImage;
     // Prop
     public float MaxHealth => maxHealth;
     public float CurrentHealth => _currentHealth;
@@ -14,6 +16,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     private void Start()
     {
         _currentHealth = maxHealth;
+        UpdateHealthBar();
     }
     public void TakeDamage(float damage)
     {
@@ -24,7 +27,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         {
             Die();
         }
-
+        UpdateHealthBar();
         Debug.Log("Player Current Health: " + _currentHealth);
     }
     public void Heal(float amount)
@@ -32,7 +35,15 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (IsDead) return;
 
         _currentHealth = Mathf.Min(_currentHealth + amount, maxHealth);
+        UpdateHealthBar();
         Debug.Log("Player Current Health: " + _currentHealth);
+    }
+    private void UpdateHealthBar()
+    {
+        if (healthBarImage != null)
+        {
+            healthBarImage.fillAmount = _currentHealth / maxHealth;
+        }
     }
     public void Die()
     {
