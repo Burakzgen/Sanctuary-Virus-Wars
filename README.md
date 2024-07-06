@@ -102,6 +102,7 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
 - Engel: Github uyumluluk sorunları yaşandı
   Çözüm: Yeni github profili kuruldu.
+- Engel: Bireysel iş yoğunluğunun yüksek olması.
 
 ### Ekran Görüntüleri
 <details>
