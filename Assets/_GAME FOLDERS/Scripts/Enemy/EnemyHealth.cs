@@ -43,6 +43,6 @@ public class EnemyHealth : MonoBehaviour, IHealth
     {
         Debug.Log("Enemy has died!");
         _animator.SetTrigger("IsDead");
-        Destroy(gameObject, 2.2f); // Ölüm animasyonundan sonra düþmaný yok edin
+        Destroy(gameObject, 2.2f);
     }
 }
