@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent _agent;
     private Animator _animator;
     private Transform _player;
+    private EnemyHealth _myHealth;
     private PlayerHealth _playerHealth;
     private Vector3 _startPosition;
     private bool _isPlayerDetected = false;
@@ -38,6 +39,7 @@ public class EnemyController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _playerHealth = _player.GetComponent<PlayerHealth>();
+        _myHealth = gameObject.GetComponent<EnemyHealth>();
         _startPosition = transform.position;
         _agent.speed = moveSpeed;
         _agent.stoppingDistance = attackRadius + 0.4f;
@@ -89,6 +91,8 @@ public class EnemyController : MonoBehaviour
     private void AttackPlayer()
     {
         if (!_isPlayerDetected) return;
+        if (_myHealth.IsDead) return;
+
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
         if (distanceToPlayer <= attackRadius)
@@ -115,13 +119,9 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
-        if (distanceToPlayer <= attackRadius && !_playerHealth.IsDead)
+        if (distanceToPlayer <= attackRadius && !_playerHealth.IsDead && !_playerHealth.IsAttacking)
         {
-            IHealth playerHealth = _player.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(attackDamage);
-            }
+            _playerHealth.TakeDamage(attackDamage);
         }
 
         _lastAttackTime = Time.time;

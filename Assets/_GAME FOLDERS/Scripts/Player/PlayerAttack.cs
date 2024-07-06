@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -75,6 +76,7 @@ public class PlayerAttack : MonoBehaviour
 
         Weapon currentWeapon = weapons[_currentWeaponIndex];
         _animator.SetTrigger("Attack");
+        _playerHealth.SetAttacking(true); // Saldýrý baþladýðýnda
 
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hitInfo, currentWeapon.attackRange, LayerMask.GetMask("Enemy")))
@@ -87,7 +89,16 @@ public class PlayerAttack : MonoBehaviour
         }
 
         _nextAttackTime = Time.time + attackCooldown;
+
+        StartCoroutine(ResetAttackState(0.5f));
     }
+
+    private IEnumerator ResetAttackState(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _playerHealth.SetAttacking(false);
+    }
+
 
     private void OnDrawGizmosSelected()
     {
@@ -105,5 +116,4 @@ public class PlayerAttack : MonoBehaviour
         Vector3 rayDirection = _cam.transform.forward;
         Gizmos.DrawRay(rayOrigin, rayDirection * currentWeapon.attackRange);
     }
-
 }

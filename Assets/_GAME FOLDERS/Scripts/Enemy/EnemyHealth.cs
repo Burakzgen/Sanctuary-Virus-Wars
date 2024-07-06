@@ -3,30 +3,34 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour, IHealth
 {
-    [SerializeField] float maxHealth = 100f;
-    float _currentHealth;
+    [SerializeField] private float maxHealth = 100f;
+    private float _currentHealth;
+    private Animator _animator;
     [SerializeField] Image healthBarImage;
-    // Prop
-    public float CurrentHealth => _currentHealth;
+
     public float MaxHealth => maxHealth;
+    public float CurrentHealth => _currentHealth;
     public bool IsDead => _currentHealth <= 0;
 
     private void Start()
     {
         _currentHealth = maxHealth;
+        _animator = GetComponentInChildren<Animator>();
         UpdateHealthBar();
     }
-    public void TakeDamage(float damage)
+
+    public void TakeDamage(float amount)
     {
         if (IsDead) return;
 
-        _currentHealth -= damage;
+        _currentHealth -= amount;
+
         if (_currentHealth <= 0)
         {
             Die();
         }
-        Debug.Log("Enemy Current Health:" + _currentHealth);
         UpdateHealthBar();
+        Debug.Log("Enemy Current Health: " + _currentHealth);
     }
     private void UpdateHealthBar()
     {
@@ -35,12 +39,10 @@ public class EnemyHealth : MonoBehaviour, IHealth
             healthBarImage.fillAmount = _currentHealth / maxHealth;
         }
     }
-
     public void Die()
     {
         Debug.Log("Enemy has died!");
-        // TODO: Ölüm animasyonu gelecek
-
-        Destroy(gameObject);
+        _animator.SetTrigger("IsDead");
+        Destroy(gameObject, 2.2f); // Ölüm animasyonundan sonra düþmaný yok edin
     }
 }

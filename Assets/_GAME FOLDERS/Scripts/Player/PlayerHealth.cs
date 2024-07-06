@@ -5,19 +5,21 @@ public class PlayerHealth : MonoBehaviour, IHealth
 {
     [SerializeField] private float maxHealth = 100f;
     private float _currentHealth;
+    private bool _isAttacking = false; // Saldýrýyý izleme
 
     [SerializeField] Image healthBarImage;
     // Prop
     public float MaxHealth => maxHealth;
     public float CurrentHealth => _currentHealth;
     public bool IsDead => _currentHealth <= 0;
-
+    public bool IsAttacking => _isAttacking;
 
     private void Start()
     {
         _currentHealth = maxHealth;
         UpdateHealthBar();
     }
+
     public void TakeDamage(float damage)
     {
         if (IsDead) return;
@@ -30,6 +32,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         UpdateHealthBar();
         Debug.Log("Player Current Health: " + _currentHealth);
     }
+
     public void Heal(float amount)
     {
         if (IsDead) return;
@@ -38,6 +41,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         UpdateHealthBar();
         Debug.Log("Player Current Health: " + _currentHealth);
     }
+
     private void UpdateHealthBar()
     {
         if (healthBarImage != null)
@@ -45,9 +49,15 @@ public class PlayerHealth : MonoBehaviour, IHealth
             healthBarImage.fillAmount = _currentHealth / maxHealth;
         }
     }
+
     public void Die()
     {
         Debug.Log("Player has died!");
         // TODO: Ölüm animasyonu gelecek
+    }
+
+    public void SetAttacking(bool isAttacking)
+    {
+        _isAttacking = isAttacking;
     }
 }
