@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
         _myHealth = gameObject.GetComponent<EnemyHealth>();
         _startPosition = transform.position;
         _agent.speed = moveSpeed;
-        _agent.stoppingDistance = attackRadius + 0.4f;
+        //_agent.stoppingDistance = attackRadius + 0.4f;
 
         StartPatrolling();
     }
@@ -57,6 +57,8 @@ public class EnemyController : MonoBehaviour
             return;
         }
 
+        if (_myHealth.IsDead) return;
+
         DetectPlayer();
         AttackPlayer();
         UpdateAnimations();
@@ -64,6 +66,7 @@ public class EnemyController : MonoBehaviour
 
     private void DetectPlayer()
     {
+
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
         if (distanceToPlayer <= detectionRadius && !_playerHealth.IsDead)
@@ -91,7 +94,6 @@ public class EnemyController : MonoBehaviour
     private void AttackPlayer()
     {
         if (!_isPlayerDetected) return;
-        if (_myHealth.IsDead) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
