@@ -63,7 +63,7 @@ Oyun fikrinin kararlaştırılması, gerekli asset ve çevre dizaynları hakkın
 6. Temel çevre dizaynının araştırılıp projeye prototip olarak eklenmesi
 
 ### Daily Scrum
-Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve planlarını paylaşmıştır. Detaylı Daily Scrum notları [ekran görüntüleri eklenecek)'da bulunmaktadır.
+Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve planlarını paylaşmıştır. Detaylı Daily Scrum notları [Ekran Görüntüleri]'de bulunmaktadır.
 
 ### Sprint Review
 - Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
@@ -71,28 +71,37 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 - Yapılacak işler ve rollerin dağıtımı yapıldı.
 - Map ve karakterlerin sayısına, detaylı bir tasarım diline karar verildi.
 - Unity projeleri ve Trello gibi diğer kaynaklardaki ilerleme durumları hazırlandı.
+- Yapılacak işlerin planlaması yapıldı.
+- İpuçları ve görevlerle ilgili gerekli araştırmalar ve örnekler sunuldu.
 
 #### Tamamlanan İşler
 - Trello planlaması sağlandı
 - Projeyle ilgili genel araştırmalar yapıldı ve notlar alındı
 - Projenin temeli oluşturuldu
 - Ana karakter oluşturuldu
+- Ana karakterin basit düzeyde animasyon yapısı kuruldu
+- Temel düşmanla aralarındaki etkileşimler sağlandı
 - Temel düşman yapısı ve gerekli araştırmaları yapıldı
 - Temel sahne düzeni yapıldı
 
 ### Sprint Retrospective
 - Tasarımlarla ilgili ayrı toplantılar yapılarak oyun içi yapılabilecekler konusunda detaylı notlar alındı.
 - Düşman karakterleriyle ilgili güncellemeler yapıldı.
+- Ana karakterin basit düzeyde tutulması kararlaştırıldı.
 - İletişimin artırılması gerektiği konusunda hemfikir olundu.
 - Zaman yönetimi konusunda iyileştirmeler yapılması kararlaştırıldı.
+- Harita detaylandırılması gerektiği konuşuldu.
+- Yapılacak sistemin daha basit düzeyde tutulması kararı alındı.
 
 ### Engeller ve Çözümler
 - Engel: Bayram tatili nedeniyle başlangıçta gecikme yaşandı.
-  Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu artırdı ve öncelikleri yeniden belirledi.
+  Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu ve öncelikleri yeniden belirledi.
 - Engel: Akademinin grubu tamamlamasıyla ilgili gecikmeler yaşandı.
   Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
 - Engel: Bazı teknik zorluklar (Unity versiyonu uyumsuzluğu) yaşandı.
   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
+- Engel: Github uyumluluk sorunları yaşandı
+  Çözüm: Yeni github profili kuruldu.
 
 ### Ekran Görüntüleri
 <details>
