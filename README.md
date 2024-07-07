@@ -111,9 +111,6 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
   
 ![1](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/7a1a6d6b-daba-4a4b-a58d-d934ff8f3d4f)
 
-![2](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/4d21cd2a-1058-49b1-88b5-a4b3d389be50)
-
-![5](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/8b8dae2d-d9f4-4101-9eb0-834175289fc7)
 </details>
 
 ### Ekran Görüntüleri
