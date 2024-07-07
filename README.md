@@ -50,6 +50,7 @@ Sanctuary: Virus Wars
 ## 🔸 Sprint 1
 
 **Sprint Tarihleri**: 24 Haziran 2024 - 7 Temmuz 2024
+
 **Sprint içi puan değerlendirmesi**: 55 puan
 
 ### Sprint Hedefi
