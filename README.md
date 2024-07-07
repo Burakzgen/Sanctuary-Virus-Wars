@@ -97,13 +97,13 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 
 ### Engeller ve Çözümler
 - Engel: Bayram tatili nedeniyle başlangıçta gecikme yaşandı.
-- Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu ve öncelikleri yeniden belirledi.
+-   Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu ve öncelikleri yeniden belirledi.
 - Engel: Akademinin grubu tamamlamasıyla ilgili gecikmeler yaşandı.
-- Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
+-   Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
 - Engel: Bazı teknik zorluklar (Unity versiyonu uyumsuzluğu) yaşandı.
-- Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
+-   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
 - Engel: Github uyumluluk sorunları yaşandı
-- Çözüm: Yeni github profili kuruldu.
+-   Çözüm: Yeni github profili kuruldu.
 - Engel: Bireysel iş yoğunluğunun yüksek olması.
 
 ### Sprint Board Ekran Görüntüleri
