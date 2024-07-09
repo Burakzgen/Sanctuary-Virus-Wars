@@ -19,12 +19,23 @@ public class PlayerController : MonoBehaviour
     private CharacterController _characterController;
     private CameraController _cameraController;
     private Animator _animator;
+    private PlayerHealth _playerHealth;
+
+    private float originalWalkSpeed;
+    private float originalRunSpeed;
+    [SerializeField] private float poisonedWalkSpeed = 3f;
+    [SerializeField] private float poisonedRunSpeed = 5f;
+    private bool isPoisoned = false;
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         _cameraController = Camera.main.GetComponent<CameraController>();
         _animator = GetComponentInChildren<Animator>();
+        _playerHealth = GetComponent<PlayerHealth>();
+
+        originalWalkSpeed = walkSpeed;
+        originalRunSpeed = runSpeed;
     }
 
     private void Update()
@@ -46,6 +57,12 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         _isRunning = Input.GetKey(KeyCode.LeftShift);
         float currentSpeed = _isRunning ? runSpeed : walkSpeed;
+
+        // Zehirlenme durumu kontrolü
+        if (isPoisoned)
+        {
+            currentSpeed = _isRunning ? poisonedRunSpeed : poisonedWalkSpeed;
+        }
 
         Vector3 movement = _cameraController.PlanarRotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
 
@@ -86,10 +103,25 @@ public class PlayerController : MonoBehaviour
         if (_animator != null)
         {
             float currentSpeed = _isRunning ? runSpeed : walkSpeed;
+            if (isPoisoned)
+            {
+                currentSpeed = _isRunning ? poisonedRunSpeed : poisonedWalkSpeed;
+            }
+
             float moveAmount = new Vector3(_characterController.velocity.x, 0, _characterController.velocity.z).magnitude / currentSpeed;
             _animator.SetFloat("moveSpeed", moveAmount, 0.05f, Time.deltaTime);
             _animator.SetBool("isGrounded", _isGrounded);
             _animator.SetBool("isRunning", _isRunning);
+        }
+    }
+
+    public void SetPoisonedState(bool poisoned)
+    {
+        isPoisoned = poisoned;
+        if (!poisoned)
+        {
+            walkSpeed = originalWalkSpeed;
+            runSpeed = originalRunSpeed;
         }
     }
 }

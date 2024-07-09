@@ -201,6 +201,7 @@ public class EnemyController : MonoBehaviour
                 if (_isPlayerDetected && distanceToPlayer <= poisonRadius)
                 {
                     transform.LookAt(_player);
+                    _playerHealth.EnterPoisonZone();
                     if (_poisonCoroutine == null)
                     {
                         _poisonCoroutine = StartCoroutine(ApplyPoisonOverTime());
@@ -208,6 +209,7 @@ public class EnemyController : MonoBehaviour
                 }
                 else if (!_isPlayerDetected || distanceToPlayer > poisonRadius)
                 {
+                    _playerHealth.ExitPoisonZone();
                     if (_poisonCoroutine != null)
                     {
                         StopCoroutine(_poisonCoroutine);
@@ -280,6 +282,7 @@ public class EnemyController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
+
     private void UpdateAnimations()
     {
         bool isMoving = _agent.velocity.magnitude > 0.1f;
@@ -295,9 +298,7 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
-
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, poisonRadius);
-
     }
 }

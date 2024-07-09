@@ -12,6 +12,10 @@ public class PlayerAttack : MonoBehaviour
     private float _nextAttackTime = 0f;
     private Animator _animator;
 
+    private float originalDamage;
+    [SerializeField] private float poisonedDamage = 5f;
+    private bool isPoisoned = false;
+
     private void Start()
     {
         _playerHealth = GetComponent<PlayerHealth>();
@@ -22,6 +26,12 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].gameObject.SetActive(false);
+        }
+
+        // Ýlk silahýn hasarýný kaydet
+        if (weapons.Length > 0)
+        {
+            originalDamage = weapons[0].damage;
         }
     }
 
@@ -78,13 +88,15 @@ public class PlayerAttack : MonoBehaviour
         _animator.SetTrigger("Attack");
         _playerHealth.SetAttacking(true); // Saldýrý baþladýðýnda
 
+        float damage = isPoisoned ? poisonedDamage : currentWeapon.damage;
+
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hitInfo, currentWeapon.attackRange, LayerMask.GetMask("Enemy")))
         {
             EnemyHealth enemyHealth = hitInfo.collider.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(currentWeapon.damage);
+                enemyHealth.TakeDamage(damage);
             }
         }
 
@@ -99,6 +111,17 @@ public class PlayerAttack : MonoBehaviour
         _playerHealth.SetAttacking(false);
     }
 
+    public void SetPoisonedState(bool poisoned)
+    {
+        isPoisoned = poisoned;
+        if (!poisoned)
+        {
+            if (weapons.Length > 0)
+            {
+                weapons[0].damage = originalDamage;
+            }
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

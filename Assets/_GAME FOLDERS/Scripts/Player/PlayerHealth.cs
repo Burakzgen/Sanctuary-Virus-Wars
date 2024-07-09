@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     private float poisonEffectCooldown = 5f;
     private float lastPoisonEffectTime;
     private bool isPoisoned = false;
+    private bool inPoisonZone = false;
 
     // Properties
     public float MaxHealth => maxHealth;
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     public bool IsAttacking => _isAttacking;
     public float MaxPoisonLevel => maxPoisonLevel;
     public float CurrentPoisonLevel => _currentPoisonLevel;
+    public bool IsPoisoned => _currentPoisonLevel <= 0;
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void Update()
     {
-        if (isPoisoned && Time.time >= lastPoisonEffectTime + poisonEffectCooldown)
+        if (inPoisonZone && isPoisoned && Time.time >= lastPoisonEffectTime + poisonEffectCooldown)
         {
             ApplyPoisonEffect();
             lastPoisonEffectTime = Time.time;
@@ -72,6 +74,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         {
             _currentPoisonLevel = 0;
             isPoisoned = true;
+            ApplyPoisonEffects(true);
         }
         UpdatePoisonBar();
         Debug.Log("Player Current Poison Level: " + _currentPoisonLevel);
@@ -87,6 +90,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (_currentPoisonLevel > 0)
         {
             isPoisoned = false;
+            ApplyPoisonEffects(false);
         }
         UpdatePoisonBar();
         Debug.Log("Player Current Poison Level: " + _currentPoisonLevel);
@@ -94,7 +98,6 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void ApplyPoisonEffect()
     {
-        // Zehirlenme efektleri burada uygulanacak
         _currentHealth -= 5f; // Örnek olarak her 5 saniyede bir 5 saðlýk azaltma
         UpdateHealthBar();
         if (_currentHealth <= 0)
@@ -102,6 +105,25 @@ public class PlayerHealth : MonoBehaviour, IHealth
             Die();
         }
         Debug.Log("Poison effect applied. Player Current Health: " + _currentHealth);
+    }
+
+    private void ApplyPoisonEffects(bool apply)
+    {
+        PlayerController playerController = GetComponent<PlayerController>();
+        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+
+        if (apply)
+        {
+            // Karakterin hýzýný, koþma hýzýný ve saldýrý hasarýný azalt
+            playerController.SetPoisonedState(true);
+            playerAttack.SetPoisonedState(true);
+        }
+        else
+        {
+            // Karakterin hýzýný, koþma hýzýný ve saldýrý hasarýný normale döndür
+            playerController.SetPoisonedState(false);
+            playerAttack.SetPoisonedState(false);
+        }
     }
 
     private void UpdateHealthBar()
@@ -118,6 +140,16 @@ public class PlayerHealth : MonoBehaviour, IHealth
         {
             poisonBarImage.fillAmount = _currentPoisonLevel / maxPoisonLevel;
         }
+    }
+
+    public void EnterPoisonZone()
+    {
+        inPoisonZone = true;
+    }
+
+    public void ExitPoisonZone()
+    {
+        inPoisonZone = false;
     }
 
     public void Die()

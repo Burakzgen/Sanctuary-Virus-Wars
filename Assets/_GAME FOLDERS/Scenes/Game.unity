@@ -1398,6 +1398,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  poisonedWalkSpeed: 3
+  poisonedRunSpeed: 5
 --- !u!114 &975502415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1433,7 @@ MonoBehaviour:
   - {fileID: 420831837}
   - {fileID: 1221704005}
   attackCooldown: 1
+  poisonedDamage: 5
 --- !u!114 &975502417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3576,6 +3579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Poisoner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867167511056696395, guid: 3078b9556ba047449aab7f756b4d9835,
+        type: 3}
+      propertyPath: poisonDamage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1867167511056696396, guid: 3078b9556ba047449aab7f756b4d9835,
         type: 3}
