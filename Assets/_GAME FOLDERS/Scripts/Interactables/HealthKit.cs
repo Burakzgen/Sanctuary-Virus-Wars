@@ -3,19 +3,13 @@ using UnityEngine;
 public class HealthKit : MonoBehaviour, IInteractable
 {
     [SerializeField] private float healthAmount = 15f;
-    PlayerHealth playerHealth;
-    private void Start()
+    public void Interact(PlayerHealth health)
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-    }
+        if (health.CurrentHealth >= 100) return;
 
-    public void Interact()
-    {
-        if (playerHealth.CurrentHealth >= 100) return;
-
-        if (playerHealth != null)
+        if (health != null)
         {
-            playerHealth.Heal(healthAmount);
+            health.Heal(healthAmount);
             HealthKitManager.Instance.RespawnHealthKit(this);
         }
     }

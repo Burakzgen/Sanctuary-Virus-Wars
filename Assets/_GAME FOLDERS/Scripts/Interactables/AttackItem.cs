@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackItem : MonoBehaviour, IInteractable
 {
-    public void Interact()
+    public void Interact(PlayerHealth playerHealth)
     {
         PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
         if (playerInventory != null)

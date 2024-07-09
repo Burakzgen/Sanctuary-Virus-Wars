@@ -6,10 +6,11 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     private Camera _cam;
     private CameraController _cameraController;
-
+    PlayerHealth _playerHealth;
     private void Start()
     {
         _cam = Camera.main;
+        _playerHealth = GetComponent<PlayerHealth>();
         _cameraController = _cam.GetComponent<CameraController>();
     }
 
@@ -36,7 +37,7 @@ public class Interactor : MonoBehaviour
             Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.TryGetComponent(out IInteractable interactable))
             {
-                interactable.Interact();
+                interactable.Interact(_playerHealth);
             }
         }
     }
