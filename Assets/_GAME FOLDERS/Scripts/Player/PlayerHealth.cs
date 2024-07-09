@@ -3,6 +3,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
+
+    FirstPersonMovement playerMovement;
+
+    PlayerAttack playerAttack;
+
     [SerializeField] private float maxHealth = 100f;
     private float _currentHealth;
     private bool _isAttacking = false;
@@ -30,6 +35,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void Start()
     {
+        playerMovement = GetComponent<FirstPersonMovement>();
+        playerAttack = GetComponent<PlayerAttack>();
         _currentHealth = maxHealth;
         _currentPoisonLevel = maxPoisonLevel;
         UpdateHealthBar();
@@ -109,17 +116,14 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void ApplyPoisonEffects(bool apply)
     {
-        PlayerController playerController = GetComponent<PlayerController>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
         if (apply)
         {
-            playerController.SetPoisonedState(true);
+            playerMovement.SetPoisonedState(true);
             playerAttack.SetPoisonedState(true);
         }
         else
         {
-            playerController.SetPoisonedState(false);
+            playerMovement.SetPoisonedState(false);
             playerAttack.SetPoisonedState(false);
         }
     }

@@ -3,23 +3,22 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] Weapon[] weapons;
-    [SerializeField] float attackCooldown = 1f;
-    private int _currentWeaponIndex = -1;
-
     private PlayerHealth _playerHealth;
-    private Camera _cam;
-    private float _nextAttackTime = 0f;
     private Animator _animator;
+    private int _currentWeaponIndex = -1;
+    private float _nextAttackTime = 0f;
+    private float _originalDamage;
+    private bool _isPoisoned = false;
+    private string _animationName;
 
-    private float originalDamage;
+    [SerializeField] Camera _cam;
+    [SerializeField] Weapon[] weapons;
+    [SerializeField] string[] animationsName;
+    [SerializeField] float attackCooldown = 1f;
     [SerializeField] private float poisonedDamage = 5f;
-    private bool isPoisoned = false;
-
     private void Start()
     {
         _playerHealth = GetComponent<PlayerHealth>();
-        _cam = Camera.main;
         _animator = GetComponentInChildren<Animator>();
 
         for (int i = 0; i < weapons.Length; i++)
@@ -29,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (weapons.Length > 0)
         {
-            originalDamage = weapons[0].damage;
+            _originalDamage = weapons[0].damage;
         }
     }
 
@@ -72,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 weapons[_currentWeaponIndex].gameObject.SetActive(false);
             }
+            _animationName = animationsName[index];
             weapons[index].gameObject.SetActive(true);
             _currentWeaponIndex = index;
         }
@@ -83,10 +83,10 @@ public class PlayerAttack : MonoBehaviour
         if (_currentWeaponIndex == -1) return;
 
         Weapon currentWeapon = weapons[_currentWeaponIndex];
-        _animator.SetTrigger("Attack");
+        _animator.SetTrigger(_animationName);
         _playerHealth.SetAttacking(true);
 
-        float damage = isPoisoned ? poisonedDamage : currentWeapon.damage;
+        float damage = _isPoisoned ? poisonedDamage : currentWeapon.damage;
 
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hitInfo, currentWeapon.attackRange, LayerMask.GetMask("Enemy")))
@@ -111,12 +111,12 @@ public class PlayerAttack : MonoBehaviour
 
     public void SetPoisonedState(bool poisoned)
     {
-        isPoisoned = poisoned;
+        _isPoisoned = poisoned;
         if (!poisoned)
         {
             if (weapons.Length > 0)
             {
-                weapons[0].damage = originalDamage;
+                weapons[0].damage = _originalDamage;
             }
         }
     }

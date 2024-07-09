@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public class FirstPersonJump : MonoBehaviour
+{
+    // Private
+    Rigidbody _rb;
+    [SerializeField] FirstPersonGroundCheck _groundCheck;
+
+    [SerializeField] float jumpStrength = 2;
+    [SerializeField] event System.Action Jumped;
+    void Reset()
+    {
+        _groundCheck = GetComponentInChildren<FirstPersonGroundCheck>();
+    }
+    void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+    void LateUpdate()
+    {
+        if (Input.GetButtonDown("Jump") && (!_groundCheck || _groundCheck.isGrounded))
+        {
+            _rb.AddForce(Vector3.up * 100 * jumpStrength);
+            Jumped?.Invoke();
+        }
+    }
+}

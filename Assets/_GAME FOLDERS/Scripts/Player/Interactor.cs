@@ -4,16 +4,14 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField][Range(0, 10)] private float _raycastRange = 1f;
     [SerializeField] private LayerMask _layerMask;
-    private Camera _cam;
-    private CameraController _cameraController;
+    [SerializeField] private Camera _cam;
+    //private CameraController _cameraController;
     PlayerHealth _playerHealth;
     private void Start()
     {
-        _cam = Camera.main;
         _playerHealth = GetComponent<PlayerHealth>();
-        _cameraController = _cam.GetComponent<CameraController>();
+        //_cameraController = _cam.GetComponent<CameraController>();
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -21,16 +19,15 @@ public class Interactor : MonoBehaviour
             PerformInteraction();
         }
     }
-
     private void PerformInteraction()
     {
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         float effectiveRange = _raycastRange;
 
-        if (_cameraController != null && _cameraController.cameraMode == CameraController.CameraMode.ThirdPerson)
-        {
-            effectiveRange = Mathf.Max(_raycastRange, _raycastRange + _cameraController.thirdPersonSettings.distance);
-        }
+        //if (_cameraController != null && _cameraController.cameraMode == CameraController.CameraMode.ThirdPerson)
+        //{
+        //    effectiveRange = Mathf.Max(_raycastRange, _raycastRange + _cameraController.thirdPersonSettings.distance);
+        //}
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, effectiveRange, _layerMask))
         {
@@ -54,11 +51,11 @@ public class Interactor : MonoBehaviour
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         float effectiveRange = _raycastRange;
 
-        if (_cameraController != null && _cameraController.cameraMode == CameraController.CameraMode.ThirdPerson)
-        {
-            // Adjust range for third person if necessary
-            effectiveRange = Mathf.Max(_raycastRange, _raycastRange + _cameraController.thirdPersonSettings.distance);
-        }
+        //if (_cameraController != null && _cameraController.cameraMode == CameraController.CameraMode.ThirdPerson)
+        //{
+        //    // Adjust range for third person if necessary
+        //    effectiveRange = Mathf.Max(_raycastRange, _raycastRange + _cameraController.thirdPersonSettings.distance);
+        //}
 
         Gizmos.DrawRay(ray.origin, ray.direction * effectiveRange);
 
