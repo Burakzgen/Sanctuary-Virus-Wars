@@ -5325,6 +5325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7775177104492821984, guid: b3c466ca0554edf4fa0022174c523a69,
         type: 3}
+      propertyPath: attackRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775177104492821984, guid: b3c466ca0554edf4fa0022174c523a69,
+        type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1520634932}
@@ -5718,6 +5723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1124755347}
     m_Modifications:
+    - target: {fileID: 8713597524537303776, guid: 8e461c4121f555040b0c2f58e3aac048,
+        type: 3}
+      propertyPath: attackRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8713597524537303777, guid: 8e461c4121f555040b0c2f58e3aac048,
         type: 3}
       propertyPath: m_Name

@@ -98,7 +98,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void ApplyPoisonEffect()
     {
-        _currentHealth -= 5f; // Örnek olarak her 5 saniyede bir 5 saðlýk azaltma
+        _currentHealth -= 5f;
         UpdateHealthBar();
         if (_currentHealth <= 0)
         {
@@ -114,13 +114,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
         if (apply)
         {
-            // Karakterin hýzýný, koþma hýzýný ve saldýrý hasarýný azalt
             playerController.SetPoisonedState(true);
             playerAttack.SetPoisonedState(true);
         }
         else
         {
-            // Karakterin hýzýný, koþma hýzýný ve saldýrý hasarýný normale döndür
             playerController.SetPoisonedState(false);
             playerAttack.SetPoisonedState(false);
         }

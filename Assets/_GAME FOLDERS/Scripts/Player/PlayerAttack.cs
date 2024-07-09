@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] Weapon[] weapons; // Karakterin sahip olduðu silahlar
-    [SerializeField] float attackCooldown = 1f; // Saldýrý gecikme süresi
+    [SerializeField] Weapon[] weapons;
+    [SerializeField] float attackCooldown = 1f;
     private int _currentWeaponIndex = -1;
 
     private PlayerHealth _playerHealth;
@@ -22,13 +22,11 @@ public class PlayerAttack : MonoBehaviour
         _cam = Camera.main;
         _animator = GetComponentInChildren<Animator>();
 
-        // Tüm silahlarý baþta kapat
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].gameObject.SetActive(false);
         }
 
-        // Ýlk silahýn hasarýný kaydet
         if (weapons.Length > 0)
         {
             originalDamage = weapons[0].damage;
@@ -86,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
 
         Weapon currentWeapon = weapons[_currentWeaponIndex];
         _animator.SetTrigger("Attack");
-        _playerHealth.SetAttacking(true); // Saldýrý baþladýðýnda
+        _playerHealth.SetAttacking(true);
 
         float damage = isPoisoned ? poisonedDamage : currentWeapon.damage;
 

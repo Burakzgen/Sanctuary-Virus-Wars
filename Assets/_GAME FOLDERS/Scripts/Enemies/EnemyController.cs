@@ -55,7 +55,11 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (_myHealth.IsDead) return;
+        if (_myHealth.IsDead)
+        {
+            HandleDeath();
+            return;
+        }
 
         if (_playerHealth.IsDead)
         {
@@ -100,7 +104,7 @@ public class EnemyController : MonoBehaviour
         if (distanceToPlayer <= detectionRadius && !_playerHealth.IsDead)
         {
             _isPlayerDetected = true;
-            _agent.stoppingDistance = stoppingDistance; // Stopping distance belirle
+            _agent.stoppingDistance = stoppingDistance;
             if (enemyType != EnemyType.Poisoner)
             {
                 _agent.isStopped = false;
@@ -111,7 +115,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             _isPlayerDetected = false;
-            _agent.stoppingDistance = 0f; // Stopping distance sýfýrla
+            _agent.stoppingDistance = 0f;
             _agent.speed = moveSpeed;
 
             if (enemyType == EnemyType.Patroller)
@@ -281,6 +285,19 @@ public class EnemyController : MonoBehaviour
             _playerHealth.TakePoisonDamage(poisonDamage);
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    private void HandleDeath()
+    {
+        if (_poisonCoroutine != null)
+        {
+            StopCoroutine(_poisonCoroutine);
+            _poisonCoroutine = null;
+        }
+        _playerHealth.ExitPoisonZone();
+        _agent.isStopped = true;
+        _collider.enabled = false;
+        // TODO Düþmanýn diðer iþlemlerini burada durdurulacak
     }
 
     private void UpdateAnimations()
