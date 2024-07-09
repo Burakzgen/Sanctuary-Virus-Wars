@@ -9,6 +9,7 @@ public class FirstPersonLook : MonoBehaviour
     // Private
     Vector2 velocity;
     Vector2 frameVelocity;
+
     void Reset()
     {
         character = GetComponentInParent<FirstPersonMovement>().transform;
@@ -23,7 +24,7 @@ public class FirstPersonLook : MonoBehaviour
         Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
         frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);
         velocity += frameVelocity;
-        velocity.y = Mathf.Clamp(velocity.y, -60, 90);
+        velocity.y = Mathf.Clamp(velocity.y, -75, 90);
 
 
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);

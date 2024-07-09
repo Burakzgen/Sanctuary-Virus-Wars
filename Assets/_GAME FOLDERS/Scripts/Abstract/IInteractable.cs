@@ -1,4 +1,4 @@
 public interface IInteractable
 {
-    void Interact(PlayerHealth health);
+    void Interact(PlayerHealth health = null);
 }

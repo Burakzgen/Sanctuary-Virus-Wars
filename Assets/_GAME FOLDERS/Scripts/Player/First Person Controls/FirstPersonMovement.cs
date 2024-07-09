@@ -20,7 +20,7 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] private float poisonedWalkSpeed = 3f;
     [SerializeField] private float poisonedRunSpeed = 5f;
 
-
+    public bool IsPause = false;
 
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
     public bool IsRunning { get; private set; }
@@ -35,6 +35,7 @@ public class FirstPersonMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (IsPause) return;
         IsRunning = canRun && Input.GetKey(runningKey);
 
         float targetMovingSpeed = IsRunning ? runSpeed : speed;
