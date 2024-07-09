@@ -51,16 +51,18 @@ Sanctuary: Virus Wars
 
 **Sprint Tarihleri**: 24 Haziran 2024 - 7 Temmuz 2024
 
+**Sprint içi puan değerlendirmesi**: 55 puan
+
 ### Sprint Hedefi
 Oyun fikrinin kararlaştırılması, gerekli asset ve çevre dizaynları hakkında araştırmaların yapılması, Unity projesinin oluşturulup temel oyun mekaniğinin oluşturulması.
 
 ### Sprint Backlog
-1. Oyun fikrinin kararlaştırılması
-2. Genel oyunla ilgili araştırmalar
-3. Unity projesinin başlatılması ve temel sahne düzeninin oluşturulması
-4. Ana karakterin hareket mekaniklerinin programlanması
-5. İlk düşman türünün araştırılması ve projeye eklenmesi
-6. Temel çevre dizaynının araştırılıp projeye prototip olarak eklenmesi
+1. Oyun fikrinin kararlaştırılması (10 puan)
+2. Genel oyunla ilgili araştırmalar (5 puan)
+3. Unity projesinin başlatılması ve temel sahne düzeninin oluşturulması (5 puan)
+4. Ana karakterin hareket mekaniklerinin programlanması (15 puan)
+5. İlk düşman türünün araştırılması ve projeye eklenmesi (10 puan)
+6. Temel çevre dizaynının araştırılıp projeye prototip olarak eklenmesi (10 puan)
 
 ### Daily Scrum
 Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve planlarını paylaşmıştır. Detaylı Daily Scrum notları [Ekran Görüntüleri]'de bulunmaktadır.
@@ -75,14 +77,14 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 - İpuçları ve görevlerle ilgili gerekli araştırmalar ve örnekler sunuldu.
 
 #### Tamamlanan İşler
-- Trello planlaması sağlandı
-- Projeyle ilgili genel araştırmalar yapıldı ve notlar alındı
-- Projenin temeli oluşturuldu
-- Ana karakter oluşturuldu
-- Ana karakterin basit düzeyde animasyon yapısı kuruldu
-- Temel düşmanla aralarındaki etkileşimler sağlandı
-- Temel düşman yapısı ve gerekli araştırmaları yapıldı
-- Temel sahne düzeni yapıldı
+- Trello planlaması sağlandı (5 puan)
+- Projeyle ilgili genel araştırmalar yapıldı ve notlar alındı (5 puan)
+- Projenin temeli oluşturuldu (5 puan)
+- Ana karakter oluşturuldu (10 puan)
+- Ana karakterin basit düzeyde animasyon yapısı kuruldu (10 puan)
+- Temel düşmanla aralarındaki etkileşimler sağlandı (10 puan)
+- Temel düşman yapısı ve gerekli araştırmaları yapıldı (5 puan)
+- Temel sahne düzeni yapıldı (5 puan)
 
 ### Sprint Retrospective
 - Tasarımlarla ilgili ayrı toplantılar yapılarak oyun içi yapılabilecekler konusunda detaylı notlar alındı.
@@ -95,14 +97,21 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 
 ### Engeller ve Çözümler
 - Engel: Bayram tatili nedeniyle başlangıçta gecikme yaşandı.
-  Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu ve öncelikleri yeniden belirledi.
+-   Çözüm: Ekip, gecikmeli başlangıcı telafi etmek için çalışma temposunu ve öncelikleri yeniden belirledi.
 - Engel: Akademinin grubu tamamlamasıyla ilgili gecikmeler yaşandı.
-  Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
+-   Çözüm: Ekip, 4 kişi olarak devam etme kararı alındı.
 - Engel: Bazı teknik zorluklar (Unity versiyonu uyumsuzluğu) yaşandı.
-  Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
+-   Çözüm: Tüm ekip üyeleri aynı Unity sürümüne geçiş yaptı ve proje yeniden yapılandırıldı.
 - Engel: Github uyumluluk sorunları yaşandı
-  Çözüm: Yeni github profili kuruldu.
+-   Çözüm: Yeni github profili kuruldu.
 - Engel: Bireysel iş yoğunluğunun yüksek olması.
+
+### Sprint Board Ekran Görüntüleri
+<details>
+  
+![1](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/7a1a6d6b-daba-4a4b-a58d-d934ff8f3d4f)
+
+</details>
 
 ### Ekran Görüntüleri
 <details>
