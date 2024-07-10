@@ -9,6 +9,11 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private bool _isDead = false;
     [SerializeField] Image healthBarImage;
 
+    // Interact buff
+    [SerializeField] bool useBuff = false;
+    [SerializeField] GameObject buffPrefab;
+    [SerializeField] float buffDropChance = 0.5f;
+
     public float MaxHealth => maxHealth;
     public float CurrentHealth => _currentHealth;
     public bool IsDead => _isDead;
@@ -47,6 +52,16 @@ public class EnemyHealth : MonoBehaviour, IHealth
         Debug.Log("Enemy has died!");
         _isDead = true;
         _animator.SetTrigger("IsDead");
+        if (useBuff)
+            DropBuff();
         Destroy(gameObject, 2.2f);
+    }
+
+    private void DropBuff()
+    {
+        if (buffPrefab != null && Random.value <= buffDropChance)
+        {
+            Instantiate(buffPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class EnergyCell : MonoBehaviour, IInteractable
 {
-    [SerializeField] Weapon weapon;
+    [SerializeField] Weapon[] weapons;
     public void Interact(PlayerHealth playerHealth)
     {
-        weapon.damage = 50f;
+        int randomValue = Random.Range(0, weapons.Length);
+        weapons[randomValue].damage = 50f;
         Destroy(gameObject);
     }
 }

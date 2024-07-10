@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Camera _cam;
     [SerializeField] Weapon[] weapons;
     [SerializeField] string[] animationsName;
+    [SerializeField] Image[] selectedImage;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] private float poisonedDamage = 5f;
     private void Start()
@@ -62,6 +64,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (index == _currentWeaponIndex)
         {
+            selectedImage[index].gameObject.SetActive(false);
             weapons[index].gameObject.SetActive(false);
             _currentWeaponIndex = -1;
         }
@@ -70,8 +73,10 @@ public class PlayerAttack : MonoBehaviour
             if (_currentWeaponIndex != -1)
             {
                 weapons[_currentWeaponIndex].gameObject.SetActive(false);
+                selectedImage[_currentWeaponIndex].gameObject.SetActive(false);
             }
             _animationName = animationsName[index];
+            selectedImage[index].gameObject.SetActive(true);
             weapons[index].gameObject.SetActive(true);
             _currentWeaponIndex = index;
         }
