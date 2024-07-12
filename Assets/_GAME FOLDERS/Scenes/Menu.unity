@@ -13740,7 +13740,7 @@ GameObject:
   - component: {fileID: 2215693355719147352}
   - component: {fileID: 2215693355719147355}
   - component: {fileID: 2215693355719147354}
-  - component: {fileID: 2215693355719147356}
+  - component: {fileID: 2215693355719147357}
   m_Layer: 5
   m_Name: More Details Panel
   m_TagString: Untagged
@@ -13813,7 +13813,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2215693355719147335}
   m_CullTransparentMesh: 1
---- !u!114 &2215693355719147356
+--- !u!114 &2215693355719147357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13822,7 +13822,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2215693355719147335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df784c243573214bbd6529afec1130c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4859eaebc80a21b4c9e61ebd9991181b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panels:
@@ -13837,7 +13837,7 @@ MonoBehaviour:
   - {fileID: 34909897}
   - {fileID: 552250997}
   - {fileID: 1741035039}
-  hideButtons: []
+  switchInterval: 4
 --- !u!1001 &2215693355827036356
 PrefabInstance:
   m_ObjectHideFlags: 0
