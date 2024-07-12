@@ -3,47 +3,36 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] panels;
-    [SerializeField] private Button[] showButtons;
-    [SerializeField] private Button[] hideButtons;
-
-    private GameObject _currentPanel;
+    [SerializeField] private Button newGameButton;
+    [SerializeField] private Sprite newGameSprite;
+    [SerializeField] private Button quitGameButton;
+    [SerializeField] private Sprite quitSprite;
+    [SerializeField] private PopupManager popupManager;
 
     private void Start()
     {
-        ShowPanel(0);
-
-        for (int i = 0; i < showButtons.Length; i++)
-        {
-            int index = i;
-            showButtons[index].onClick.AddListener(() => ShowPanel(index));
-            hideButtons[index].onClick.AddListener(CloseCurrentPanel);
-        }
+        newGameButton.onClick.AddListener(OnNewGameClicked);
+        quitGameButton.onClick.AddListener(OnQuitGameClicked);
     }
 
-    private void ShowPanel(int index)
+    private void OnNewGameClicked()
     {
-        if (index < 0 || index >= panels.Length)
-        {
-            Debug.LogError("Invalid panel index");
-            return;
-        }
-
-        if (_currentPanel != null)
-        {
-            _currentPanel.SetActive(false);
-        }
-
-        _currentPanel = panels[index];
-        _currentPanel.SetActive(true);
+        popupManager.ShowPopup("Are you sure you want to start a new game?", "NEW GAME", newGameSprite, ConfirmNewGame);
     }
 
-    private void CloseCurrentPanel()
+    private void OnQuitGameClicked()
     {
-        if (_currentPanel != null)
-        {
-            _currentPanel.SetActive(false);
-            _currentPanel = null;
-        }
+        popupManager.ShowPopup("Are you sure you want to quit the game?", "EXIT", quitSprite, ConfirmQuitGame);
+    }
+
+    private void ConfirmNewGame()
+    {
+        Debug.Log("New Game Started!");
+    }
+
+    private void ConfirmQuitGame()
+    {
+        Debug.Log("Game Quit!");
+        Application.Quit();
     }
 }
