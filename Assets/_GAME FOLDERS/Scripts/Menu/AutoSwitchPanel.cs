@@ -26,17 +26,16 @@ public class AutoSwitchPanel : MonoBehaviour
             {
                 if (_autoSwitchCoroutine != null)
                 {
-                    StopCoroutine(_autoSwitchCoroutine); // Elle týklanýrsa otomatik geçiþi durdur
+                    StopCoroutine(_autoSwitchCoroutine);
                 }
                 ShowPanel(index);
                 if (_autoSwitchActive)
                 {
-                    _autoSwitchCoroutine = StartCoroutine(AutoSwitchPanelsCoroutine()); // Elle týklamadan sonra otomatik geçiþi tekrar baþlat
+                    _autoSwitchCoroutine = StartCoroutine(AutoSwitchPanelsCoroutine());
                 }
             });
         }
 
-        // Baþlangýçta otomatik geçiþi baþlat
         _autoSwitchCoroutine = StartCoroutine(AutoSwitchPanelsCoroutine());
     }
 
