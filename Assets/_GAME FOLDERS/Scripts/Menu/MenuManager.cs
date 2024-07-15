@@ -119,6 +119,7 @@ public class MenuManager : MonoBehaviour
     private void ConfirmNewGame()
     {
         Debug.Log("New Game Started!");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
 
     private void ConfirmQuitGame()
