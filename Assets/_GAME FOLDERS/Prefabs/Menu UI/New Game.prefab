@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2215693355489123383}
   - component: {fileID: 2215693355489123382}
   - component: {fileID: 2215693355489123381}
+  - component: {fileID: 7189385102959941976}
   m_Layer: 5
   m_Name: New Game
   m_TagString: Untagged
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 32
+  m_PixelsPerUnitMultiplier: 20
 --- !u!114 &2215693355489123381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +201,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7189385102959941976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215693355489123371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695745eda2a536145b5a4a895a320fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2215693355489123381}
+  targetImage: {fileID: 2215693355489123382}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 1, g: 0.67058825, b: 0.05882353, a: 1}
+  normalScale: {x: 1, y: 1, z: 1}
+  highlightedScale: {x: 1.05, y: 1.05, z: 1.05}
+  animationDuration: 0.15
 --- !u!1 &2215693356397328327
 GameObject:
   m_ObjectHideFlags: 0
