@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [Header("Referance")]
     [SerializeField] private Button button;
@@ -25,6 +25,11 @@ public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        targetImage.color = normalColor;
+        button.transform.DOScale(normalScale, animationDuration);
+    }
+    public void OnPointerClick(PointerEventData eventData)
     {
         targetImage.color = normalColor;
         button.transform.DOScale(normalScale, animationDuration);

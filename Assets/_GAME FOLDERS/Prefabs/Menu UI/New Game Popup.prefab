@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 7515703038016849066}
   - component: {fileID: 7515703038016849067}
   - component: {fileID: 7515703038016849064}
+  - component: {fileID: 705997420729098377}
   m_Layer: 5
   m_Name: Cancel Button
   m_TagString: Untagged
@@ -685,6 +686,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &705997420729098377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7515703038016849070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695745eda2a536145b5a4a895a320fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 7515703038016849064}
+  targetImage: {fileID: 7515703038016849067}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 1, g: 0.67058825, b: 0.058823533, a: 1}
+  normalScale: {x: 1, y: 1, z: 1}
+  highlightedScale: {x: 1.1, y: 1.1, z: 1.1}
+  animationDuration: 0.15
 --- !u!1 &7515703038047003302
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +881,7 @@ GameObject:
   - component: {fileID: 7515703038565434437}
   - component: {fileID: 7515703038565434458}
   - component: {fileID: 7515703038565434459}
+  - component: {fileID: 2482135105579738340}
   m_Layer: 5
   m_Name: Confirm Button
   m_TagString: Untagged
@@ -972,6 +993,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2482135105579738340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7515703038565434457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695745eda2a536145b5a4a895a320fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 7515703038565434459}
+  targetImage: {fileID: 7515703038565434458}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 1, g: 0.67058825, b: 0.058823533, a: 1}
+  normalScale: {x: 1, y: 1, z: 1}
+  highlightedScale: {x: 1.1, y: 1.1, z: 1.1}
+  animationDuration: 0.15
 --- !u!1 &7515703038620297582
 GameObject:
   m_ObjectHideFlags: 0
