@@ -1,11 +1,10 @@
 using DG.Tweening;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class AnimatedColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Referance")]
     [SerializeField] private Button button;
@@ -22,14 +21,19 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
     [SerializeField] private Color highlightedTextColor = Color.black;
     [SerializeField] private Color pressedTextColor = Color.black;
 
+    [Header("Size")]
+    [SerializeField] private Vector3 normalScale = Vector3.one;
+    [SerializeField] private Vector3 highlightedScale = Vector3.one * 1.1f;
+    [SerializeField] private float animationDuration = 0.15f;
+
     [Header("Settings")]
     [SerializeField] private bool keepPressedColor = false;
-    [SerializeField] private List<ColorChangeButton> groupButtons;
     [SerializeField] private bool defaultSelected = false;
     [SerializeField] private bool inverseControls = false;
     private bool isSelected = false;
 
     private RectTransform targetRectTransfrom;
+
     private void Start()
     {
         if (inverseControls) targetRectTransfrom = button.GetComponent<RectTransform>();
@@ -41,30 +45,36 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!keepPressedColor) return;
-
-        foreach (var btn in groupButtons)
+        if (keepPressedColor)
         {
-            if (btn != this)
-            {
-                btn.Deselect();
-            }
+            Select();
         }
-        Select();
+        targetImage.color = normalColor;
+        targetIconImage.color = pressedColor;
+        targetText.color = pressedColor;
+        button.transform.DOScale(normalScale, animationDuration);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isSelected) return;
+        if (!isSelected)
+        {
+            SetHighlightState(true);
+        }
 
-        SetHighlightState(true);
+        targetImage.color = highlightedColor;
+        button.transform.DOScale(highlightedScale, animationDuration);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isSelected) return;
+        if (!isSelected)
+        {
+            SetHighlightState(false);
+        }
 
-        SetHighlightState(false);
+        targetImage.color = normalColor;
+        button.transform.DOScale(normalScale, animationDuration);
     }
 
     private void Select()
@@ -96,7 +106,6 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
             if (targetBorderImage != null) targetBorderImage.color = normalTextColor;
         }
 
-        if (targetBorderImage != null) targetBorderImage.color = normalTextColor;
         if (targetIconImage != null) targetIconImage.color = textColor;
         if (targetText != null) targetText.color = textColor;
     }
@@ -131,6 +140,7 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
         {
             if (targetBorderImage != null) targetBorderImage.color = normalTextColor;
         }
+
         if (targetIconImage != null) targetIconImage.color = normalTextColor;
         if (targetText != null) targetText.color = normalTextColor;
     }

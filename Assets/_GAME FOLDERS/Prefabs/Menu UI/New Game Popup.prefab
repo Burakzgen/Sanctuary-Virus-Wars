@@ -726,8 +726,7 @@ GameObject:
   - component: {fileID: 7515703038016849066}
   - component: {fileID: 7515703038016849067}
   - component: {fileID: 7515703038016849064}
-  - component: {fileID: 1604556611353519177}
-  - component: {fileID: 8703751547599798324}
+  - component: {fileID: 1585590465032618748}
   m_Layer: 5
   m_Name: Cancel Button
   m_TagString: Untagged
@@ -840,7 +839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1604556611353519177
+--- !u!114 &1585590465032618748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -849,7 +848,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7515703038016849070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7967bfda5bf334b45aa64d00c9caffcd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0281e8775de70884bbcad7f42182e35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 7515703038016849064}
@@ -863,29 +862,13 @@ MonoBehaviour:
   normalTextColor: {r: 1, g: 0.29411766, b: 0.29411766, a: 1}
   highlightedTextColor: {r: 1, g: 1, b: 1, a: 1}
   pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
-  keepPressedColor: 0
-  groupButtons: []
-  defaultSelected: 0
-  inverseControls: 0
---- !u!114 &8703751547599798324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7515703038016849070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 695745eda2a536145b5a4a895a320fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 7515703038016849064}
-  targetImage: {fileID: 7515703038016849067}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightedColor: {r: 1, g: 0.29411766, b: 0.29411766, a: 1}
   normalScale: {x: 1, y: 1, z: 1}
   highlightedScale: {x: 1.1, y: 1.1, z: 1.1}
   animationDuration: 0.15
+  keepPressedColor: 0
+  defaultSelected: 0
+  inverseControls: 0
+  resetControls: 0
 --- !u!1 &7515703038047003302
 GameObject:
   m_ObjectHideFlags: 0
