@@ -353,13 +353,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 4205981802443743335}
   targetImage: {fileID: 4205981802789605128}
-  targetRectTransfrom: {fileID: 4205981802443743334}
   targetBorderImage: {fileID: 7216970844233344873}
   targetIconImage: {fileID: 0}
   targetText: {fileID: 0}
-  normalColor: {r: 0.52156866, g: 0.5764706, b: 0.6431373, a: 1}
-  highlightedColor: {r: 0.2723389, g: 0.31976712, b: 0.3773585, a: 1}
-  pressedColor: {r: 0.52156866, g: 0.5764706, b: 0.6431373, a: 1}
+  normalColor: {r: 0.09803922, g: 0.13725491, b: 0.1764706, a: 0.9607843}
+  highlightedColor: {r: 0.09803922, g: 0.13725491, b: 0.1764706, a: 1}
+  pressedColor: {r: 0.09803922, g: 0.13725491, b: 0.1764706, a: 0.9607843}
   normalTextColor: {r: 1, g: 1, b: 1, a: 0}
   highlightedTextColor: {r: 1, g: 1, b: 1, a: 1}
   pressedTextColor: {r: 1, g: 0.67058825, b: 0.058823533, a: 1}
