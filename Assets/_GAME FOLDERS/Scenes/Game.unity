@@ -7220,6 +7220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Patroller
       objectReference: {fileID: 0}
+    - target: {fileID: 2042122305956695607, guid: 6f5dd88dd2cb5b34a90fe00d03417e3a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2042122305956695627, guid: 6f5dd88dd2cb5b34a90fe00d03417e3a,
         type: 3}
       propertyPath: m_RootOrder
@@ -7288,6 +7293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Attacker
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017213496880558547, guid: 8b789df686410af4da90167b054260c9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3017213496880558551, guid: 8b789df686410af4da90167b054260c9,
         type: 3}
@@ -7778,6 +7788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Stable
       objectReference: {fileID: 0}
+    - target: {fileID: 6631719837697854308, guid: 58133c7fb7316654cb914649f68bc4d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58133c7fb7316654cb914649f68bc4d7, type: 3}
 --- !u!114 &7109128823388931852
@@ -7869,6 +7884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Poisoner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963831319096622378, guid: f5c02c78026647043bca162be4f7d6aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8963831319096622382, guid: f5c02c78026647043bca162be4f7d6aa,
         type: 3}
