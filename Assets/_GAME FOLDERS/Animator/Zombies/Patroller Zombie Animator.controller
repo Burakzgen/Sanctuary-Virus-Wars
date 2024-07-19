@@ -85,7 +85,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6374065413660466386}
@@ -98,7 +98,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d3a64dbaebd54d4459d7c27184a8932f,
+  m_Motion: {fileID: -203655887218126122, guid: 7cde23bb31ece9245b495dc99e7d0ec0,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -127,7 +127,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: ee9c9d0e06cba5044b8fcbf0ad5a085d,
+  m_Motion: {fileID: -203655887218126122, guid: 527a985a357fe30478eaff02e3b9e57b,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -359,7 +359,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 1c3de82f7fcee1442ab8a8ea9ff18fa3,
+  m_Motion: {fileID: -203655887218126122, guid: 2538f3ed08df8814ba1a2e77d30838c7,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -496,7 +496,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Run
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5693610119213544565}
@@ -510,7 +510,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: e05205e4bcef9cf41a6dea8d691a8b42,
+  m_Motion: {fileID: -203655887218126122, guid: 75ddebd94c606ec45915ea8d11da2ee0,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -537,7 +537,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 4ad038c935dd10c4dae7fa0427d0d636,
+  m_Motion: {fileID: -203655887218126122, guid: f8c0285fe2c9bdb49b2a1a27e1780978,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
