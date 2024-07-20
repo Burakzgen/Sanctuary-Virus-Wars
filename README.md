@@ -136,3 +136,97 @@ Sprint 2'de (8 Temmuz 2024 - 21 Temmuz 2024) odaklanılacak ana konular:
 2. Kaynak yönetimi sisteminin oluşturulması
 3. İlk seviyenin tasarlanması ve uygulanması
 4. Kullanıcı arayüzünün (UI) temel tasarımının yapılması
+
+## 🔸 Sprint 2
+
+**Sprint Tarihleri** : 8 Temmuz 2024 - 21 Temmuz 2024
+
+**Sprint içi puan değerlendirmesi**: 60 puan
+
+### Sprint Hedefi
+Düşmanların çeşitlerinin oluşturulması, menü tasarımı ve oyun içi UI animasyonlarının ayarlanması, harita prototiplerinin geliştirilmesi, ev ve bina modellerinin ayarlanması, karakterin etkileşimde bulunabileceği modellerin kodlanması ve prototiplerin üretilmesi.
+
+### Sprint Backlog
+
+1. Düşman çeşitlerinin oluşturulması (15 puan)
+2. Menü tasarımı ve UI animasyonlarının ayarlanması (10 puan)
+3. Harita prototiplerinin geliştirilmesi (10 puan)
+4. Ev ve bina modellerinin ayarlanması (10 puan)
+5. Karakterin etkileşimde bulunabileceği modellerin kodlanması (10 puan)
+6. Prototiplerin üretilmesi ve test edilmesi (5 puan)
+
+### Daily Scrum
+Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve planlarını paylaşmıştır. Detaylı Daily Scrum notları [Ekran Görüntüleri]'de bulunmaktadır.
+
+### Sprint Review
+Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
+
+- 10 Temmuz Çarşamba günü yapılan toplantıda çevre prototipinin oluşturulmasında hızlanılması gerektiği konuşuldu.
+- Oyun içi eksik ve yapılacak durumlarla ilgili Trello notları güncellendi.
+- Menü tasarımı netleşti ve animasyonların yapılması kararlaştırıldı.
+- Modellerle ilgili olarak, game kit ve modellerin bütün bir şekilde olup olmayacağına karar verildi. Evlerin bütün olarak modellenmesi gerektiği konuşuldu.
+- Çevre tasarımı ve haritanın oluşturulmasıyla ilgili kararlar alındı; görevlerin ve ipuçlarının haritaya uyarlanması gerektiği konuşuldu.
+- Düşman objelerinin neler olacağına karar verildi.
+- Entegre edilebilecek multiplayer özellikleri son sprintte değerlendirildi.
+
+### Tamamlanan İşler
+
+- Düşman çeşitleri oluşturuldu: Zehirle hasar veren düşman, sabit duran düşman, atak gücü yüksek olan düşman, devriye atan düşman modelleri ayarlandı (15 puan)
+- Menü tasarımı ve oyun içi UI animasyonları yapıldı (10 puan)
+- Harita prototipleri hakkında görüşmeler yapıldı ve prototip geliştirildi (10 puan)
+- Ev modelleri ve bina modelleri kararları alındı (10 puan)
+- Karakterin etkileşimde bulunabileceği modeller kodlandı ve prototipler üretildi (10 puan)
+- Discord ve Trello'dan yorumlarla görüşmeler yapıldı, 2-3 günde bir sesli toplantı yapıldı (5 puan)
+
+### Sprint Retrospective
+
+- Tasarımlarla ilgili ayrı toplantılar yapılarak oyun içi yapılabilecekler konusunda detaylı notlar alındı.
+- Düşman karakterleriyle ilgili güncellemeler yapıldı. Her düşmana özel modeller eklendi ve animasyonları yapıldı.
+- Ana karakterin basit düzeyde tutulması kararlaştırıldı.
+- İletişimin artırılması gerektiği konusunda hemfikir olundu.
+- Zaman yönetimi konusunda iyileştirmeler yapılması kararlaştırıldı.
+- Harita detaylandırılması gerektiği konuşuldu.
+- Yapılacak sistemin daha basit düzeyde tutulması kararı alındı.
+- Entegre edilebilecek multiplayer özellikleri son sprintte değerlendirildi.
+
+### Engeller ve Çözümler
+
+- Engel: Çevre prototipinin oluşturulmasında hızlanma gerekliliği.
+  - Çözüm: Github üzerinden paylaşılan pluginlerin örnekleri incelenerek prototipler hızla geliştirildi.
+- Engel: Menü tasarımı ve animasyonları konusunda tasarımsal belirsizlikler.
+  - Çözüm: Menü tasarımı netleştirildi ve animasyonlar yapıldı.
+- Engel: Modellerin bütün bir şekilde olup olmayacağı konusunda belirsizlik.
+  - Çözüm: Evlerin bütün olarak modellenmesine karar verildi.
+- Engel: Çevre tasarımı ve haritanın oluşturulması konusundaki belirsizlikler. Görev yerleri ile ilgili çevrenin uyumsuzluğu.
+  - Çözüm: Görevlerin ve ipuçlarının haritaya uyarlanması hakkında kararlar alınarak çözüme kavuşturuldu.
+- Engel: Bireysel işlerin yoğunluğu
+  - Çözüm: Görev dağılımının esnetilmesi yapıldı.
+ 
+### Sprint Board Ekran Görüntüleri
+<details>
+
+![T8](https://github.com/user-attachments/assets/fd68166b-d068-4fbd-95e7-feaffc9a594e)
+</details>
+
+### Ekran Görüntüleri
+<details>
+
+![7](https://github.com/user-attachments/assets/0ca4c118-4381-4771-a90a-407751284925)
+![8](https://github.com/user-attachments/assets/ed69af66-d070-49ba-b61c-d0854a421dfc)
+![9](https://github.com/user-attachments/assets/b4393992-50fe-490a-b899-414347514915)
+![10](https://github.com/user-attachments/assets/3d7520e2-330f-4f21-833d-b34e70ce16e8)
+![11](https://github.com/user-attachments/assets/ad226b4c-ebac-4fba-ab87-40d1cda79b62)
+![Ekran_goruntusu_2024-07-17_160038](https://github.com/user-attachments/assets/143d14f7-0452-4705-bbc5-c15ec4457d38)
+
+</details>
+
+🔸 Sonraki Sprint Planı
+Sprint 3'de (22 Temmuz 2024 - 03 Ağustos 2024) odaklanılacak ana konular:
+- Haritanan oyuna uyarlanması
+- Kaynak yönetimi sisteminin oluşturulması
+- Seviye tasarımının yapılması
+- Görevlerin entegre edilmesi
+- Seslerin oyuna eklenmesi
+- Kullanıcı arayüzünün (UI) temel tasarımının geliştirilmesi
+- Düşman AI sisteminin geliştirilmesi
+- Animasyon ve efektlerin geliştirilmesi
