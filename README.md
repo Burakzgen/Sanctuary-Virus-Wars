@@ -212,8 +212,8 @@ Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
 <details>
 
 ![7](https://github.com/user-attachments/assets/0ca4c118-4381-4771-a90a-407751284925)
-![8](https://github.com/user-attachments/assets/ed69af66-d070-49ba-b61c-d0854a421dfc)
 ![T8](https://github.com/user-attachments/assets/fd68166b-d068-4fbd-95e7-feaffc9a594e)
+![8](https://github.com/user-attachments/assets/ed69af66-d070-49ba-b61c-d0854a421dfc)
 ![10](https://github.com/user-attachments/assets/3d7520e2-330f-4f21-833d-b34e70ce16e8)
 ![11](https://github.com/user-attachments/assets/ad226b4c-ebac-4fba-ab87-40d1cda79b62)
 ![Ekran_goruntusu_2024-07-17_160038](https://github.com/user-attachments/assets/143d14f7-0452-4705-bbc5-c15ec4457d38)
