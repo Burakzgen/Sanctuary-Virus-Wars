@@ -228,7 +228,7 @@ Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
 
 </details>
 
-🔸 Sonraki Sprint Planı
+## 🔸 Sonraki Sprint Planı
 Sprint 3'de (22 Temmuz 2024 - 03 Ağustos 2024) odaklanılacak ana konular:
 - Haritanan oyuna uyarlanması
 - Kaynak yönetimi sisteminin oluşturulması
