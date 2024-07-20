@@ -129,14 +129,7 @@ Ekip her gün Discord üzerinden iletişim kurarak güncel durumlarını ve plan
 ![EnemyControls](https://github.com/Burakzgen/Sanctuary-Virus-Wars/assets/35861357/fd09c2b7-cbd1-4be2-9d9a-d26c36596d1e)
 </details>
 
-### Video
-<details>
 
-https://github.com/user-attachments/assets/9c0eb0f3-5c10-4a74-8066-fc16fce64733
-https://github.com/user-attachments/assets/2946a294-408e-4e1e-8121-908bb762219b
-![Step_2](https://github.com/user-attachments/assets/b4fd6e77-3efd-46e2-a087-b7f04c3dfdcb)
-
-</details>
 ## 🔸 Sonraki Sprint Planı
 Sprint 2'de (8 Temmuz 2024 - 21 Temmuz 2024) odaklanılacak ana konular:
 1. Düşman AI sisteminin geliştirilmesi
@@ -224,6 +217,15 @@ Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
 ![10](https://github.com/user-attachments/assets/3d7520e2-330f-4f21-833d-b34e70ce16e8)
 ![11](https://github.com/user-attachments/assets/ad226b4c-ebac-4fba-ab87-40d1cda79b62)
 ![Ekran_goruntusu_2024-07-17_160038](https://github.com/user-attachments/assets/143d14f7-0452-4705-bbc5-c15ec4457d38)
+
+</details>
+
+### Video
+<details>
+  
+![MenuUI design](https://github.com/user-attachments/assets/cb059b1d-dcba-4de5-8233-ad266933dbdd)
+![Menu UI](https://github.com/user-attachments/assets/c270dfdd-ff5e-4615-8b4b-8698bb175e0f)
+![Step_2](https://github.com/user-attachments/assets/b4fd6e77-3efd-46e2-a087-b7f04c3dfdcb)
 
 </details>
 
