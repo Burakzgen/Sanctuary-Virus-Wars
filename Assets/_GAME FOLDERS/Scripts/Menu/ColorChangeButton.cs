@@ -88,7 +88,7 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
 
         if (inverseControls)
         {
-            targetRectTransfrom.DOAnchorPosY(-16, 0.15f);
+            targetRectTransfrom.DOAnchorPosY(-16, 0.15f).SetUpdate(true);
             if (targetBorderImage != null) targetBorderImage.color = pressedTextColor;
         }
         else
@@ -106,7 +106,7 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
         targetImage.color = pressedColor;
         if (inverseControls)
         {
-            targetRectTransfrom.DOAnchorPosY(-32, 0.15f);
+            targetRectTransfrom.DOAnchorPosY(-32, 0.15f).SetUpdate(true);
             if (targetBorderImage != null) targetBorderImage.color = pressedTextColor;
         }
         else
@@ -124,7 +124,7 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
 
         if (inverseControls)
         {
-            targetRectTransfrom.DOAnchorPosY(-16, 0.15f);
+            targetRectTransfrom.DOAnchorPosY(-16, 0.15f).SetUpdate(true);
             if (targetBorderImage != null) targetBorderImage.color = normalTextColor;
         }
         else

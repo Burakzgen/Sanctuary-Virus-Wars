@@ -20,6 +20,8 @@ public class FirstPersonLook : MonoBehaviour
     }
     void Update()
     {
+        if (GameManager.Instance.IsGamePaused()) return;
+
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
         frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);

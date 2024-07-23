@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
     private float _currentHealth;
     private bool _isAttacking = false;
 
+    [Header("Bars")]
     [SerializeField] Image healthBarImage;
     [SerializeField] Image poisonBarImage;
+    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI poisonEnergyText;
 
     [SerializeField] private float maxPoisonLevel = 100f;
     private float _currentPoisonLevel;
@@ -133,6 +137,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (healthBarImage != null)
         {
             healthBarImage.fillAmount = _currentHealth / maxHealth;
+
+            healthText.text = ((_currentHealth / maxHealth) * 100).ToString("0");
         }
     }
 
@@ -141,6 +147,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (poisonBarImage != null)
         {
             poisonBarImage.fillAmount = _currentPoisonLevel / maxPoisonLevel;
+
+            poisonEnergyText.text = ((_currentPoisonLevel / maxPoisonLevel) * 100).ToString("0");
         }
     }
 

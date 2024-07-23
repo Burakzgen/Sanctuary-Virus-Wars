@@ -19418,11 +19418,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 211742745}
     m_Modifications:
-    - target: {fileID: 1604556611353519177, guid: 8e27473359e3f8443854eb0a02865d38,
-        type: 3}
-      propertyPath: resetControls
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7515703037438325797, guid: 8e27473359e3f8443854eb0a02865d38,
         type: 3}
       propertyPath: m_HorizontalAlignment
