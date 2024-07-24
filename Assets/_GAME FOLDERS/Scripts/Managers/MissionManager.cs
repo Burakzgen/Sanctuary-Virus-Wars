@@ -60,12 +60,13 @@ public class MissionManager : MonoBehaviour
         else
         {
             Debug.Log("All missions completed!");
+            missionPanelController.HideTabInfo();
             // Tüm görevler tamamlandýðýnda yapýlacak iþlemler
         }
     }
     public void CompleteCurrentMission()
     {
-
+        missionPanelController.HideTabInfo();
         Debug.Log($"Mission: '{missions[currentMissionIndex].Description}' completed!");
         timerTextParent.DOFade(0, 0.15f);
         if (missionTimerCoroutine != null)
@@ -73,6 +74,7 @@ public class MissionManager : MonoBehaviour
             StopCoroutine(missionTimerCoroutine);
         }
 
+        missionPanelController.ShowMissionCompletePopup();
         currentMissionIndex++;
         StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
     }
@@ -90,6 +92,7 @@ public class MissionManager : MonoBehaviour
             CompleteCurrentMission();
         }
     }
+
     private IEnumerator MissionTimer(float duration)
     {
         timerTextParent.DOFade(0, 0.15f);
