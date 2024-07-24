@@ -4006,6 +4006,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9024759442198707139}
+  - component: {fileID: 3039411292479464297}
+  - component: {fileID: 1253143646075230880}
+  - component: {fileID: 7585226310310876342}
+  - component: {fileID: 7757877834095693176}
+  - component: {fileID: 3348266425862386393}
   m_Layer: 0
   m_Name: GwangjuBiennale_Exterior
   m_TagString: Untagged
@@ -4029,3 +4034,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3039411292479464297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535924695976599929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 65.73192, y: 19.608437, z: 26.365685}
+  m_Center: {x: -12.847557, y: 9.304218, z: -22.483215}
+--- !u!65 &1253143646075230880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535924695976599929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40.448578, y: 11.901911, z: 17.718288}
+  m_Center: {x: -0.28824615, y: 5.4509554, z: -0.04117775}
+--- !u!65 &7585226310310876342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535924695976599929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.13351, y: 19.608437, z: 28.023453}
+  m_Center: {x: 13.0468025, y: 9.304218, z: 22.653252}
+--- !u!65 &7757877834095693176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535924695976599929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.308098, y: 4.640119, z: 4.5205297}
+  m_Center: {x: -25.158646, y: 1.8200581, z: -5.4408393}
+--- !u!65 &3348266425862386393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535924695976599929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.252762, y: 3.3182917, z: 4.8926525}
+  m_Center: {x: -32.021065, y: 1.1591458, z: -5.0924416}

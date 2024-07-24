@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2375271186323019124}
   - component: {fileID: 4945000505524465414}
   - component: {fileID: 3722089075851000309}
+  - component: {fileID: 3038621523098846579}
   m_Layer: 0
   m_Name: AE_House_04_LOD1
   m_TagString: Untagged
@@ -88,6 +89,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3038621523098846579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990430047152957496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1009.61273, y: 1009.24097, z: 1281.0679}
+  m_Center: {x: 499.81418, y: 0.00057983387, z: -639.57947}
 --- !u!1 &1341602726607038536
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +280,7 @@ GameObject:
   - component: {fileID: 6122925730577531915}
   - component: {fileID: 8402728977330202119}
   - component: {fileID: 8812343744530431174}
+  - component: {fileID: 1591059100897969236}
   m_Layer: 0
   m_Name: AE_House_04_LOD0
   m_TagString: Untagged
@@ -347,6 +362,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1591059100897969236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485858068921121677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1009.6128, y: 1009.241, z: 3184.6223}
+  m_Center: {x: 499.81415, y: 0.00074768055, z: -1589.7711}
 --- !u!1 &6317554196574659195
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +386,7 @@ GameObject:
   - component: {fileID: 2076933499501335035}
   - component: {fileID: 8895238755718003683}
   - component: {fileID: 1280383007626667543}
+  - component: {fileID: 7564201347857274720}
   m_Layer: 0
   m_Name: AE_Garage_Door_01_LOD0.002
   m_TagString: Untagged
@@ -432,6 +461,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7564201347857274720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317554196574659195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 120.28532, y: 23.639267, z: 249.99995}
+  m_Center: {x: 59.859272, y: 3.004259, z: -124.999985}
 --- !u!1 &6642424644342839363
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +485,7 @@ GameObject:
   - component: {fileID: 580654653114653873}
   - component: {fileID: 2400479548178891305}
   - component: {fileID: 2373781833830876424}
+  - component: {fileID: 4791263630085193048}
   m_Layer: 0
   m_Name: AE_Door_01_LOD0.001
   m_TagString: Untagged
@@ -517,6 +560,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4791263630085193048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642424644342839363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.638023, y: 111.83444, z: 227.17221}
+  m_Center: {x: -2.6545358, y: 53.11172, z: -113.586105}
 --- !u!1 &7259901423959411835
 GameObject:
   m_ObjectHideFlags: 0

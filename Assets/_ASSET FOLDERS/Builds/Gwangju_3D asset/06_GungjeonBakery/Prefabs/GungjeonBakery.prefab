@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3224245642758980135}
+  - component: {fileID: 7269072818263173764}
   m_Layer: 0
   m_Name: GungjeonBakery
   m_TagString: Untagged
@@ -117,6 +118,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7269072818263173764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879210804571297949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.195654, y: 13.870146, z: 21.154287}
+  m_Center: {x: -0.009086609, y: 6.9568357, z: -0.4666052}
 --- !u!1 &3108687557046866170
 GameObject:
   m_ObjectHideFlags: 0

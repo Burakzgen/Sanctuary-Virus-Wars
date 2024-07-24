@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1085816253419529533}
   - component: {fileID: 325708760146837563}
   - component: {fileID: 2166945592113784644}
+  - component: {fileID: 4463880153600867654}
   m_Layer: 0
   m_Name: Dongasilk_Wall
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4463880153600867654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806961115389265344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.9649844, y: 9.427355, z: 27.4185}
+  m_Center: {x: 0.00015211105, y: 4.7134504, z: 0.81431675}
 --- !u!1 &2520400907929074057
 GameObject:
   m_ObjectHideFlags: 0

@@ -127,6 +127,9 @@ GameObject:
   - component: {fileID: 5591649135550020895}
   - component: {fileID: 5307887671887821603}
   - component: {fileID: 4467680590561507600}
+  - component: {fileID: 3555618114403264101}
+  - component: {fileID: 3996367394723796146}
+  - component: {fileID: 3455672966746530923}
   m_Layer: 0
   m_Name: MudeungsanTouristHotel_Base
   m_TagString: Untagged
@@ -199,3 +202,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3555618114403264101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385660052899337479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1604195, y: 5.682128, z: 2.861393}
+  m_Center: {x: -0.9976225, y: 1.0410633, z: -7.8770237}
+--- !u!65 &3996367394723796146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385660052899337479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0632973, y: 5.682128, z: 3.972622}
+  m_Center: {x: 7.475505, y: 1.0410633, z: -8.467361}
+--- !u!65 &3455672966746530923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385660052899337479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.690502, y: 5.682128, z: 8.243913}
+  m_Center: {x: 0.63449574, y: 1.0410633, z: -2.4076881}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8672037332776282788}
   - component: {fileID: 1755702595815854414}
   - component: {fileID: 1392446372126064995}
+  - component: {fileID: 1004989905552211808}
   m_Layer: 0
   m_Name: Ground_Bodo
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1004989905552211808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685268243810495721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 108.30816, y: 2.988389, z: 91.49676}
+  m_Center: {x: 5.4620132, y: -1.6252575, z: 0.25574493}
 --- !u!1 &5332862789312874138
 GameObject:
   m_ObjectHideFlags: 0

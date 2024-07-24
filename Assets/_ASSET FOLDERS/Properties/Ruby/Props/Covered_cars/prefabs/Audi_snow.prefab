@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 4000011731883954}
   - component: {fileID: 95000010793141722}
   - component: {fileID: 205000012479924978}
-  - component: {fileID: 64000014121749916}
+  - component: {fileID: 5838519130277928587}
   m_Layer: 0
   m_Name: Audi_snow
   m_TagString: Untagged
@@ -375,8 +375,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23000013028563816}
   m_Enabled: 1
---- !u!64 &64000014121749916
-MeshCollider:
+--- !u!65 &5838519130277928587
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -385,7 +385,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300044, guid: cf9117a83ead2a54fac4d52261421382, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.05185, y: 1.7217919, z: 2.2142901}
+  m_Center: {x: -0.031224966, y: 0.86065406, z: 0.00023502111}

@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4000013116996372}
   - component: {fileID: 95000011773026662}
   - component: {fileID: 205000011173879336}
-  - component: {fileID: 64000012434877912}
+  - component: {fileID: 5077269838361454072}
   m_Layer: 0
   m_Name: Mers_col2
   m_TagString: Untagged
@@ -252,8 +252,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23000012876963464}
   m_Enabled: 1
---- !u!64 &64000012434877912
-MeshCollider:
+--- !u!65 &5077269838361454072
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,10 +262,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: cf9117a83ead2a54fac4d52261421382, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.05185, y: 1.7217919, z: 2.2142901}
+  m_Center: {x: -0.031224966, y: 0.86065406, z: 0.00023502111}
 --- !u!1 &1000013343772684
 GameObject:
   m_ObjectHideFlags: 0

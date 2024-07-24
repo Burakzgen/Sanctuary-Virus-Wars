@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 175087413752050038}
   - component: {fileID: 7263150594016371715}
   - component: {fileID: 2157766768081479921}
+  - component: {fileID: 1287320138697145360}
+  - component: {fileID: 3512436173137130343}
   m_Layer: 0
   m_Name: Geungnakgang_Station_mat_1
   m_TagString: Untagged
@@ -83,6 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1287320138697145360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969722933561972649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.190203, y: 6.3758893, z: 4.432043}
+  m_Center: {x: -0.29097843, y: 3.1316378, z: -1.1606927}
+--- !u!65 &3512436173137130343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969722933561972649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.978943, y: 6.37589, z: 6.957711}
+  m_Center: {x: -2.660098, y: 3.1316376, z: -0.046306133}
 --- !u!1 &4326744991744180508
 GameObject:
   m_ObjectHideFlags: 0

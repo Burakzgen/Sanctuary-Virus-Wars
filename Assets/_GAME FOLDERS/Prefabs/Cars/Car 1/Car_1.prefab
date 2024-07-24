@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8926498319093225650}
   - component: {fileID: 2793766731528127320}
   - component: {fileID: 3248603991106106030}
+  - component: {fileID: 486718056023045674}
   m_Layer: 0
   m_Name: Hatchback Body
   m_TagString: Untagged
@@ -121,6 +122,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &486718056023045674
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207166681636389536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.95675373
+  m_Height: 4.4514565
+  m_Direction: 1
+  m_Center: {x: 0.00000208606, y: -0.019565107, z: 0.5268027}
 --- !u!1 &4941852913899093684
 GameObject:
   m_ObjectHideFlags: 0

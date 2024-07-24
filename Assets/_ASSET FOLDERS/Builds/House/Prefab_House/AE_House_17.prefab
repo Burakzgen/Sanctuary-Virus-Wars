@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7783439532685128347}
   - component: {fileID: 6605530033943674174}
   - component: {fileID: 8957512154906495476}
+  - component: {fileID: 5430236274649294871}
   m_Layer: 0
   m_Name: AE_House_17
   m_TagString: Untagged
@@ -88,3 +89,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5430236274649294871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444315668467263521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1010.967, y: 1513.9319, z: 1013.07446}
+  m_Center: {x: 499.13687, y: -1.9323349, z: -505.583}

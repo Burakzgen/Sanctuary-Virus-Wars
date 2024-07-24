@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1792640361430105232}
   - component: {fileID: 3409057227214861109}
   - component: {fileID: 624751533263570943}
+  - component: {fileID: 1606782314825611353}
+  - component: {fileID: 3197134205251691800}
+  - component: {fileID: 2409530779880230569}
   m_Layer: 0
   m_Name: AE_House_15
   m_TagString: Untagged
@@ -89,3 +92,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1606782314825611353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417345554226210346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12657022, y: 0.049778044, z: 0.05372794}
+  m_Center: {x: 0.062176846, y: -0.02502886, z: 0.026768638}
+--- !u!65 &3197134205251691800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417345554226210346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0841296, y: 0.050613154, z: 0.05372794}
+  m_Center: {x: 0.083397046, y: 0.024848247, z: 0.026768636}
+--- !u!65 &2409530779880230569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417345554226210346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12657022, y: 0.002925592, z: 0.05372794}
+  m_Center: {x: 0.062176846, y: 0.048870496, z: 0.026768638}

@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8296775631539817190}
   - component: {fileID: 8229353497430111463}
   - component: {fileID: 953027623520325745}
+  - component: {fileID: 8710461101264010550}
   m_Layer: 0
   m_Name: Sport body
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8710461101264010550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065624362814094570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9898932, y: 4.402512, z: 1.085083}
+  m_Center: {x: -0.00000006084811, y: -0.07143796, z: 0.62555355}
 --- !u!1 &6897833941458485361
 GameObject:
   m_ObjectHideFlags: 0

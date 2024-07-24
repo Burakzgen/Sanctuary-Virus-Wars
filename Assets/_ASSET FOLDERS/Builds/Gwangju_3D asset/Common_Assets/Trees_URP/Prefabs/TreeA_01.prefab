@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7266786464624120767}
   - component: {fileID: 1205949219356205044}
   - component: {fileID: 3492556915882549378}
+  - component: {fileID: 6485796123440364556}
   m_Layer: 0
   m_Name: Tree_A_Bark
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &6485796123440364556
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098161983672218372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.36202335
+  m_Height: 4.0399423
+  m_Direction: 1
+  m_Center: {x: -0.077418566, y: 1.8545282, z: 0.07733005}
 --- !u!1 &5488878722885683785
 GameObject:
   m_ObjectHideFlags: 0

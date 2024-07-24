@@ -296,6 +296,9 @@ GameObject:
   - component: {fileID: 2872994167051786043}
   - component: {fileID: 8425273115592349490}
   - component: {fileID: 312405962445442872}
+  - component: {fileID: 4164364529096058894}
+  - component: {fileID: 5019440724056475647}
+  - component: {fileID: 6606241917751377791}
   m_Layer: 0
   m_Name: OwenStoneroof
   m_TagString: Untagged
@@ -368,6 +371,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4164364529096058894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619835071080078643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.104979, y: 5.6892695, z: 16.398258}
+  m_Center: {x: -0.052859306, y: 2.7649696, z: -0.19408512}
+--- !u!65 &5019440724056475647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619835071080078643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0294418, y: 3.1057863, z: 2.6790695}
+  m_Center: {x: -9.228683, y: 1.4732277, z: 2.745741}
+--- !u!65 &6606241917751377791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619835071080078643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9307194, y: 3.0166996, z: 5.9752383}
+  m_Center: {x: -8.590236, y: 1.4286846, z: -1.5155218}
 --- !u!1 &3396189968973882350
 GameObject:
   m_ObjectHideFlags: 0
