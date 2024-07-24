@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleWeaponSwitching()
     {
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ToggleWeapon(0);
@@ -58,6 +60,11 @@ public class PlayerAttack : MonoBehaviour
         {
             ToggleWeapon(2);
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (_currentWeaponIndex != -1)
+                ToggleWeapon(_currentWeaponIndex);
+        }
     }
 
     private void ToggleWeapon(int index)
@@ -67,6 +74,7 @@ public class PlayerAttack : MonoBehaviour
             selectedImage[index].gameObject.SetActive(false);
             weapons[index].gameObject.SetActive(false);
             _currentWeaponIndex = -1;
+            selectedImage[index].transform.parent.DOScale(1f, 0.15f);
         }
         else
         {
@@ -75,10 +83,16 @@ public class PlayerAttack : MonoBehaviour
                 weapons[_currentWeaponIndex].gameObject.SetActive(false);
                 selectedImage[_currentWeaponIndex].gameObject.SetActive(false);
             }
+            for (int i = 0; i < selectedImage.Length; i++)
+            {
+                selectedImage[i].transform.parent.DOScale(1f, 0.25f);
+            }
             _animationName = animationsName[index];
             selectedImage[index].gameObject.SetActive(true);
+            selectedImage[index].transform.parent.DOScale(1.2f, 0.25f);
             weapons[index].gameObject.SetActive(true);
             _currentWeaponIndex = index;
+
         }
     }
 
