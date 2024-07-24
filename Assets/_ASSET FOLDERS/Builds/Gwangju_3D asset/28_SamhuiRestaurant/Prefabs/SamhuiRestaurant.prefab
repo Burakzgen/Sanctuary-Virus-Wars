@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 1196309364499892227}
   - component: {fileID: 7281947808207830549}
   - component: {fileID: 9208638139520160089}
+  - component: {fileID: 2009100395658256876}
   m_Layer: 0
   m_Name: Trim_Wall
   m_TagString: Untagged
@@ -1050,6 +1051,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2009100395658256876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608075749829635187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.6, y: 8.165, z: 8.870449}
+  m_Center: {x: 0.20000005, y: 4.0224996, z: 0.13522387}
 --- !u!1 &8366123919292270840
 GameObject:
   m_ObjectHideFlags: 0

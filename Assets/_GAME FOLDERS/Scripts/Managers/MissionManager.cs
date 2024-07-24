@@ -1,71 +1,135 @@
 using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour
 {
-    [Header("Mission Panel")]
-    [SerializeField] private RectTransform missionPanel;
-    [SerializeField] private TextMeshProUGUI missionText;
+    [Header("Missions")]
+    [SerializeField] private List<Mission> missions = new List<Mission>();
 
-    [Header("Canvas Panel")]
-    [SerializeField] private CanvasGroup canvasMainPanel;
-    [SerializeField] private CanvasGroup canvasChildPanel;
-    [SerializeField] private CanvasGroup tabInfoPanel;
+    [Header("Mission Panel Controller")]
+    private MissionPanelController missionPanelController;
 
-    [Header("Animation Settings")]
-    [SerializeField] private float animationDuration = 0.5f;
+    [Header("UI Controller")]
+    [SerializeField] private CanvasGroup timerTextParent;
+    [SerializeField] private TextMeshProUGUI timerText;
 
-    [Header("Default Position and Size")]
-    [SerializeField] private Vector2 offScreenPosition;
-    [SerializeField] private Vector2 onScreenPosition;
-    [SerializeField] private Vector2 offSize;
-    [SerializeField] private Vector2 onSize;
 
-    private bool isPanelVisible = false;
+    [Header("Timer Settings")]
+    [SerializeField] private float timerStartDelay = 10f; // Timer'in görev popup'ý çýktýktan ne kadar sonra baþlayacaðý
+    [SerializeField] private float missionStartDelay = 45f; // Ýlk görevin baþlamasý için belirlenen süre
+    [SerializeField] private Vector2 randomMissionStartRange = new Vector2(10f, 20f); // Rastgele süre aralýðý
+    [SerializeField] private float nextMissionDelay = 30f; // Bir görev tamamlandýktan veya baþarýsýz olduktan sonra bekleme süresi
 
+    [Header("Settings")]
+    [SerializeField] private bool useRandomStartTime = false; // Rastgele süre kullanýmý
+
+
+    private int currentMissionIndex = 0;
+    private Coroutine missionTimerCoroutine;
+
+    private void Awake()
+    {
+        missionPanelController = GetComponent<MissionPanelController>();
+    }
     private void Start()
     {
-        missionPanel.anchoredPosition = offScreenPosition;
-        missionPanel.sizeDelta = offSize;
-    }
+        timerTextParent.alpha = 0f;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (missions.Count > 0)
         {
-            ToggleMissionPanel();
+            float initialDelay = useRandomStartTime ? Random.Range(randomMissionStartRange.x, randomMissionStartRange.y) : missionStartDelay;
+            StartCoroutine(StartMissionAfterDelay(initialDelay));
         }
     }
-
-    private void ToggleMissionPanel()
+    private IEnumerator StartMissionAfterDelay(float delay)
     {
-        if (isPanelVisible)
+        yield return new WaitForSeconds(delay);
+        StartNextMission();
+    }
+    private void StartNextMission()
+    {
+        if (currentMissionIndex < missions.Count)
         {
-            canvasChildPanel.DOFade(0, animationDuration).OnComplete(() =>
-            {
-                missionPanel.DOAnchorPos(offScreenPosition, animationDuration);
-                missionPanel.DOSizeDelta(offSize, animationDuration);
-                canvasMainPanel.DOFade(0, animationDuration);
-                tabInfoPanel.DOFade(1, animationDuration);
-            });
+            missionPanelController.SetMissionText(missions[currentMissionIndex].Description);
+            missionPanelController.ShowMissionPanel();
+            missionTimerCoroutine = StartCoroutine(MissionTimer(missions[currentMissionIndex].Duration));
         }
         else
         {
-            tabInfoPanel.DOFade(0, animationDuration);
-            missionPanel.DOAnchorPos(onScreenPosition, animationDuration);
-            missionPanel.DOSizeDelta(onSize, animationDuration);
-            canvasMainPanel.DOFade(1, animationDuration).OnComplete(() =>
-            {
-                canvasChildPanel.DOFade(1, animationDuration);
-
-            });
+            Debug.Log("All missions completed!");
+            // Tüm görevler tamamlandýðýnda yapýlacak iþlemler
         }
-        isPanelVisible = !isPanelVisible;
+    }
+    public void CompleteCurrentMission()
+    {
+
+        Debug.Log($"Mission: '{missions[currentMissionIndex].Description}' completed!");
+        timerTextParent.DOFade(0, 0.15f);
+        if (missionTimerCoroutine != null)
+        {
+            StopCoroutine(missionTimerCoroutine);
+        }
+
+        currentMissionIndex++;
+        StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
+    }
+    public void OnTriggerMissionCompleted(string missionName)
+    {
+        if (missions[currentMissionIndex].Description.Contains(missionName))
+        {
+            CompleteCurrentMission();
+        }
+    }
+    public void OnTriggerMissionCompleted(MissionType missionType, string targetName)
+    {
+        if (missions[currentMissionIndex].Type == missionType && missions[currentMissionIndex].TargetName == targetName)
+        {
+            CompleteCurrentMission();
+        }
+    }
+    private IEnumerator MissionTimer(float duration)
+    {
+        timerTextParent.DOFade(0, 0.15f);
+        yield return new WaitForSeconds(timerStartDelay);
+        timerTextParent.DOFade(1, 0.25f);
+
+        float remainingTime = duration;
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            UpdateTimerUI(remainingTime);
+            yield return null;
+        }
+
+        // Görev süresi dolduðunda yapýlacak iþlemler
+        missionPanelController.ShowGameOver();
+        Debug.Log("Mission failed: " + missions[currentMissionIndex].Description);
+    }
+    private void UpdateTimerUI(float remainingTime)
+    {
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void SetMissionText(string mission)
-    {
-        missionText.text = mission;
-    }
+}
+
+[System.Serializable]
+public class Mission
+{
+    public string Description;
+    public float Duration;
+    public MissionType Type;
+    public string TargetName;
+}
+
+public enum MissionType
+{
+    ZombieKill, // Zombi öldürme ve inceleme görevlerinde kullanýlacak
+    ObjectInspection, // Nesne bulup inceleme
+    CodeBreaking, // Þifre çözme iþlemlerinde 
+    LocationExploration // Belirli yerleri incelem görevleri
 }

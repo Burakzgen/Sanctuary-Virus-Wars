@@ -16,7 +16,14 @@ public class GameManager : SingleReference<GameManager>
         // Diðer durdurma iþlemleri eklenecek
         Debug.Log("Game Paused");
     }
-
+    public void GameOver()
+    {
+        m_firstPersonMovement.IsPause = true;
+        isPaused = true;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("Game Over");
+    }
     public void ContinueGame()
     {
         if (!isPaused) return;
