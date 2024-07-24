@@ -53,6 +53,12 @@ public class MissionManager : MonoBehaviour
     {
         if (currentMissionIndex < missions.Count)
         {
+            var missionObject = missions[currentMissionIndex].MissionObject;
+            if (missionObject != null)
+            {
+                missionObject.GetComponent<Collider>().isTrigger = true;
+                missionObject.GetComponent<MissionInteraction>().enabled = true;
+            }
             missionPanelController.SetMissionText(missions[currentMissionIndex].Description);
             missionPanelController.ShowMissionPanel();
             missionTimerCoroutine = StartCoroutine(MissionTimer(missions[currentMissionIndex].Duration));
@@ -72,6 +78,13 @@ public class MissionManager : MonoBehaviour
         if (missionTimerCoroutine != null)
         {
             StopCoroutine(missionTimerCoroutine);
+        }
+        // Gorev tamamlandýðýnda diger gorev icin sirali kontrolu
+        var missionObject = missions[currentMissionIndex].MissionObject;
+        if (missionObject != null)
+        {
+            missionObject.GetComponent<Collider>().isTrigger = false;
+            missionObject.GetComponent<MissionInteraction>().enabled = false;
         }
 
         missionPanelController.ShowMissionCompletePopup();
@@ -127,6 +140,7 @@ public class Mission
     public float Duration;
     public MissionType Type;
     public string TargetName;
+    public GameObject MissionObject;
 }
 
 public enum MissionType
