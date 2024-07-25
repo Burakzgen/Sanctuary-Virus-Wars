@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 8681317571681052231}
   - component: {fileID: 6890167801319199373}
   - component: {fileID: 4935039896060795063}
+  - component: {fileID: 9137726397065246380}
   m_Layer: 0
   m_Name: tonkatsusign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5752758914016405986
 Transform:
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024200247, y: 0.00635307, z: 0.016420888}
   m_Center: {x: 0.000028677023, y: 0.000019103885, z: 0.0010370153}
+--- !u!208 &9137726397065246380
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944450378547114840}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.0012100125, y: 0.003176535, z: 0.008210445}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.00002867702, y: 0.00001910389, z: 0.001037015}
+  m_TimeToStationary: 0.5

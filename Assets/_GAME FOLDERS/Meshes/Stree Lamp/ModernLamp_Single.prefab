@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7943188145084148808
 Transform:
@@ -127,12 +127,13 @@ GameObject:
   - component: {fileID: 9655240054234260}
   - component: {fileID: 698692696277453684}
   - component: {fileID: 3950110758623990780}
+  - component: {fileID: 6598068329692149769}
   m_Layer: 0
   m_Name: ModernLamp_Single
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &186902232151834012
 Transform:
@@ -214,3 +215,19 @@ CapsuleCollider:
   m_Height: 4.4847956
   m_Direction: 1
   m_Center: {x: -1.4560812, y: 2.2423978, z: -0.0000007748604}
+--- !u!208 &6598068329692149769
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468790404992249291}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.130957, y: 2.242398, z: 0.130957}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.456081, y: 2.242398, z: -0.0000007748604}
+  m_TimeToStationary: 0.5

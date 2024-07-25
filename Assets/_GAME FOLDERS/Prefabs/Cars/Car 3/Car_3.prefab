@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4683324754740005522
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1310868350441843368
 Transform:
@@ -178,12 +178,13 @@ GameObject:
   - component: {fileID: 3315741587716954728}
   - component: {fileID: 485372486007130792}
   - component: {fileID: 3425773494288944450}
+  - component: {fileID: 7682241211126912279}
   m_Layer: 0
   m_Name: minivan body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4390586187801419781
 Transform:
@@ -265,6 +266,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1023853, y: 5.186453, z: 1.7970946}
   m_Center: {x: 0.000001786005, y: -0.036457557, z: 1.079896}
+--- !u!208 &7682241211126912279
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268308725431149941}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.051, y: 2.5930002, z: 0.89900005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.036000002, z: 1.08}
+  m_TimeToStationary: 0.5
 --- !u!1 &2418514533456709501
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +296,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9180905623806260093
 Transform:
@@ -317,7 +334,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7494934760975541063
 Transform:
@@ -400,7 +417,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3974803955741093819
 Transform:

@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6302707985736285527}
   - component: {fileID: 309410192806625710}
   - component: {fileID: 4303291490912145778}
+  - component: {fileID: 2791532855962353635}
   m_Layer: 0
   m_Name: mailbox_street
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3038998711269787489
 Transform:
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5005271, y: 1.0840216, z: 0.47411478}
   m_Center: {x: 0, y: 0.54201066, z: 0}
+--- !u!208 &2791532855962353635
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051364216636306802}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.25, y: 0.54200006, z: 0.23700002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.54200006, z: 0}
+  m_TimeToStationary: 0.5

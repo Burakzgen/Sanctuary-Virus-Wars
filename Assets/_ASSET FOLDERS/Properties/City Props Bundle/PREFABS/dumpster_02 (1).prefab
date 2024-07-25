@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5362427188636768999}
   - component: {fileID: 1826106804503619102}
   - component: {fileID: 4507578323988626920}
+  - component: {fileID: 3384999789499936361}
   m_Layer: 0
   m_Name: dumpster_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3976728648909086929
 Transform:
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6409643, y: 1.7120382, z: 1.406944}
   m_Center: {x: 0, y: 0.8244191, z: -0.01347205}
+--- !u!208 &3384999789499936361
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102303484313768642}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.32, y: 0.85600007, z: 0.703}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.82400006, z: -0.013}
+  m_TimeToStationary: 0.5

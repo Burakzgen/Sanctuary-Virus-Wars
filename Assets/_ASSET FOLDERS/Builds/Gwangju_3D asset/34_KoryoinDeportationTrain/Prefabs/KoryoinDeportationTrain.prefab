@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 9103565087522317828}
   - component: {fileID: 6463416978076504782}
   - component: {fileID: 3813681344883955705}
+  - component: {fileID: 5808722428105506972}
   m_Layer: 0
   m_Name: KoryoinDeportationTrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5330440770692671905
 Transform:
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 17.164938, y: 5.2113776, z: 3.327808}
   m_Center: {x: 0.50753117, y: 2.6056888, z: 0.00000029802322}
+--- !u!208 &5808722428105506972
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4805999474358170395}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.582001, y: 2.6060002, z: 1.664}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.508, y: 2.6060002, z: 0}
+  m_TimeToStationary: 0.5

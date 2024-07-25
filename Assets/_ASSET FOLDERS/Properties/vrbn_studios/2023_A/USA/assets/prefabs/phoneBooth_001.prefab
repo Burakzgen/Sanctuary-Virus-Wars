@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4125511102649070630}
   - component: {fileID: 8850284221730283844}
-  - component: {fileID: 7103869570688301324}
-  - component: {fileID: 9051553259397033229}
+  - component: {fileID: 6366668054904627002}
+  - component: {fileID: 6851475897630080117}
   m_Layer: 0
   m_Name: phoneBooth_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4125511102649070630
 Transform:
@@ -64,8 +64,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3617944344848047304}
   m_Enabled: 1
---- !u!64 &7103869570688301324
-MeshCollider:
+--- !u!65 &6366668054904627002
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -74,30 +74,25 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6939290099271591603, guid: 0391d386b74ac61458f970ead6fbbfed, type: 3}
---- !u!114 &9051553259397033229
-MonoBehaviour:
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 2.6720605, z: 1.3}
+  m_Center: {x: 0, y: 1.0860302, z: 0}
+--- !u!208 &6851475897630080117
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053925778402637666}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2264065b9cc409418f32b41211f7f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxIntensity: 40000
-  minWaitTime: 300
-  maxWaitTime: 800
-  emissionMaterialArray:
-  - {fileID: 2100000, guid: 6e2e0a9fe1918314c88485caa3953678, type: 2}
-  - {fileID: 2100000, guid: 1d437dddae48ec5448295a85d89ff591, type: 2}
-  - {fileID: 2100000, guid: 14609baa924dac9419d41cb1a56b719f, type: 2}
-  emissionIntensity: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.65, y: 1.33603, z: 0.65}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.08603, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2430478349963746124
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +109,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &742112931019869254
 Transform:
@@ -198,7 +193,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6720265499474573054
 Transform:
@@ -282,7 +277,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6055926976592708196
 Transform:

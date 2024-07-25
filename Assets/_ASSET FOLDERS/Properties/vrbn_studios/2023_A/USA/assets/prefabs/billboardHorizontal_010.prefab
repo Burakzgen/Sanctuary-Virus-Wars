@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3069996044872736028
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &198785825591991456
 Transform:
@@ -182,7 +182,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6774233434316325410
 Transform:
@@ -260,12 +260,13 @@ GameObject:
   - component: {fileID: 1512663646208507735}
   - component: {fileID: 5682846059424898715}
   - component: {fileID: 3015681333593232730}
+  - component: {fileID: 4214589112110573630}
   m_Layer: 0
   m_Name: billboardHorizontal_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1512663646208507735
 Transform:
@@ -325,3 +326,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3065898, y: 3.2010002, z: 0.9361794}
   m_Center: {x: 0.000000029802322, y: 0.3201, z: 0}
+--- !u!208 &4214589112110573630
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591091548111349889}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.653295, y: 1.6005, z: 0.4680897}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.3201, z: 0}
+  m_TimeToStationary: 0.5

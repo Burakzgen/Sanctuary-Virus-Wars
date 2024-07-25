@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &546619161437725576
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1049712218209993216
 Transform:
@@ -182,7 +182,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7044356439308758020
 Transform:
@@ -260,12 +260,13 @@ GameObject:
   - component: {fileID: 6589339573783331094}
   - component: {fileID: 7905949143501828353}
   - component: {fileID: 957201567319873103}
+  - component: {fileID: 5049788031259532306}
   m_Layer: 0
   m_Name: acUnitHorizontal_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6589339573783331094
 Transform:
@@ -325,3 +326,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3032753, y: 1.2509812, z: 1.5578215}
   m_Center: {x: 0, y: 0.6254906, z: -0.00009945035}
+--- !u!208 &5049788031259532306
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914776771485497396}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.1516376, y: 0.6254905, z: 0.778911}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.6254906, z: 0}
+  m_TimeToStationary: 0.5

@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6377760430913108648
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4450728813619356968
 Transform:
@@ -177,12 +177,13 @@ GameObject:
   - component: {fileID: 7145501440014213017}
   - component: {fileID: 8299494365825255970}
   - component: {fileID: 2163640598426826215}
+  - component: {fileID: 1181460710688584676}
   m_Layer: 0
   m_Name: container_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7145501440014213017
 Transform:
@@ -242,6 +243,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6438553, y: 1.0978673, z: 0.6862594}
   m_Center: {x: -0.003101319, y: 0.547346, z: 0.00007241964}
+--- !u!208 &1181460710688584676
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426418812644174892}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.32192764, y: 0.5489335, z: 0.3431297}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.547346, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8647819841178245180
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +275,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3494412853714261050
 Transform:

@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 4993423991401301446}
   - component: {fileID: 1617000910245378367}
   - component: {fileID: 5381195662562885483}
+  - component: {fileID: 4732683605963009224}
   m_Layer: 0
   m_Name: road_barrier_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4041754264461934576
 Transform:
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4094503, y: 1.2609174, z: 0.6037927}
   m_Center: {x: -0.015857577, y: 0.6304587, z: 0}
+--- !u!208 &4732683605963009224
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030316947490377187}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.205, y: 0.63000005, z: 0.30200002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.016, y: 0.63000005, z: 0}
+  m_TimeToStationary: 0.5

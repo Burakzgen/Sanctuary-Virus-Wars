@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6624113041454778615
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6519486445358405885
 Transform:
@@ -177,12 +177,13 @@ GameObject:
   - component: {fileID: 4924806953335691234}
   - component: {fileID: 6858208771773955491}
   - component: {fileID: 2466866606927891513}
+  - component: {fileID: 3874776553491792676}
   m_Layer: 0
   m_Name: hydrant_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4924806953335691234
 Transform:
@@ -242,6 +243,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48819995, y: 0.8663941, z: 0.5618989}
   m_Center: {x: 0.0008499995, y: 0.41461203, z: 0}
+--- !u!208 &3874776553491792676
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178473061465418912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.24409994, y: 0.43319705, z: 0.28094944}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.414612, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &9098762766053143931
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +275,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1770262426700035565
 Transform:

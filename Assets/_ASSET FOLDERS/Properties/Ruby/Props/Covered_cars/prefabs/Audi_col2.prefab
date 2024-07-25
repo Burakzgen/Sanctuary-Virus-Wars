@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 95000011667201758}
   - component: {fileID: 205000014033430410}
   - component: {fileID: 3318922282826494126}
+  - component: {fileID: 5687268563882558764}
   m_Layer: 0
   m_Name: Audi_col2
   m_TagString: Untagged
@@ -99,6 +100,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.05185, y: 1.7217919, z: 2.2142901}
   m_Center: {x: -0.031224966, y: 0.86065406, z: 0.00023502111}
+--- !u!208 &5687268563882558764
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011155046062}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.525925, y: 0.860896, z: 1.107145}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.03122497, y: 0.8606541, z: 0.0002350211}
+  m_TimeToStationary: 0.5
 --- !u!1 &1000012845011270
 GameObject:
   m_ObjectHideFlags: 0

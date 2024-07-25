@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 1770938260329941325}
   - component: {fileID: 4921189275808403793}
   - component: {fileID: 83947059000195961}
+  - component: {fileID: 4257909452731041571}
   m_Layer: 0
   m_Name: TrafficCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1071012509893646920
 Transform:
@@ -30,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -109,3 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14310029, y: 0.7483919, z: 0.15442228}
   m_Center: {x: 0.0019699, y: 0.37419572, z: 0.0043562055}
+--- !u!208 &4257909452731041571
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908254231211520169}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.21616955, y: 0.03605835, z: 0.21616955}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.03605811, z: 0}
+  m_TimeToStationary: 0.5

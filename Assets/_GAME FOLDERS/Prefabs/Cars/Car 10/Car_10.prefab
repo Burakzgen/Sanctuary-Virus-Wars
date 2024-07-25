@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &631179943334541338
 Transform:
@@ -95,12 +95,13 @@ GameObject:
   - component: {fileID: 8229353497430111463}
   - component: {fileID: 953027623520325745}
   - component: {fileID: 8710461101264010550}
+  - component: {fileID: 7625789843906188456}
   m_Layer: 0
   m_Name: Sport body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8296775631539817190
 Transform:
@@ -182,6 +183,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9898932, y: 4.402512, z: 1.085083}
   m_Center: {x: -0.00000006084811, y: -0.07143796, z: 0.62555355}
+--- !u!208 &7625789843906188456
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065624362814094570}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.99500006, y: 2.2010002, z: 0.54300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.071, z: 0.62600005}
+  m_TimeToStationary: 0.5
 --- !u!1 &6897833941458485361
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &550661478114166344
 Transform:
@@ -281,7 +298,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4557213123662866061
 Transform:
@@ -362,7 +379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8090306766099581428
 Transform:
@@ -400,7 +417,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2173570182813940011
 Transform:

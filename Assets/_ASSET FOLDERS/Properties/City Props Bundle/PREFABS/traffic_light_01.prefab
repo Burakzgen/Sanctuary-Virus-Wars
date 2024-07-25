@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5897416470831000529}
   - component: {fileID: 210363390032385832}
   - component: {fileID: 1985547199898849477}
+  - component: {fileID: 5205237619344381086}
   m_Layer: 0
   m_Name: traffic_light_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3210173421008998887
 Transform:
@@ -98,3 +99,19 @@ CapsuleCollider:
   m_Height: 5.665842
   m_Direction: 1
   m_Center: {x: 0.018539429, y: 2.832921, z: 0}
+--- !u!208 &5205237619344381086
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934166775217431540}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.06185913, y: 2.832921, z: 0.06185913}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.01853943, y: 2.832921, z: 0}
+  m_TimeToStationary: 0.5

@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 1890357241281214480}
   - component: {fileID: 4605403287491931455}
   - component: {fileID: 5987175840701577671}
+  - component: {fileID: 5300510474662596609}
   m_Layer: 0
   m_Name: RoadSign_Polygon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8492790690523238427
 Transform:
@@ -30,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -109,3 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.74714756, y: 0.74901366, z: 0.11000004}
   m_Center: {x: 0, y: 2.200109, z: 0}
+--- !u!208 &5300510474662596609
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883264383020306885}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.07, y: 0.925, z: 0.07}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.89, z: 0}
+  m_TimeToStationary: 0.5
