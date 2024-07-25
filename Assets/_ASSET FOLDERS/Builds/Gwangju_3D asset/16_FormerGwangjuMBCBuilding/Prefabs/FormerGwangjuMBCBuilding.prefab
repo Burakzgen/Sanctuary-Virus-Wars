@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046486587385404082}
+  - component: {fileID: 8692708888710312703}
   m_Layer: 0
   m_Name: FormerGwangjuMBCBuilding
   m_TagString: Untagged
@@ -35,6 +36,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &8692708888710312703
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418287952353886216}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 11.000001, y: 11.157001, z: 15.109001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 11.157001, z: -13.348001}
+  m_TimeToStationary: 0.5
 --- !u!1 &474075408046790996
 GameObject:
   m_ObjectHideFlags: 0

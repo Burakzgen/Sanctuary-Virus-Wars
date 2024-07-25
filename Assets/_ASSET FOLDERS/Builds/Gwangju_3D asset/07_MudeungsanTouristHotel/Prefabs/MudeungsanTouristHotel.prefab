@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3555618114403264101}
   - component: {fileID: 3996367394723796146}
   - component: {fileID: 3455672966746530923}
+  - component: {fileID: 2815990270213914560}
   m_Layer: 0
   m_Name: MudeungsanTouristHotel_Base
   m_TagString: Untagged
@@ -241,3 +242,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 26.690502, y: 5.682128, z: 8.243913}
   m_Center: {x: 0.63449574, y: 1.0410633, z: -2.4076881}
+--- !u!208 &2815990270213914560
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385660052899337479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 13.710001, y: 2.841, z: 6.275}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.27, y: 1.041, z: -4.5610003}
+  m_TimeToStationary: 0.5

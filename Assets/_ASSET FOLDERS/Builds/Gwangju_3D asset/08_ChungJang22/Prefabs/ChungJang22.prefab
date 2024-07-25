@@ -4781,6 +4781,7 @@ GameObject:
   - component: {fileID: 9120968879699025110}
   - component: {fileID: 5043080099006003159}
   - component: {fileID: 21140533109969783}
+  - component: {fileID: 471571062729384215}
   m_Layer: 0
   m_Name: ChungJang22
   m_TagString: Untagged
@@ -4834,6 +4835,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.995508, y: 15.458087, z: 19.70887}
   m_Center: {x: -8.270911, y: 7.2290425, z: 2.7810478}
+--- !u!208 &471571062729384215
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8493754209377322604}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 32.5, y: 5, z: 19.925}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 20.4, y: 5, z: -4.3}
+  m_TimeToStationary: 0.5
 --- !u!1 &8950941566023735702
 GameObject:
   m_ObjectHideFlags: 0

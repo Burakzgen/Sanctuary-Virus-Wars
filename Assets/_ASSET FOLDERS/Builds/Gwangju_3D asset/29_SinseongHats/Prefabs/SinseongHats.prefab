@@ -563,6 +563,7 @@ GameObject:
   - component: {fileID: 2876081712432478782}
   - component: {fileID: 3627858807361863627}
   - component: {fileID: 4099574880475429768}
+  - component: {fileID: 8328535894097704480}
   m_Layer: 0
   m_Name: Trim_Wall
   m_TagString: Untagged
@@ -661,6 +662,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2449772, y: 13.96, z: 3.9207463}
   m_Center: {x: -4.777511, y: 6.98, z: -1.464628}
+--- !u!208 &8328535894097704480
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582351925861254932}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.2450004, y: 6.9800005, z: 3.8000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.15400001, y: 6.9800005, z: 0.37500003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4137120966495070747
 GameObject:
   m_ObjectHideFlags: 0

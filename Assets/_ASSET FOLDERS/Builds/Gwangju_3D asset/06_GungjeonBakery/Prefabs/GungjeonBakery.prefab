@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 8935649122958937869}
   - component: {fileID: 4979267117983338789}
   - component: {fileID: 2719692639932090783}
+  - component: {fileID: 3888378253476016727}
   m_Layer: 0
   m_Name: GungjeonBakery_Base
   m_TagString: Untagged
@@ -413,3 +414,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &3888378253476016727
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112443049583957708}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.6690001, y: 6.906, z: 11.019}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 6.8940005, z: -0.019000001}
+  m_TimeToStationary: 0.5

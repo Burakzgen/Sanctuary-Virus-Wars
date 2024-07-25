@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 2157766768081479921}
   - component: {fileID: 1287320138697145360}
   - component: {fileID: 3512436173137130343}
+  - component: {fileID: 4801932737201043994}
   m_Layer: 0
   m_Name: Geungnakgang_Station_mat_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &175087413752050038
 Transform:
@@ -111,6 +112,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.978943, y: 6.37589, z: 6.957711}
   m_Center: {x: -2.660098, y: 3.1316376, z: -0.046306133}
+--- !u!208 &4801932737201043994
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969722933561972649}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 9.592, y: 3.3600001, z: 5.005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.335, y: 2.96, z: -1.2270001}
+  m_TimeToStationary: 0.5
 --- !u!1 &4326744991744180508
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3981321750451100582
 Transform:
@@ -160,7 +177,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4176872527219112041
 Transform:

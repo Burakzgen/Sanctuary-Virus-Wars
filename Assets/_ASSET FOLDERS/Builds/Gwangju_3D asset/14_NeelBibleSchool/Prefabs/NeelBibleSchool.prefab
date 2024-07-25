@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1670205276249045139
 Transform:
@@ -49,7 +49,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7085508322685818247
 Transform:
@@ -133,12 +133,13 @@ GameObject:
   - component: {fileID: 5765642415353309873}
   - component: {fileID: 5599951947678780248}
   - component: {fileID: 6036208428224932209}
+  - component: {fileID: 6305746331317689107}
   m_Layer: 0
   m_Name: NeelSchoolWalls_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3083877697760225872
 Transform:
@@ -283,3 +284,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34523344, y: 2.4779515, z: 0.30929184}
   m_Center: {x: -1.32, y: 2.219926, z: 6.873251}
+--- !u!208 &6305746331317689107
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228167041501293519}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.432, y: 5.01, z: 6.76}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 5.0080004, z: 1.4860001}
+  m_TimeToStationary: 0.5

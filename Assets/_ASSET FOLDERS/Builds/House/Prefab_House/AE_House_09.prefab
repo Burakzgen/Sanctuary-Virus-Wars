@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5191700269811079721}
   - component: {fileID: 5191700269827444353}
+  - component: {fileID: 1150404895249007096}
   m_Layer: 0
   m_Name: AE_House_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5191700269811079721
 Transform:
@@ -57,6 +58,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5191700269809178827}
   m_Enabled: 1
+--- !u!208 &1150404895249007096
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191700269811107337}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.254, y: 5.065, z: 7.938}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 4.7920003, y: 5.056, z: -0.024}
+  m_TimeToStationary: 0.5
 --- !u!1 &5191700269811107339
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +93,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5191700269811079723
 Transform:
@@ -203,7 +220,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5191700269811079725
 Transform:

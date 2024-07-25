@@ -258,6 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283667665396817871}
+  - component: {fileID: 5220093665866548767}
   m_Layer: 0
   m_Name: CulturalCenterOfKoreansOfTheCIS_Exterior
   m_TagString: Untagged
@@ -281,6 +282,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5220093665866548767
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917214424038475125}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.926, y: 3.7510002, z: 5.7500005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 2.08, y: 3.63, z: -0.93}
+  m_TimeToStationary: 0.5
 --- !u!1 &2183560642668475527
 GameObject:
   m_ObjectHideFlags: 0

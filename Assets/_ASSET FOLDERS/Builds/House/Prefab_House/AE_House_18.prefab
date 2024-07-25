@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 7093248021824460486}
   - component: {fileID: 4029513533615596157}
   - component: {fileID: 1770830750655917732}
+  - component: {fileID: 79924892990282345}
   m_Layer: 0
   m_Name: AE_House_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8231291088158666153
 Transform:
@@ -116,3 +117,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 245.59853, y: 265.19867, z: 484.42}
   m_Center: {x: -375.12097, y: 121.28721, z: 2608.0593}
+--- !u!208 &79924892990282345
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750699747774920467}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 541.05, y: 301.15, z: 242.21}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -42.550003, y: -21.5, z: 2608.059}
+  m_TimeToStationary: 0.5
