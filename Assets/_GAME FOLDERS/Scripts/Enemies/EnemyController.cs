@@ -4,14 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public enum EnemyType
-    {
-        Attacker,
-        Patroller,
-        Stable,
-        Poisoner
-    }
-
+    public event System.Action OnEnemyKilled;
     [SerializeField] private EnemyType enemyType;
 
     [Header("General Settings")]
@@ -297,7 +290,9 @@ public class EnemyController : MonoBehaviour
         _playerHealth.ExitPoisonZone();
         _agent.isStopped = true;
         _collider.enabled = false;
-        // TODO Düþmanýn diðer iþlemlerini burada durdurulacak
+
+        OnEnemyKilled?.Invoke();
+        // TODO: Düþmanýn diðer iþlemlerini burada durdurulacak
     }
 
     private void UpdateAnimations()
