@@ -4,8 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public event System.Action OnEnemyKilled;
-    [SerializeField] private EnemyType enemyType;
+    [SerializeField] public EnemyType enemyType;
 
     [Header("General Settings")]
     [SerializeField] float detectionRadius = 10f;
@@ -68,7 +67,10 @@ public class EnemyController : MonoBehaviour
         PerformAction();
         UpdateAnimations();
     }
-
+    public void Init(EnemyType type)
+    {
+        enemyType = type;
+    }
     private void InitializeEnemy()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -89,7 +91,6 @@ public class EnemyController : MonoBehaviour
             _agent.isStopped = true;
         }
     }
-
     private void DetectPlayer()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
@@ -291,7 +292,6 @@ public class EnemyController : MonoBehaviour
         _agent.isStopped = true;
         _collider.enabled = false;
 
-        OnEnemyKilled?.Invoke();
         // TODO: Düþmanýn diðer iþlemlerini burada durdurulacak
     }
 

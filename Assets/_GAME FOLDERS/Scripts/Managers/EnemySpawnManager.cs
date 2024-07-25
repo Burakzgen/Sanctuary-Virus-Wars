@@ -1,88 +1,85 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnManager : MonoBehaviour
+public class EnemySpawnManager : SingleReference<EnemySpawnManager>
 {
     [Header("Spawn Points")]
     [SerializeField] private List<Transform> attackerSpawnPoints = new List<Transform>();
-    [SerializeField] private List<Transform> patrollerSpawnPoints = new List<Transform>();
     [SerializeField] private List<Transform> stableSpawnPoints = new List<Transform>();
     [SerializeField] private List<Transform> poisonerSpawnPoints = new List<Transform>();
 
     [Header("Enemy Prefabs")]
     [SerializeField] private GameObject attackerPrefab;
-    [SerializeField] private GameObject patrollerPrefab;
     [SerializeField] private GameObject stablePrefab;
     [SerializeField] private GameObject poisonerPrefab;
 
     [Header("Spawn Settings")]
-    [SerializeField] private float spawnInterval = 5f;
-    [SerializeField] private int maxAttackerCount = 5;
-    [SerializeField] private int maxPatrollerCount = 5;
-    [SerializeField] private int maxStableCount = 5;
-    [SerializeField] private int maxPoisonerCount = 5;
+    [SerializeField] private Transform enemiesParent;
+    [SerializeField] private int initialAttackerCount = 30;
+    [SerializeField] private int initialStableCount = 30;
+    [SerializeField] private int initialPoisonerCount = 30;
+    [SerializeField] private float respawnDelay = 5f;
+    WaitForSeconds respawnEnemyDuration;
 
-    private Dictionary<EnemyType, int> enemyCount;
-    private Dictionary<EnemyType, int> maxEnemyCount;
+    private Dictionary<EnemyType, List<Transform>> spawnPoints;
+    private Dictionary<EnemyType, GameObject> enemyPrefabs;
 
+    public override void Awake()
+    {
+        base.Awake();
+        respawnEnemyDuration = new WaitForSeconds(3f);
+        spawnPoints = new Dictionary<EnemyType, List<Transform>>
+        {
+            { EnemyType.Attacker, attackerSpawnPoints },
+            { EnemyType.Stable, stableSpawnPoints },
+            { EnemyType.Poisoner, poisonerSpawnPoints }
+        };
+
+        enemyPrefabs = new Dictionary<EnemyType, GameObject>
+        {
+            { EnemyType.Attacker, attackerPrefab },
+            { EnemyType.Stable, stablePrefab },
+            { EnemyType.Poisoner, poisonerPrefab }
+        };
+    }
     private void Start()
     {
-        InitializeEnemyCounts();
-        InvokeRepeating("CheckAndSpawnEnemies", spawnInterval, spawnInterval);
+        SpawnInitialEnemies();
     }
 
-    private void InitializeEnemyCounts()
+    private void SpawnInitialEnemies()
     {
-        enemyCount = new Dictionary<EnemyType, int>
-        {
-            { EnemyType.Attacker, 0 },
-            { EnemyType.Patroller, 0 },
-            { EnemyType.Stable, 0 },
-            { EnemyType.Poisoner, 0 }
-        };
-
-        maxEnemyCount = new Dictionary<EnemyType, int>
-        {
-            { EnemyType.Attacker, maxAttackerCount },
-            { EnemyType.Patroller, maxPatrollerCount },
-            { EnemyType.Stable, maxStableCount },
-            { EnemyType.Poisoner, maxPoisonerCount }
-        };
+        SpawnEnemies(EnemyType.Attacker, initialAttackerCount);
+        SpawnEnemies(EnemyType.Stable, initialStableCount);
+        SpawnEnemies(EnemyType.Poisoner, initialPoisonerCount);
     }
 
-    private void CheckAndSpawnEnemies()
+    private void SpawnEnemies(EnemyType enemyType, int count)
     {
-        CheckAndSpawnEnemyType(attackerSpawnPoints, EnemyType.Attacker, attackerPrefab);
-        CheckAndSpawnEnemyType(patrollerSpawnPoints, EnemyType.Patroller, patrollerPrefab);
-        CheckAndSpawnEnemyType(stableSpawnPoints, EnemyType.Stable, stablePrefab);
-        CheckAndSpawnEnemyType(poisonerSpawnPoints, EnemyType.Poisoner, poisonerPrefab);
-    }
-
-    private void CheckAndSpawnEnemyType(List<Transform> spawnPoints, EnemyType enemyType, GameObject prefab)
-    {
-        if (enemyCount[enemyType] < maxEnemyCount[enemyType])
+        var points = spawnPoints[enemyType];
+        var prefab = enemyPrefabs[enemyType];
+        for (int i = 0; i < count; i++)
         {
-            foreach (var spawnPoint in spawnPoints)
-            {
-                if (enemyCount[enemyType] >= maxEnemyCount[enemyType])
-                    break;
-
-                SpawnEnemy(spawnPoint, enemyType, prefab);
-            }
+            var spawnPoint = points[Random.Range(0, points.Count)];
+            var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
+            newEnemy.GetComponent<EnemyController>().Init(enemyType);
         }
     }
 
-    private void SpawnEnemy(Transform spawnPoint, EnemyType enemyType, GameObject prefab)
+    public void RespawnEnemy(EnemyType enemyType)
     {
-        GameObject newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
-        var enemyController = newEnemy.GetComponent<EnemyController>();
-        enemyController.OnEnemyKilled += () => OnEnemyKilled(enemyType);
-        enemyCount[enemyType]++;
+        StartCoroutine(RespawnEnemyAfterDelay(enemyType));
     }
 
-    private void OnEnemyKilled(EnemyType enemyType)
+    private IEnumerator RespawnEnemyAfterDelay(EnemyType enemyType)
     {
-        enemyCount[enemyType]--;
+        yield return new WaitForSeconds(respawnDelay);
+        var points = spawnPoints[enemyType];
+        var prefab = enemyPrefabs[enemyType];
+        var spawnPoint = points[Random.Range(0, points.Count)];
+        var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
+        newEnemy.GetComponent<EnemyController>().Init(enemyType);
     }
 }
 

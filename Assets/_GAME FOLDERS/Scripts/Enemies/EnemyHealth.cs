@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private Animator _animator;
     private bool _isDead = false;
     [SerializeField] Image healthBarImage;
+    private EnemyType enemyType;
 
     // Interact buff
     [SerializeField] bool useBuff = false;
@@ -54,6 +55,10 @@ public class EnemyHealth : MonoBehaviour, IHealth
         _animator.SetTrigger("IsDead");
         if (useBuff)
             DropBuff();
+
+
+        EnemySpawnManager.Instance.RespawnEnemy(enemyType);
+
         Destroy(gameObject, 2.2f);
     }
 

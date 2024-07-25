@@ -13,7 +13,6 @@ public class MissionPanelController : MonoBehaviour
     [SerializeField] private CanvasGroup canvasMainPanel;
     [SerializeField] private CanvasGroup canvasChildPanel;
     [SerializeField] private CanvasGroup tabInfoPanel;
-    [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private RectTransform missionCompletePopup;
 
     [Header("Animation Settings")]
@@ -95,7 +94,6 @@ public class MissionPanelController : MonoBehaviour
     public void ShowGameOver()
     {
         GameManager.Instance.GameOver();
-        gameOverPanel.SetActive(true);
     }
     public void SetMissionText(string mission)
     {
