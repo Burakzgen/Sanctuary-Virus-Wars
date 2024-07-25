@@ -32,6 +32,9 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     bool _isPickUp = false; // Tüm objelerinin alýnýp alýnmadýðýnýn kontrolu.
     bool _isModelObject = false; // Sadece model üzerinde döndürme olacaðý için kontrol amaçlý oluþturdu.
     Collider _objectCollider;
+
+
+    public event System.Action OnCollected;
     #endregion
 
     #region UI TYPE CONTROLS

@@ -5,6 +5,8 @@ public class HealthKit : MonoBehaviour, IInteractable
     [SerializeField] private float healthAmount = 15f;
     [SerializeField] bool useRandom = false;
     private float healthValue;
+
+    public event System.Action OnCollected;
     public void Interact(PlayerHealth health)
     {
         if (health.CurrentHealth >= 100) return;
@@ -17,7 +19,7 @@ public class HealthKit : MonoBehaviour, IInteractable
                 healthValue = healthAmount;
 
             health.Heal(healthValue);
-            HealthKitManager.Instance.RespawnHealthKit(this);
+            OnCollected?.Invoke();
         }
     }
 }

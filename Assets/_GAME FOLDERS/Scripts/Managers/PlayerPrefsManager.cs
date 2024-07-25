@@ -4,6 +4,7 @@ public class PlayerPrefsManager : MonoBehaviour
 {
     private const string ZombieKillCountKey = "ZombieKillCount";
     private const string HighestZombieKillCountKey = "HighestZombieKillCount";
+
     public static int ZombieKillCount
     {
         get { return PlayerPrefs.GetInt(ZombieKillCountKey, 0); }
@@ -27,5 +28,14 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void IncrementZombieKillCount()
     {
         ZombieKillCount++;
+    }
+
+    public static void ResetZombieKillCount()
+    {
+        ZombieKillCount = 0;
+    }
+    public static int GetHighestZombieKillCount()
+    {
+        return HighestZombieKillCount;
     }
 }

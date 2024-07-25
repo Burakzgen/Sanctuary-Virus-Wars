@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private float _currentHealth;
     private Animator _animator;
     private bool _isDead = false;
+    [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] Image healthBarImage;
     private EnemyType enemyType;
 
@@ -53,13 +54,15 @@ public class EnemyHealth : MonoBehaviour, IHealth
         if (_isDead) return;
 
         Debug.Log("Enemy has died!");
+
+        canvasGroup.gameObject.SetActive(false);
         _isDead = true;
         _animator.SetTrigger("IsDead");
         if (dropBuff)
             DropBuff();
 
 
-        PlayerPrefsManager.IncrementZombieKillCount();
+        //PlayerPrefsManager.IncrementZombieKillCount();
         GameManager.Instance.UpdateZombieCountUI();
         EnemySpawnManager.Instance.RespawnEnemy(enemyType);
         // VFX efekt gelebilir.

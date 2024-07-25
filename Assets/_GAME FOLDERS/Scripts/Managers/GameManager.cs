@@ -9,9 +9,16 @@ public class GameManager : SingleReference<GameManager>
     private bool isPaused = false;
     [SerializeField] FirstPersonMovement m_firstPersonMovement;
 
+    private void Start()
+    {
+        PlayerPrefsManager.ResetZombieKillCount();
+        zombieKillCountText.text = PlayerPrefsManager.ZombieKillCount.ToString();
+    }
     public void UpdateZombieCountUI()
     {
+        PlayerPrefsManager.IncrementZombieKillCount();
         zombieKillCountText.text = PlayerPrefsManager.ZombieKillCount.ToString();
+        Debug.Log("High Zombie Kill :" + PlayerPrefsManager.HighestZombieKillCount);
     }
     public void PauseGame()
     {

@@ -28,7 +28,6 @@ public class EnemySpawnManager : SingleReference<EnemySpawnManager>
 
     public override void Awake()
     {
-        base.Awake();
         respawnEnemyDuration = new WaitForSeconds(3f);
         spawnPoints = new Dictionary<EnemyType, List<Transform>>
         {

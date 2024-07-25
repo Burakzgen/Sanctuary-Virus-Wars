@@ -1206,8 +1206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  canvasGroup: {fileID: 7567884017533596191}
   healthBarImage: {fileID: 2042122305251636507}
-  useBuff: 0
+  dropBuff: 0
   buffPrefab: {fileID: 3776780869552391133, guid: 47f9f382ee531214cb5df05388555bde,
     type: 3}
   buffDropChance: 0.5
