@@ -60,11 +60,11 @@ public class PlayerAttack : MonoBehaviour
         {
             ToggleWeapon(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) && GameManager.Instance.IsItemPurchased("Weapon_4"))
         {
             ToggleWeapon(3);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha5) && GameManager.Instance.IsItemPurchased("Weapon_5"))
         {
             ToggleWeapon(4);
         }

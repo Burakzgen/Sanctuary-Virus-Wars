@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : SingleReference<GameManager>
 {
+    [SerializeField] GameObject weapon1, weapon2;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TextMeshProUGUI zombieKillCountText;
     private bool isPaused = false;
@@ -11,6 +12,8 @@ public class GameManager : SingleReference<GameManager>
 
     private void Start()
     {
+        UpdateButtonVisibility();
+
         PlayerPrefsManager.ResetZombieKillCount();
         zombieKillCountText.text = PlayerPrefsManager.ZombieKillCount.ToString();
     }
@@ -64,5 +67,14 @@ public class GameManager : SingleReference<GameManager>
     public bool IsGamePaused()
     {
         return isPaused;
+    }
+    public void UpdateButtonVisibility()
+    {
+        weapon1.SetActive(IsItemPurchased(weapon1.name));
+        weapon2.SetActive(IsItemPurchased(weapon2.name));
+    }
+    public bool IsItemPurchased(string itemName)
+    {
+        return PlayerPrefs.GetInt(itemName, 0) == 1;
     }
 }

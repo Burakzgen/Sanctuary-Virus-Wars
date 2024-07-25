@@ -10,8 +10,12 @@ public class StoreItem : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt(itemName) == 1)
+            this.gameObject.SetActive(false);
+
         purchaseButton.onClick.AddListener(OnPurchaseClicked);
-        itemName = gameObject.name;
+        if (itemName == null)
+            itemName = gameObject.name;
     }
 
     private void OnPurchaseClicked()
@@ -22,5 +26,13 @@ public class StoreItem : MonoBehaviour
     private void ConfirmPurchase()
     {
         Debug.Log($"{itemName} purchased successfully!");
+        SetItemPurchased(itemName, true);
+        this.gameObject.SetActive(false);
     }
+    public void SetItemPurchased(string itemName, bool isPurchased)
+    {
+        PlayerPrefs.SetInt(itemName, isPurchased ? 1 : 0);
+    }
+
+
 }
