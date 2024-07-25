@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBarImage: {fileID: 6631719836863248125}
-  useBuff: 1
+  useBuff: 0
   buffPrefab: {fileID: 5991391873743486956, guid: 9b8eb3977e316df4a844588b024c4e67,
     type: 3}
   buffDropChance: 0.5

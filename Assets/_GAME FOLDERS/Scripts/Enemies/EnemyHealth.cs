@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private EnemyType enemyType;
 
     // Interact buff
-    [SerializeField] bool useBuff = false;
+    [SerializeField] bool dropBuff = false;
     [SerializeField] GameObject buffPrefab;
     [SerializeField] float buffDropChance = 0.5f;
 
@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
         Debug.Log("Enemy has died!");
         _isDead = true;
         _animator.SetTrigger("IsDead");
-        if (useBuff)
+        if (dropBuff)
             DropBuff();
 
 
