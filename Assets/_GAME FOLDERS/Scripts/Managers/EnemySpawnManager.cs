@@ -20,6 +20,7 @@ public class EnemySpawnManager : SingleReference<EnemySpawnManager>
     [SerializeField] private int initialStableCount = 30;
     [SerializeField] private int initialPoisonerCount = 30;
     [SerializeField] private float respawnDelay = 5f;
+    [SerializeField] private float spawnRadiusCheck = 2f;
     WaitForSeconds respawnEnemyDuration;
 
     private Dictionary<EnemyType, List<Transform>> spawnPoints;
@@ -61,9 +62,12 @@ public class EnemySpawnManager : SingleReference<EnemySpawnManager>
         var prefab = enemyPrefabs[enemyType];
         for (int i = 0; i < count; i++)
         {
-            var spawnPoint = points[Random.Range(0, points.Count)];
-            var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
-            newEnemy.GetComponent<EnemyController>().Init(enemyType);
+            var spawnPoint = GetAvailableSpawnPoint(points);
+            if (spawnPoint != null)
+            {
+                var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
+                newEnemy.GetComponent<EnemyController>().Init(enemyType);
+            }
         }
     }
 
@@ -77,9 +81,35 @@ public class EnemySpawnManager : SingleReference<EnemySpawnManager>
         yield return new WaitForSeconds(respawnDelay);
         var points = spawnPoints[enemyType];
         var prefab = enemyPrefabs[enemyType];
-        var spawnPoint = points[Random.Range(0, points.Count)];
-        var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
-        newEnemy.GetComponent<EnemyController>().Init(enemyType);
+        var spawnPoint = GetAvailableSpawnPoint(points);
+        if (spawnPoint != null)
+        {
+            var newEnemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation, enemiesParent);
+            newEnemy.GetComponent<EnemyController>().Init(enemyType);
+        }
+    }
+    private Transform GetAvailableSpawnPoint(List<Transform> points)
+    {
+        foreach (var point in points)
+        {
+            if (IsPositionAvailable(point.position))
+            {
+                return point;
+            }
+        }
+        return null; // Boþ pozisyon yoksa null dönecek
+    }
+    private bool IsPositionAvailable(Vector3 position)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(position, spawnRadiusCheck);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Enemy"))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
