@@ -17,7 +17,7 @@ public class BoundaryTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            health.TakeDamage(1);
+            health.TakeDamage(0.5f);
         }
     }
     private void OnTriggerExit(Collider other)

@@ -60,6 +60,14 @@ public class PlayerAttack : MonoBehaviour
         {
             ToggleWeapon(2);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ToggleWeapon(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            ToggleWeapon(4);
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (_currentWeaponIndex != -1)
