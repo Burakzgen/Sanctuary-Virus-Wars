@@ -1,11 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : SingleReference<GameManager>
 {
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TextMeshProUGUI zombieKillCountText;
     private bool isPaused = false;
     [SerializeField] FirstPersonMovement m_firstPersonMovement;
+
+    public void UpdateZombieCountUI()
+    {
+        zombieKillCountText.text = PlayerPrefsManager.ZombieKillCount.ToString();
+    }
     public void PauseGame()
     {
         if (isPaused) return;

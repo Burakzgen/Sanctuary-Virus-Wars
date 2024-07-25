@@ -50,6 +50,8 @@ public class EnemyHealth : MonoBehaviour, IHealth
     }
     public void Die()
     {
+        if (_isDead) return;
+
         Debug.Log("Enemy has died!");
         _isDead = true;
         _animator.SetTrigger("IsDead");
@@ -57,9 +59,11 @@ public class EnemyHealth : MonoBehaviour, IHealth
             DropBuff();
 
 
+        PlayerPrefsManager.IncrementZombieKillCount();
+        GameManager.Instance.UpdateZombieCountUI();
         EnemySpawnManager.Instance.RespawnEnemy(enemyType);
-
-        Destroy(gameObject, 2.2f);
+        // VFX efekt gelebilir.
+        Destroy(gameObject, 2.8f);
     }
 
     private void DropBuff()

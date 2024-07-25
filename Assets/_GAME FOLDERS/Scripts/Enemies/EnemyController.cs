@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,7 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float runSpeed = 4f;
     [SerializeField] float stoppingDistance = 2f;
-
+    [SerializeField] CanvasGroup healthCanvasGroup;
     [Header("Attack Settings")]
     [SerializeField] float attackRadius = 1.5f;
     [SerializeField] float attackDamage = 20f;
@@ -97,6 +98,7 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer <= detectionRadius && !_playerHealth.IsDead)
         {
+            healthCanvasGroup.DOFade(1, 0.25f);
             _isPlayerDetected = true;
             _agent.stoppingDistance = stoppingDistance;
             if (enemyType != EnemyType.Poisoner)
@@ -108,6 +110,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            healthCanvasGroup.DOFade(0, 0.25f);
             _isPlayerDetected = false;
             _agent.stoppingDistance = 0f;
             _agent.speed = moveSpeed;

@@ -2018,6 +2018,7 @@ MonoBehaviour:
   moveSpeed: 1
   runSpeed: 3
   stoppingDistance: 3
+  healthCanvasGroup: {fileID: 7007099494796684998}
   attackRadius: 2.5
   attackDamage: 20
   attackCooldown: 2
@@ -2071,6 +2072,7 @@ GameObject:
   - component: {fileID: 3017213496915996445}
   - component: {fileID: 3017213496915996442}
   - component: {fileID: 3017213496915996443}
+  - component: {fileID: 7007099494796684998}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -2096,8 +2098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.084}
-  m_SizeDelta: {x: 64, y: 8}
+  m_AnchoredPosition: {x: 0, y: 2.075}
+  m_SizeDelta: {x: 52, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3017213496915996445
 Canvas:
@@ -2160,6 +2162,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7007099494796684998
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017213496915996441}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3017213497247622036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,8 +2240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: abe5da079d8db8f4694acf24788a8ecb,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbd85da6bd8d7ae4083c54b0dc33ac5b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2351,7 +2364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fbd85da6bd8d7ae4083c54b0dc33ac5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
