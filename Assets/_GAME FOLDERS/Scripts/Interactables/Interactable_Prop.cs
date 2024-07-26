@@ -25,6 +25,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     [Header("Referances")]
     FirstPersonMovement m_CharacterMovement;
     FirstPersonLook m_FirstPersonLook;
+    PlayerAttack m_PlayerAttack;
     // Private
     private Vector3 _startPosition;
     private Quaternion _startRotation;
@@ -81,6 +82,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp)
             return;
 
+        m_PlayerAttack.enabled = false;
         _UIInfoTexts.text = notes;
         _readModeText.text = notes;
         _canvasUIInfoPanel.SetActive(true);
@@ -92,6 +94,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     }
     private void CloseNote()
     {
+        m_PlayerAttack.enabled = true;
         _canvasUIInfoPanel.SetActive(false);
         _isPickUp = false;
         m_CharacterMovement.IsPause = false;
@@ -131,6 +134,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp)
             return;
 
+        m_PlayerAttack.enabled = false;
         _isPickUp = true;
         // Transform noktalarýnýn ayarlanmasý.
         //transform.SetPositionAndRotation(_setTransformPos.position, _setTransformPos.rotation);
@@ -198,6 +202,8 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
 
         _isPickUp = false;
         _isModelObject = false;
+
+        m_PlayerAttack.enabled = true;
     }
     #endregion
 
@@ -207,7 +213,9 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         GameObject player = GameObject.FindWithTag("Player");
         m_FirstPersonLook = player.GetComponentInChildren<FirstPersonLook>();
         m_CharacterMovement = player.GetComponent<FirstPersonMovement>();
-
+        m_PlayerAttack = player.GetComponent<PlayerAttack>();
+        if (_setTransformPos == null)
+            _setTransformPos = player.transform.GetChild(4).transform;
         if (gameObject.layer != 6)
             gameObject.layer = 6;
     }
