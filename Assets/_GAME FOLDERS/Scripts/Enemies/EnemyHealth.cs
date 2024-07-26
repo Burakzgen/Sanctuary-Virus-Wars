@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     [SerializeField] bool dropBuff = false;
     [SerializeField] GameObject buffPrefab;
     [SerializeField] float buffDropChance = 0.5f;
-
+    [SerializeField] bool isMutantZombie = false;
     public float MaxHealth => maxHealth;
     public float CurrentHealth => _currentHealth;
     public bool IsDead => _isDead;
@@ -54,6 +54,8 @@ public class EnemyHealth : MonoBehaviour, IHealth
         if (_isDead) return;
 
         Debug.Log("Enemy has died!");
+        if (isMutantZombie)
+            gameObject.GetComponent<MissionInteraction>().OnMissionCompleted();
 
         canvasGroup.gameObject.SetActive(false);
         _isDead = true;
