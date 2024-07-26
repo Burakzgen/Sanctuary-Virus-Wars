@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Interactable_Prop : MonoBehaviour, IInteractable
@@ -37,6 +38,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
 
 
     public event System.Action OnCollected;
+    public UnityEvent OnMissionCompleted;
     #endregion
 
     #region UI TYPE CONTROLS
@@ -55,6 +57,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     bool _isReadModeUse = false;
     private GameObject _blurredEffectImage;
     private TextMeshProUGUI _readModeText;
+
 
     //[Header("Image Controls")]
     //[SerializeField] private Image _spriteImage; // TODO: Duruma göre ilave edilecek. 
@@ -85,6 +88,8 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp)
             return;
 
+        SetUISprite();
+        OnMissionCompleted?.Invoke();
         m_PlayerAttack.enabled = false;
         _UIInfoTexts.text = notes;
         _readModeText.text = notes;
@@ -137,6 +142,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp)
             return;
 
+        OnMissionCompleted?.Invoke();
         m_PlayerAttack.enabled = false;
         _isPickUp = true;
         // Transform noktalarýnýn ayarlanmasý.
@@ -238,12 +244,19 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         _UIInfoTexts = _canvasUIInfoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         _blurredEffectImage = _canvasUIInfoPanel.transform.GetChild(2).gameObject;
         _readModeText = _blurredEffectImage.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        // MODEL TYPE
+        _canvasModelInfoPanel = UIReferanceManager.Instance.m_ModelInteractionPanel;
+    }
+    public void SetUISprite()
+    {
         if (propSprite != null)
             _canvasUIInfoPanel.GetComponent<Image>().sprite = propSprite;
         if (infoSprite != null)
+        {
+            _canvasUIInfoImagePanel.gameObject.SetActive(true);
             _canvasUIInfoImagePanel.sprite = infoSprite;
-        // MODEL TYPE
-        _canvasModelInfoPanel = UIReferanceManager.Instance.m_ModelInteractionPanel;
+        }
     }
     private void Update()
     {

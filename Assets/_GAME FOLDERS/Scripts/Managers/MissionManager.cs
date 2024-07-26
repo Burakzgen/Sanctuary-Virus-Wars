@@ -56,7 +56,7 @@ public class MissionManager : MonoBehaviour
             var missionObject = missions[currentMissionIndex].MissionObject;
             if (missionObject != null)
             {
-                missionObject.GetComponent<Collider>().isTrigger = true;
+                missionObject.GetComponent<Collider>().enabled = true;
                 missionObject.GetComponent<MissionInteraction>().enabled = true;
             }
             missionPanelController.SetMissionText(missions[currentMissionIndex].Description);
@@ -83,7 +83,7 @@ public class MissionManager : MonoBehaviour
         var missionObject = missions[currentMissionIndex].MissionObject;
         if (missionObject != null)
         {
-            missionObject.GetComponent<Collider>().isTrigger = false;
+            missionObject.GetComponent<Collider>().enabled = false;
             missionObject.GetComponent<MissionInteraction>().enabled = false;
         }
 
