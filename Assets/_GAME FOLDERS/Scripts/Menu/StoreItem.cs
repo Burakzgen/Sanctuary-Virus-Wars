@@ -1,3 +1,6 @@
+using PlayFab;
+using PlayFab.ClientModels;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +11,9 @@ public class StoreItem : MonoBehaviour
     [SerializeField] private Button purchaseButton;
     [SerializeField] private PopupManager popupManager;
 
+    [SerializeField] PlayfabManager m_PlayfabManager;
+    [SerializeField] TextMeshProUGUI coinTitle;
+    [SerializeField] int coinsPrice;
     private void Start()
     {
         if (PlayerPrefs.GetInt(itemName) == 1)
@@ -16,6 +22,8 @@ public class StoreItem : MonoBehaviour
         purchaseButton.onClick.AddListener(OnPurchaseClicked);
         if (itemName == null)
             itemName = gameObject.name;
+
+        coinTitle.text = $"{coinsPrice} $";
     }
 
     private void OnPurchaseClicked()
@@ -26,6 +34,7 @@ public class StoreItem : MonoBehaviour
     private void ConfirmPurchase()
     {
         Debug.Log($"{itemName} purchased successfully!");
+        BuyItem();
         SetItemPurchased(itemName, true);
         this.gameObject.SetActive(false);
     }
@@ -33,6 +42,23 @@ public class StoreItem : MonoBehaviour
     {
         PlayerPrefs.SetInt(itemName, isPurchased ? 1 : 0);
     }
+    void BuyItem()
+    {
+        var request = new SubtractUserVirtualCurrencyRequest
+        {
+            VirtualCurrency = "CN",
+            Amount = coinsPrice
+        };
+        PlayFabClientAPI.SubtractUserVirtualCurrency(request, OnSubtractCoinsSuccess, OnError);
+    }
 
-
+    private void OnSubtractCoinsSuccess(ModifyUserVirtualCurrencyResult result)
+    {
+        Debug.Log("Bought item! " + itemName);
+        m_PlayfabManager.GetVirtualCurrencies();
+    }
+    private void OnError(PlayFabError error)
+    {
+        Debug.Log("Error :" + error.ErrorMessage);
+    }
 }

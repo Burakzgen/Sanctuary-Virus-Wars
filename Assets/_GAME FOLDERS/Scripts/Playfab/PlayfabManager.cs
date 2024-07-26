@@ -17,9 +17,11 @@ public class PlayfabManager : MonoBehaviour
     private const string NICKNAME_KEY = "Nickname";
     private string HIGHEST_SCORE_KEY = "HighestZombieKillCount";
 
+
+    [SerializeField] TextMeshProUGUI availableVCoinText;
+
     private void Awake()
     {
-        Debug.Log(PlayerPrefs.GetInt(HIGHEST_SCORE_KEY));
         submitButton.onClick.AddListener(SubmitNameButton);
         getLeaderboardButton.onClick.AddListener(GetLeaderboard);
         Login();
@@ -42,6 +44,7 @@ public class PlayfabManager : MonoBehaviour
     {
         Debug.Log("Successful account login/creation!");
 
+        // Leaderboard
         string playfabName = null;
         string localName = PlayerPrefs.GetString(NICKNAME_KEY, "");
         int localScore = PlayerPrefs.GetInt(HIGHEST_SCORE_KEY, 0);
@@ -73,7 +76,12 @@ public class PlayfabManager : MonoBehaviour
             Debug.Log("Login and data sync complete");
 
         }
+
+        // IAP
+        GetVirtualCurrencies();
+
     }
+    #region LEADERBOARD
     private void SyncNickname(string localName, string playfabName)
     {
         if (!string.IsNullOrEmpty(playfabName))
@@ -147,7 +155,7 @@ public class PlayfabManager : MonoBehaviour
 
     void OnError(PlayFabError error)
     {
-        Debug.Log("Error while logging creating account!" + error.GenerateErrorReport());
+        Debug.Log("Error: " + error.GenerateErrorReport());
     }
     void SendLeaderboard(int score)
     {
@@ -244,5 +252,18 @@ public class PlayfabManager : MonoBehaviour
             UpdatePlayFabScore(newScore);
             SendLeaderboard(newScore);
         }
+    }
+    #endregion
+
+    public void GetVirtualCurrencies()
+    {
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(), OnGetUserInventroySuccess, OnError);
+
+    }
+    void OnGetUserInventroySuccess(GetUserInventoryResult result)
+    {
+        int coins = result.VirtualCurrency["CN"];
+        availableVCoinText.text = "Available virtual currency: " + coins;
+        Debug.Log("Current money value: " + coins);
     }
 }

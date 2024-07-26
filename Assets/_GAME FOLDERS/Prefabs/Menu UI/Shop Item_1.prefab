@@ -554,6 +554,8 @@ MonoBehaviour:
   itemSprite: {fileID: 21300000, guid: 1766ec589056ce2498168d977f5ad36f, type: 3}
   purchaseButton: {fileID: 5710620506025393433}
   popupManager: {fileID: 0}
+  coinTitle: {fileID: 6699945055106144179}
+  coinsPrice: 0
 --- !u!114 &641545046254183888
 MonoBehaviour:
   m_ObjectHideFlags: 0
