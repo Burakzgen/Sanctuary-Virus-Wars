@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactable_Prop : MonoBehaviour, IInteractable
 {
@@ -44,8 +45,10 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     [Header("Referances")]
     [SerializeField][TextArea] private string _notes;
     private GameObject _canvasUIInfoPanel;
+    private Image _canvasUIInfoImagePanel;
     private TextMeshProUGUI _UIInfoTexts;
-
+    [SerializeField] private Sprite propSprite;
+    [SerializeField] private Sprite infoSprite;
     // Read mode Controller
     // [Header("Read Mode Controls")]
     bool _isReadModeActive = false;
@@ -231,10 +234,14 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     {
         // UI TYPE
         _canvasUIInfoPanel = UIReferanceManager.Instance.m_UIInteractionPanel;
+        _canvasUIInfoImagePanel = UIReferanceManager.Instance.info_UIInteractionPanel;
         _UIInfoTexts = _canvasUIInfoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         _blurredEffectImage = _canvasUIInfoPanel.transform.GetChild(2).gameObject;
         _readModeText = _blurredEffectImage.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-
+        if (propSprite != null)
+            _canvasUIInfoPanel.GetComponent<Image>().sprite = propSprite;
+        if (infoSprite != null)
+            _canvasUIInfoImagePanel.sprite = infoSprite;
         // MODEL TYPE
         _canvasModelInfoPanel = UIReferanceManager.Instance.m_ModelInteractionPanel;
     }

@@ -68,7 +68,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
         GameManager.Instance.UpdateZombieCountUI();
         EnemySpawnManager.Instance.RespawnEnemy(enemyType);
         // VFX efekt gelebilir.
-        Destroy(gameObject, 2.8f);
+        Destroy(gameObject, 5f);
     }
 
     private void DropBuff()
