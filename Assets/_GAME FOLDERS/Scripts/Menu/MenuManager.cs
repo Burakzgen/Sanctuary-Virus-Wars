@@ -7,8 +7,10 @@ public class MenuManager : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button quitGameButton;
+    [SerializeField] private Button leaderboardButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button controllerButton;
+    [SerializeField] private Button closeLeaderboardButton;
     [SerializeField] private Button closeCreditsButton;
     [SerializeField] private Button closeControllerButton;
     [SerializeField] private Button qualityNextButton;
@@ -38,6 +40,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI uiVolumeText;
 
     [Header("Panels")]
+    [SerializeField] private GameObject leaderboardPanel;
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject controllerPanel;
     [SerializeField] private GameObject inputPanel;
@@ -52,8 +55,10 @@ public class MenuManager : MonoBehaviour
         // Buttons
         newGameButton.onClick.AddListener(OnNewGameClicked);
         quitGameButton.onClick.AddListener(OnQuitGameClicked);
+        leaderboardButton.onClick.AddListener(OpenLeaderboardPanel);
         creditsButton.onClick.AddListener(OpenCreditsPanel);
         controllerButton.onClick.AddListener(OpenControllerPanel);
+        closeLeaderboardButton.onClick.AddListener(CloseLeaderboardPanel);
         closeCreditsButton.onClick.AddListener(CloseCreditsPanel);
         closeControllerButton.onClick.AddListener(CloseControllerPanel);
         qualityNextButton.onClick.AddListener(OnQualityNextClicked);
@@ -179,7 +184,16 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("Quality", currentQualityLevel);
         Debug.Log("Quality Changed: " + QualitySettings.names[currentQualityLevel]);
     }
-
+    private void OpenLeaderboardPanel()
+    {
+        leaderboardPanel.transform.parent.gameObject.SetActive(true);
+        leaderboardPanel.SetActive(true);
+    }
+    private void CloseLeaderboardPanel()
+    {
+        leaderboardPanel.SetActive(false);
+        leaderboardPanel.transform.parent.gameObject.SetActive(false);
+    }
     private void OpenCreditsPanel()
     {
         creditsPanel.transform.parent.gameObject.SetActive(true);
