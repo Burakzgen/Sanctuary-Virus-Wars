@@ -263,7 +263,7 @@ public class PlayfabManager : MonoBehaviour
     void OnGetUserInventroySuccess(GetUserInventoryResult result)
     {
         int coins = result.VirtualCurrency["CN"];
-        availableVCoinText.text = "Available virtual currency: " + coins;
+        availableVCoinText.text = $"Available virtual currency: <size=30><color=yellow>{coins}</color></size>";
         Debug.Log("Current money value: " + coins);
     }
 }
