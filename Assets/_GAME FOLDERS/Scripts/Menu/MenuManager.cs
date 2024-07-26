@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button qualityNextButton;
     [SerializeField] private Button qualityPreviousButton;
     [SerializeField] private Button submitNicknameButton;
+    [SerializeField] private Button changeNicknameButton;
 
     [Header("Sprites")]
     [SerializeField] private Sprite newGameSprite;
@@ -28,10 +29,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider uiVolumeSlider;
 
     [Header("Input Fields")]
-    [SerializeField] private TMP_InputField nicknameInputField;
+    public TMP_InputField nicknameInputField;
 
     [Header("Text")]
-    [SerializeField] private TextMeshProUGUI nickNameText;
+    public TextMeshProUGUI nickNameText;
     [SerializeField] private TextMeshProUGUI nickNameErrorText;
     [SerializeField] private TextMeshProUGUI qualityText;
     [SerializeField] private TextMeshProUGUI cameraSensitivityText;
@@ -43,7 +44,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject leaderboardPanel;
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject controllerPanel;
-    [SerializeField] private GameObject inputPanel;
+    public GameObject inputPanel;
 
     [Header("Popup Manager")]
     [SerializeField] private PopupManager popupManager;
@@ -64,6 +65,7 @@ public class MenuManager : MonoBehaviour
         qualityNextButton.onClick.AddListener(OnQualityNextClicked);
         qualityPreviousButton.onClick.AddListener(OnQualityPreviousClicked);
         submitNicknameButton.onClick.AddListener(OnSubmitNicknameClicked);
+        changeNicknameButton.onClick.AddListener(ChangeNickName);
 
         // Sliders
         cameraSensitivitySlider.onValueChanged.AddListener(OnCameraSensitivityChanged);
@@ -73,24 +75,7 @@ public class MenuManager : MonoBehaviour
 
 
         LoadSettings();
-        CheckForNickname();
     }
-    private void CheckForNickname()
-    {
-        if (PlayerPrefs.HasKey("Nickname"))
-        {
-            string nickname = PlayerPrefs.GetString("Nickname");
-            nickNameText.text = nickname;
-            inputPanel.transform.parent.gameObject.SetActive(false);
-            inputPanel.SetActive(false);
-        }
-        else
-        {
-            inputPanel.transform.parent.gameObject.SetActive(true);
-            inputPanel.SetActive(true);
-        }
-    }
-
     private void OnSubmitNicknameClicked()
     {
         string nickname = nicknameInputField.text;
@@ -98,8 +83,6 @@ public class MenuManager : MonoBehaviour
         if (!string.IsNullOrEmpty(nickname))
         {
             PlayerPrefs.SetString("Nickname", nickname);
-            PlayerPrefs.Save();
-
             nickNameText.text = nickname;
             inputPanel.transform.parent.gameObject.SetActive(false);
             inputPanel.SetActive(false);
@@ -110,6 +93,12 @@ public class MenuManager : MonoBehaviour
             nickNameErrorText.gameObject.SetActive(true);
             Debug.Log("Nickname cannot be empty!");
         }
+    }
+    private void ChangeNickName()
+    {
+        nicknameInputField.text = string.Empty;
+        inputPanel.transform.parent.gameObject.SetActive(true);
+        inputPanel.SetActive(true);
     }
     private void OnNewGameClicked()
     {
