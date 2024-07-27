@@ -18,6 +18,7 @@ public class MatchingGame : MonoBehaviour
     private List<GameObject> lines = new List<GameObject>();
     private GameObject currentLine;
     public RectTransform lineParent;
+    public Light m_Light;
 
     public FirstPersonMovement m_FirstPersonMovement;
     public FirstPersonLook m_FirstPersonLook;
@@ -131,6 +132,7 @@ public class MatchingGame : MonoBehaviour
             m_FirstPersonZoom.enabled = true;
             m_FirstPersonMovement.enabled = true;
             m_FirstPersonLook.enabled = true;
+            m_Light.enabled = true;
             ClearAllLines();
         }
     }

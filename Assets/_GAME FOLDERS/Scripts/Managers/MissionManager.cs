@@ -140,7 +140,7 @@ public class Mission
     public float Duration;
     public MissionType Type;
     public string TargetName;
-    public GameObject MissionObject;
+    public GameObject MissionObject; // collider kontrolu 
 }
 
 public enum MissionType
