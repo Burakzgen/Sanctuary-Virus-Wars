@@ -23,6 +23,7 @@ public class MatchingGame : MonoBehaviour
     public FirstPersonMovement m_FirstPersonMovement;
     public FirstPersonLook m_FirstPersonLook;
     public FirstPersonZoom m_FirstPersonZoom;
+    public MissionInteraction missionInteraction;
     private void Start()
     {
         correctMatches.Add("Red Cable", "Red Socket");
@@ -133,6 +134,7 @@ public class MatchingGame : MonoBehaviour
             m_FirstPersonMovement.enabled = true;
             m_FirstPersonLook.enabled = true;
             m_Light.enabled = true;
+            missionInteraction.OnMissionCompleted();
             ClearAllLines();
         }
     }

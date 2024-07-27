@@ -224,7 +224,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         m_CharacterMovement = player.GetComponent<FirstPersonMovement>();
         m_PlayerAttack = player.GetComponent<PlayerAttack>();
         if (_setTransformPos == null)
-            _setTransformPos = player.transform.GetChild(4).transform;
+            _setTransformPos = player.transform.GetChild(1).GetChild(1).transform;
         if (gameObject.layer != 6)
             gameObject.layer = 6;
     }

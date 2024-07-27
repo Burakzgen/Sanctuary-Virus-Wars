@@ -49,6 +49,7 @@ public class SafeBoxUIPanel : MonoBehaviour
     {
         if (enteredPassword == correctPassword)
         {
+            objectToRotate.transform.parent.gameObject.layer = LayerMask.NameToLayer("Default");
             feedbackText.text = "Correct password!";
             m_MissionInteraction.OnMissionCompleted();
             objectToRotate.DORotate(new Vector3(0, -30, 0), duration, RotateMode.FastBeyond360).SetEase(Ease.OutQuad);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7173609804937383515}
   - component: {fileID: 130131848349716507}
   - component: {fileID: 2203814864133555478}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Loose_sheet_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 674297315341132236}
   - component: {fileID: 674297315341132239}
   - component: {fileID: 674297315341132238}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Book
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -150,6 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _modelType: 1
   _rotateType: 3
+  OnMissionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _notes: Bu bir Model  interactle objesidir.
   propSprite: {fileID: 0}
   infoSprite: {fileID: 0}
@@ -185,7 +188,8 @@ GameObject:
   - component: {fileID: 3558233366783391110}
   - component: {fileID: 5474924188198887859}
   - component: {fileID: 1817288384914410255}
-  m_Layer: 6
+  - component: {fileID: 7828145522001001986}
+  m_Layer: 0
   m_Name: Book_frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,6 +261,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7828145522001001986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855772692914687867}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.023529412, b: 0.023529412, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2092261738654256581
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +290,7 @@ GameObject:
   - component: {fileID: 4176534496688843171}
   - component: {fileID: 2705272588651059285}
   - component: {fileID: 8943627609500948821}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lloose_sheet_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +373,7 @@ GameObject:
   - component: {fileID: 7568199568375513065}
   - component: {fileID: 861824470136425251}
   - component: {fileID: 8373365823419479901}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Loose_sheet_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +456,7 @@ GameObject:
   - component: {fileID: 5758038321728205989}
   - component: {fileID: 312585919023210258}
   - component: {fileID: 7620200243861557520}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Loose_Sheet_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +539,7 @@ GameObject:
   - component: {fileID: 5892674760899658543}
   - component: {fileID: 8584318821408080809}
   - component: {fileID: 6110294542966596854}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Book_sheets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
