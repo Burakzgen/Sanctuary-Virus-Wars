@@ -29,7 +29,7 @@ public class MissionManager : MonoBehaviour
 
     private int currentMissionIndex = 0;
     private Coroutine missionTimerCoroutine;
-
+    private Coroutine currentTipCoroutine;
     private void Awake()
     {
         missionPanelController = GetComponent<MissionPanelController>();
@@ -53,6 +53,7 @@ public class MissionManager : MonoBehaviour
     {
         if (currentMissionIndex < missions.Count)
         {
+            Mission currentMission = missions[currentMissionIndex];
             var missionObject = missions[currentMissionIndex].MissionObject;
             if (missionObject != null)
             {
@@ -60,7 +61,10 @@ public class MissionManager : MonoBehaviour
                 if (missions[currentMissionIndex].Type != MissionType.ZombieKill)
                     missionObject.layer = 6;
             }
-
+            if (currentMission.Tip != null)
+            {
+                currentTipCoroutine = StartCoroutine(RevealTipsOverTime(currentMission));
+            }
             var outline = missions[currentMissionIndex].OutlineComp;
             if (outline != null)
                 outline.enabled = true;
@@ -76,15 +80,24 @@ public class MissionManager : MonoBehaviour
             // Tüm görevler tamamlandýðýnda yapýlacak iþlemler
         }
     }
+    private IEnumerator RevealTipsOverTime(Mission mission)
+    {
+
+        yield return new WaitForSeconds(mission.Tip.DelayBeforeShow);
+        mission.Tip.RevealTip();
+
+    }
     public void CompleteCurrentMission()
     {
         missionPanelController.HideTabInfo();
         Debug.Log($"Mission: '{missions[currentMissionIndex].Description}' completed!");
         timerTextParent.DOFade(0, 0.15f);
+
         if (missionTimerCoroutine != null)
-        {
             StopCoroutine(missionTimerCoroutine);
-        }
+
+        if (currentTipCoroutine != null)
+            StopCoroutine(currentTipCoroutine);
         // Gorev tamamlandýðýnda diger gorev icin sirali kontrolu
         var missionObject = missions[currentMissionIndex].MissionObject;
         if (missionObject != null && missions[currentMissionIndex].setActiveOffCollider)
@@ -144,8 +157,62 @@ public class Mission
     public GameObject MissionObject; // collider kontrolu 
     public bool setActiveOffCollider = false;
     public OutlineComp OutlineComp;
+    public Tip Tip = new Tip();
 }
+[System.Serializable]
+public class Tip
+{
+    public enum TipType
+    {
+        None,
+        Trace,
+        Effect,
+        Object,
+        Popup
+    }
 
+    public string Description;
+    public TipType Type;
+    public float DelayBeforeShow = 15f;
+    public GameObject TipObject; // Sadece TipType.Object için kullanýlýr
+    public string EffectName; // Sadece TipType.Effect için kullanýlýr
+    private bool isRevealed = false;
+
+    public void RevealTip()
+    {
+        if (isRevealed) return;
+        isRevealed = true;
+
+        switch (Type)
+        {
+            case TipType.Trace:
+                Debug.Log($"Showing trace: {Description}");
+                // Ýz gösterme mantýðý
+                break;
+            case TipType.Effect:
+                if (!string.IsNullOrEmpty(EffectName))
+                {
+                    Debug.Log($"Playing effect: {EffectName}");
+                    // Efekt oynatma mantýðý
+                }
+                break;
+            case TipType.Object:
+                if (TipObject != null)
+                {
+                    TipObject.SetActive(true);
+                }
+                break;
+            case TipType.Popup:
+                Debug.Log($"Showing popup: {Description}");
+                // Popup gösterme mantýðý
+                break;
+            case TipType.None:
+            default:
+                Debug.Log($"Generic tip revealed: {Description}");
+                break;
+        }
+    }
+}
 public enum MissionType
 {
     ZombieKill, // Zombi öldürme ve inceleme görevlerinde kullanýlacak
