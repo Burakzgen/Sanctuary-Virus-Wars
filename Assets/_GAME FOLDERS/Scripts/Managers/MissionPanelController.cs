@@ -9,11 +9,12 @@ public class MissionPanelController : MonoBehaviour
     [SerializeField] private RectTransform missionPanel;
     [SerializeField] private TextMeshProUGUI missionText;
 
-    [Header("Canvas Panel")]
+    [Header("Mission Canvas Panel")]
     [SerializeField] private CanvasGroup canvasMainPanel;
     [SerializeField] private CanvasGroup canvasChildPanel;
     [SerializeField] private CanvasGroup tabInfoPanel;
     [SerializeField] private RectTransform missionCompletePopup;
+
 
     [Header("Animation Settings")]
     [SerializeField] private float animationDuration = 0.5f;

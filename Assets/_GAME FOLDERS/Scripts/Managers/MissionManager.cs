@@ -82,9 +82,8 @@ public class MissionManager : MonoBehaviour
     }
     private IEnumerator RevealTipsOverTime(Mission mission)
     {
-
         yield return new WaitForSeconds(mission.Tip.DelayBeforeShow);
-        mission.Tip.RevealTip();
+        mission.Tip.RevealTip(mission.Tip);
 
     }
     public void CompleteCurrentMission()
@@ -165,7 +164,6 @@ public class Tip
     public enum TipType
     {
         None,
-        Trace,
         Effect,
         Object,
         Popup
@@ -177,18 +175,14 @@ public class Tip
     public GameObject TipObject; // Sadece TipType.Object için kullanýlýr
     public string EffectName; // Sadece TipType.Effect için kullanýlýr
     private bool isRevealed = false;
-
-    public void RevealTip()
+    public TipPanelController tipPanelController;
+    public void RevealTip(Tip tip)
     {
         if (isRevealed) return;
         isRevealed = true;
 
         switch (Type)
         {
-            case TipType.Trace:
-                Debug.Log($"Showing trace: {Description}");
-                // Ýz gösterme mantýðý
-                break;
             case TipType.Effect:
                 if (!string.IsNullOrEmpty(EffectName))
                 {
@@ -203,8 +197,10 @@ public class Tip
                 }
                 break;
             case TipType.Popup:
-                Debug.Log($"Showing popup: {Description}");
                 // Popup gösterme mantýðý
+                tipPanelController.SetMissionText(tip.Description);
+                tipPanelController.ShowTipPanel();
+
                 break;
             case TipType.None:
             default:
