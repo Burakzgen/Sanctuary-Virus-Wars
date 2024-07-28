@@ -35,6 +35,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI uiVolumeText;
 
     private int currentQualityLevel;
+    [SerializeField] FirstPersonLook m_FirstPersonLook;
 
     private void Start()
     {
@@ -105,6 +106,7 @@ public class PauseManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("CameraSensitivity", value);
         cameraSensitivityText.text = (value).ToString("F2");
+        m_FirstPersonLook.SetSensitivty();
         Debug.Log("Camera Sensitivity Changed: " + value);
     }
     private void OnMusicVolumeChanged(float value)

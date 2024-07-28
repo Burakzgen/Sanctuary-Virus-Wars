@@ -4,6 +4,7 @@ public class FirstPersonLook : MonoBehaviour
 {
     [SerializeField] Transform character;
     public float sensitivity = 2;
+    public float camsensitivity = 0.5f;
     public float smoothing = 1.5f;
 
     // Private
@@ -17,6 +18,7 @@ public class FirstPersonLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        SetSensitivty();
     }
     void Update()
     {
@@ -31,5 +33,12 @@ public class FirstPersonLook : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
+    }
+    public void SetSensitivty()
+    {
+        camsensitivity = PlayerPrefs.GetFloat("CameraSensitivity", camsensitivity);
+        if (camsensitivity < 0.1f)
+            camsensitivity = 0.1f;
+        sensitivity = camsensitivity;
     }
 }
