@@ -28,7 +28,8 @@ public class MissionPanelController : MonoBehaviour
     private bool isAutoOpened = false;
     private bool hasMission = false;
 
-
+    private float cooldownTime = 0.5f; // sürekli týklamayý önlemek için eklendi
+    private float lastToggleTime;
     private void Start()
     {
         missionPanel.anchoredPosition = offScreenPosition;
@@ -38,12 +39,13 @@ public class MissionPanelController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && Time.time > lastToggleTime + cooldownTime)
         {
             if (hasMission)
             {
                 isAutoOpened = false;
                 ToggleMissionPanel();
+                lastToggleTime = Time.time;
             }
         }
     }
