@@ -58,7 +58,7 @@ public class MissionPanelController : MonoBehaviour
         if (!isPanelVisible)
         {
             ToggleMissionPanel();
-            StartCoroutine(CloseMissionPanelAfterDelay(3f));
+            StartCoroutine(CloseMissionPanelAfterDelay(5f));
         }
     }
     private IEnumerator CloseMissionPanelAfterDelay(float delay)
