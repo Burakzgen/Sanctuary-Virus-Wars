@@ -172,7 +172,9 @@ public class Tip
     public string Description;
     public TipType Type;
     public float DelayBeforeShow = 15f;
+    [Tooltip("Sadece TipType.Object için kullanýlýr")]
     public GameObject TipObject; // Sadece TipType.Object için kullanýlýr
+    [Tooltip("Sadece TipType.Effect için kullanýlýr")]
     public string EffectName; // Sadece TipType.Effect için kullanýlýr
     private bool isRevealed = false;
     public TipPanelController tipPanelController;
@@ -187,7 +189,6 @@ public class Tip
                 if (!string.IsNullOrEmpty(EffectName))
                 {
                     Debug.Log($"Playing effect: {EffectName}");
-                    // Efekt oynatma mantýðý
                 }
                 break;
             case TipType.Object:
