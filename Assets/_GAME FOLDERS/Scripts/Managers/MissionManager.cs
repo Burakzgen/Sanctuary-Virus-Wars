@@ -164,7 +164,6 @@ public class Tip
     public enum TipType
     {
         None,
-        Effect,
         Object,
         Popup
     }
@@ -174,8 +173,6 @@ public class Tip
     public float DelayBeforeShow = 15f;
     [Tooltip("Sadece TipType.Object için kullanýlýr")]
     public GameObject TipObject; // Sadece TipType.Object için kullanýlýr
-    [Tooltip("Sadece TipType.Effect için kullanýlýr")]
-    public string EffectName; // Sadece TipType.Effect için kullanýlýr
     private bool isRevealed = false;
     public TipPanelController tipPanelController;
     public void RevealTip(Tip tip)
@@ -185,12 +182,7 @@ public class Tip
 
         switch (Type)
         {
-            case TipType.Effect:
-                if (!string.IsNullOrEmpty(EffectName))
-                {
-                    Debug.Log($"Playing effect: {EffectName}");
-                }
-                break;
+
             case TipType.Object:
                 if (TipObject != null)
                 {
