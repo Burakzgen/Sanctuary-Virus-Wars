@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2048574194075067686}
   - component: {fileID: 2048574194075067687}
   - component: {fileID: 2454663097771519835}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Computer
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -128,9 +128,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   useCharacterControls: 0
-  m_FirstPersonMovement: {fileID: 0}
-  m_FirstPersonLook: {fileID: 0}
-  m_FirstPersonZoom: {fileID: 0}
 --- !u!114 &2048574194075067687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +137,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 535087298439529717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 0}
-  missionType: 1
-  targetMissionName: bilgisayar
+  missionType: 0
+  targetMissionName: 
 --- !u!114 &2454663097771519835
 MonoBehaviour:
   m_ObjectHideFlags: 0

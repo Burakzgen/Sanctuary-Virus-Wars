@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3380501200765998775}
   - component: {fileID: 3380501200765998772}
   - component: {fileID: 3380501200765998773}
-  - component: {fileID: 3380501200765998762}
   - component: {fileID: 3380501200765998774}
+  - component: {fileID: 3380501200765998762}
   m_Layer: 6
   m_Name: Mission_Bank
   m_TagString: Interact
@@ -175,21 +175,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3380501200765998772}
   m_maskType: 0
---- !u!114 &3380501200765998762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380501200765998763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionManager: {fileID: 0}
-  missionType: 3
-  targetMissionName: banka
 --- !u!114 &3380501200765998774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +214,18 @@ MonoBehaviour:
   _setRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   _scale: 1
   rotateSpeed: 0
+--- !u!114 &3380501200765998762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380501200765998763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionManager: {fileID: 0}
+  missionType: 2
+  targetMissionName: banka

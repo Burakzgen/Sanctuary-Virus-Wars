@@ -914,9 +914,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3575247203431793587}
   - component: {fileID: 4239581386361706766}
-  - component: {fileID: 4239581386361706767}
   - component: {fileID: 4239581386361706764}
-  m_Layer: 6
+  - component: {fileID: 4239581386361706767}
+  m_Layer: 0
   m_Name: Safe Box
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -951,25 +951,10 @@ BoxCollider:
   m_GameObject: {fileID: 4239581386361706761}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.97914267, y: 1.2952642, z: 1.1660542}
   m_Center: {x: 0, y: 0, z: -0.08}
---- !u!114 &4239581386361706767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4239581386361706761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionManager: {fileID: 0}
-  missionType: 1
-  targetMissionName: kasa
 --- !u!114 &4239581386361706764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,9 +970,22 @@ MonoBehaviour:
   OnMissionCompleted:
     m_PersistentCalls:
       m_Calls: []
-  m_FirstPersonMovement: {fileID: 0}
-  m_FirstPersonLook: {fileID: 0}
-  m_FirstPersonZoom: {fileID: 0}
+  useCharacterControls: 0
+--- !u!114 &4239581386361706767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239581386361706761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionManager: {fileID: 0}
+  missionType: 1
+  targetMissionName: 
 --- !u!1 &4717540264130125210
 GameObject:
   m_ObjectHideFlags: 0

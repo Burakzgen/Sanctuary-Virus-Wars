@@ -20,10 +20,7 @@ public class MatchingGame : MonoBehaviour
     public RectTransform lineParent;
     public Light m_Light;
 
-    public FirstPersonMovement m_FirstPersonMovement;
-    public FirstPersonLook m_FirstPersonLook;
-    public FirstPersonZoom m_FirstPersonZoom;
-    public MissionInteraction missionInteraction;
+    public MissionCompletionInteraction missionInteraction;
     private void Start()
     {
         correctMatches.Add("Red Cable", "Red Socket");
@@ -129,10 +126,7 @@ public class MatchingGame : MonoBehaviour
         if (correctMatchCount >= correctMatches.Count)
         {
             gameObject.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            m_FirstPersonZoom.enabled = true;
-            m_FirstPersonMovement.enabled = true;
-            m_FirstPersonLook.enabled = true;
+            GameManager.Instance.ResumeChracterControls();
             m_Light.enabled = true;
             missionInteraction.OnMissionCompleted();
             ClearAllLines();

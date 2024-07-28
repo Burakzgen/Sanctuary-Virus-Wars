@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
 
         Debug.Log("Enemy has died!");
         if (isMutantZombie)
-            gameObject.GetComponent<MissionInteraction>().OnMissionCompleted();
+            gameObject.GetComponent<MissionCompletionInteraction>().OnMissionCompleted();
 
         canvasGroup.gameObject.SetActive(false);
         _isDead = true;

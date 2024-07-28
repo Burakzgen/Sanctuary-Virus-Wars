@@ -23,11 +23,6 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     #region GENERAL_CONTROLS
 
     [Header("*** GENERAL CONTROLS ***")]
-    // Public
-    [Header("Referances")]
-    FirstPersonMovement m_CharacterMovement;
-    FirstPersonLook m_FirstPersonLook;
-    PlayerAttack m_PlayerAttack;
     // Private
     private Vector3 _startPosition;
     private Quaternion _startRotation;
@@ -37,7 +32,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     Collider _objectCollider;
 
 
-    public event System.Action OnCollected;
+    public event System.Action OnCollected; // IInteractable impleemtn edildi
     public UnityEvent OnMissionCompleted;
     #endregion
 
@@ -89,24 +84,17 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
             return;
 
         SetUISprite();
-        OnMissionCompleted?.Invoke();
-        m_PlayerAttack.enabled = false;
         _UIInfoTexts.text = notes;
         _readModeText.text = notes;
         _canvasUIInfoPanel.SetActive(true);
-        m_CharacterMovement.IsPause = true;
-        m_FirstPersonLook.enabled = false;
 
         _isReadModeUse = true;
         _isPickUp = true;
     }
     private void CloseNote()
     {
-        m_PlayerAttack.enabled = true;
         _canvasUIInfoPanel.SetActive(false);
         _isPickUp = false;
-        m_CharacterMovement.IsPause = false;
-        m_FirstPersonLook.enabled = true;
         ReadTextMode();
     }
     private void ReadTextMode()
@@ -126,11 +114,14 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp && _isReadModeUse)
             ReadTextMode();
 
+        GameManager.Instance.PauseChracterControls(false);
+        OnMissionCompleted?.Invoke();
         SetText(GetNote());
 
     }
     private void UI_Drop()
     {
+        GameManager.Instance.ResumeChracterControls(false);
         CloseNote();
     }
     #endregion
@@ -142,8 +133,9 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         if (_isPickUp)
             return;
 
+
+        GameManager.Instance.PauseChracterControls(false);
         OnMissionCompleted?.Invoke();
-        m_PlayerAttack.enabled = false;
         _isPickUp = true;
         // Transform noktalarýnýn ayarlanmasý.
         //transform.SetPositionAndRotation(_setTransformPos.position, _setTransformPos.rotation);
@@ -155,9 +147,6 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         // UI objelerinin aktif edilmesi.
         _canvasModelInfoPanel.SetActive(true);
         _objectCollider.enabled = false;
-        // Karakter kontrol deðiþiklikleri
-        m_CharacterMovement.IsPause = true;
-        m_FirstPersonLook.enabled = false;
         _isModelObject = true;
     }
     private void InteractiveModel_Rotate()
@@ -205,14 +194,11 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
         _canvasModelInfoPanel.SetActive(false);
         _objectCollider.enabled = true;
 
-        // Karakter kontrollerinin devre dýþý býrakýlmasý.
-        m_CharacterMovement.IsPause = false;
-        m_FirstPersonLook.enabled = true;
 
         _isPickUp = false;
         _isModelObject = false;
 
-        m_PlayerAttack.enabled = true;
+        GameManager.Instance.ResumeChracterControls(false);
     }
     #endregion
 
@@ -220,13 +206,11 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     private void Awake()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        m_FirstPersonLook = player.GetComponentInChildren<FirstPersonLook>();
-        m_CharacterMovement = player.GetComponent<FirstPersonMovement>();
-        m_PlayerAttack = player.GetComponent<PlayerAttack>();
         if (_setTransformPos == null)
             _setTransformPos = player.transform.GetChild(1).GetChild(1).transform;
         if (gameObject.layer != 6)
             gameObject.layer = 6;
+
     }
     private void Start()
     {
@@ -238,6 +222,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     }
     void SetReferance()
     {
+
         // UI TYPE
         _canvasUIInfoPanel = UIReferanceManager.Instance.m_UIInteractionPanel;
         _canvasUIInfoImagePanel = UIReferanceManager.Instance.info_UIInteractionPanel;

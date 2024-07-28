@@ -39,11 +39,11 @@ ModelImporter:
       name: roar
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 1
-      lastFrame: 180
+      firstFrame: 24
+      lastFrame: 122
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.135
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 817867135781463445}
   - component: {fileID: 817867135781463444}
   - component: {fileID: 817867135781463447}
-  - component: {fileID: 817867135781463449}
   - component: {fileID: 817867135781463431}
+  - component: {fileID: 817867135781463449}
   - component: {fileID: 2058444677160068803}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bakanlik_Elektrik
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -96,25 +96,10 @@ BoxCollider:
   m_GameObject: {fileID: 817867135781463448}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &817867135781463449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817867135781463448}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionManager: {fileID: 0}
-  missionType: 1
-  targetMissionName: bakanlik_bina
 --- !u!114 &817867135781463431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +128,21 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   useCharacterControls: 0
-  m_FirstPersonMovement: {fileID: 0}
-  m_FirstPersonLook: {fileID: 0}
-  m_FirstPersonZoom: {fileID: 0}
+--- !u!114 &817867135781463449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817867135781463448}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionManager: {fileID: 0}
+  missionType: 0
+  targetMissionName: 
 --- !u!114 &2058444677160068803
 MonoBehaviour:
   m_ObjectHideFlags: 0

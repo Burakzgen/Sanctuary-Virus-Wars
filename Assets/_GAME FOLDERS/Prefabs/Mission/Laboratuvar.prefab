@@ -136,12 +136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5303240876487049301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 0}
-  missionType: 3
-  targetMissionName: laboratuvar
+  missionType: 2
+  targetMissionName: 
 --- !u!1 &7294570983854890490
 GameObject:
   m_ObjectHideFlags: 0

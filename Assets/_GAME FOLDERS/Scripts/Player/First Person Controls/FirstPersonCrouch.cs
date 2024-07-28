@@ -30,6 +30,7 @@ public class FirstPersonCrouch : MonoBehaviour
     }
     void LateUpdate()
     {
+        if (GameManager.Instance.IsGamePaused()) return;
         if (Input.GetKey(key))
         {
             if (headToLower)

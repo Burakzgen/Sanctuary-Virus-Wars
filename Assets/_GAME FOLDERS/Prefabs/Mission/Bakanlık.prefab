@@ -136,12 +136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5124240055563765676}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b16b80d3ee004587b9625e9c8be2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a7020aecd0cd004d92d4ff1792c69c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 0}
-  missionType: 3
-  targetMissionName: bakanlik
+  missionType: 0
+  targetMissionName: 
 --- !u!1 &7764089199680657923
 GameObject:
   m_ObjectHideFlags: 0

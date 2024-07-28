@@ -24,7 +24,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private float nextMissionDelay = 30f; // Bir görev tamamlandýktan veya baþarýsýz olduktan sonra bekleme süresi
 
     [Header("Settings")]
-    [SerializeField] private bool useRandomStartTime = false; // Rastgele süre kullanýmý
+    [SerializeField] private bool useRandomStartTime = false;
 
 
     private int currentMissionIndex = 0;
@@ -57,8 +57,8 @@ public class MissionManager : MonoBehaviour
             if (missionObject != null)
             {
                 missionObject.GetComponent<Collider>().enabled = true;
-                missionObject.GetComponent<MissionInteraction>().enabled = true;
-                missionObject.layer = missions[currentMissionIndex].layerMask;
+                if (missions[currentMissionIndex].Type != MissionType.ZombieKill)
+                    missionObject.layer = 6;
             }
 
             var outline = missions[currentMissionIndex].OutlineComp;
@@ -90,7 +90,6 @@ public class MissionManager : MonoBehaviour
         if (missionObject != null && missions[currentMissionIndex].setActiveOffCollider)
         {
             missionObject.GetComponent<Collider>().enabled = false;
-            missionObject.GetComponent<MissionInteraction>().enabled = false;
         }
         var outline = missions[currentMissionIndex].OutlineComp;
         if (outline != null)
@@ -99,13 +98,6 @@ public class MissionManager : MonoBehaviour
         missionPanelController.ShowMissionCompletePopup();
         currentMissionIndex++;
         StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
-    }
-    public void OnTriggerMissionCompleted(string missionName)
-    {
-        if (missions[currentMissionIndex].Description.Contains(missionName))
-        {
-            CompleteCurrentMission();
-        }
     }
     public void OnTriggerMissionCompleted(MissionType missionType, string targetName)
     {
@@ -152,13 +144,12 @@ public class Mission
     public GameObject MissionObject; // collider kontrolu 
     public bool setActiveOffCollider = false;
     public OutlineComp OutlineComp;
-    public LayerMask layerMask;
 }
 
 public enum MissionType
 {
     ZombieKill, // Zombi öldürme ve inceleme görevlerinde kullanýlacak
     ObjectInspection, // Nesne bulup inceleme
-    CodeBreaking, // Þifre çözme iþlemlerinde 
+    //CodeBreaking, // Þifre çözme iþlemlerinde 
     LocationExploration // Belirli yerleri incelem görevleri
 }

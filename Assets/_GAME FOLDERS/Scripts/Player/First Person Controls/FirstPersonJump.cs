@@ -18,6 +18,8 @@ public class FirstPersonJump : MonoBehaviour
     }
     void LateUpdate()
     {
+        if (GameManager.Instance.IsGamePaused()) return;
+
         if (Input.GetButtonDown("Jump") && (!_groundCheck || _groundCheck.isGrounded))
         {
             _rb.AddForce(Vector3.up * 100 * jumpStrength);

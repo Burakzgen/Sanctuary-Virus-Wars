@@ -37,6 +37,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsGamePaused()) return;
+
         HandleWeaponSwitching();
 
         if (Time.time >= _nextAttackTime && Input.GetMouseButtonDown(0))

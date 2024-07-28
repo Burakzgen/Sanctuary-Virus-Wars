@@ -49,6 +49,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     private void Update()
     {
+        if (GameManager.Instance.IsGamePaused()) return;
+
         if (inPoisonZone && isPoisoned && Time.time >= lastPoisonEffectTime + poisonEffectCooldown)
         {
             ApplyPoisonEffect();

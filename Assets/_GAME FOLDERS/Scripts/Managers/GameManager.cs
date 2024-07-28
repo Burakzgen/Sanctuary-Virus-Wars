@@ -8,6 +8,8 @@ public class GameManager : SingleReference<GameManager>
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TextMeshProUGUI zombieKillCountText;
     private bool isPaused = false;
+
+    [Header("Character Referance")]
     [SerializeField] FirstPersonMovement m_firstPersonMovement;
 
     private void Start()
@@ -37,10 +39,8 @@ public class GameManager : SingleReference<GameManager>
     }
     public void GameOver()
     {
-        m_firstPersonMovement.IsPause = true;
-        isPaused = true;
+        PauseChracterControls();
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
         gameOverPanel.SetActive(true);
         Debug.Log("Game Over");
     }
@@ -48,10 +48,8 @@ public class GameManager : SingleReference<GameManager>
     {
         if (!isPaused) return;
 
-        m_firstPersonMovement.IsPause = false;
-        isPaused = false;
+        ResumeChracterControls();
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("Game Continued");
     }
     public void RestartGame()
@@ -76,5 +74,19 @@ public class GameManager : SingleReference<GameManager>
     public bool IsItemPurchased(string itemName)
     {
         return PlayerPrefs.GetInt(itemName, 0) == 1;
+    }
+    public void PauseChracterControls(bool cursorLock = true)
+    {
+        m_firstPersonMovement.IsPause = true;
+        isPaused = true;
+        if (cursorLock)
+            Cursor.lockState = CursorLockMode.None;
+    }
+    public void ResumeChracterControls(bool cursorLock = true)
+    {
+        m_firstPersonMovement.IsPause = false;
+        isPaused = false;
+        if (cursorLock)
+            Cursor.lockState = CursorLockMode.Locked;
     }
 }
