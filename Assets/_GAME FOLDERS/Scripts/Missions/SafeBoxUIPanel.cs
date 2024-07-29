@@ -46,6 +46,7 @@ public class SafeBoxUIPanel : MonoBehaviour
     {
         if (enteredPassword == correctPassword)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[4]);
             objectToRotate.transform.parent.gameObject.layer = LayerMask.NameToLayer("Default");
             feedbackText.text = "Correct password!";
             m_MissionInteraction.OnMissionCompleted();

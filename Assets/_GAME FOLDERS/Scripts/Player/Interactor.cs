@@ -52,6 +52,7 @@ public class Interactor : MonoBehaviour
             if (hitInfo.collider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact(_playerHealth);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[3]);
             }
         }
     }

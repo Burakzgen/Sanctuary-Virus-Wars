@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -554,6 +554,7 @@ MonoBehaviour:
   itemSprite: {fileID: 21300000, guid: 1766ec589056ce2498168d977f5ad36f, type: 3}
   purchaseButton: {fileID: 5710620506025393433}
   popupManager: {fileID: 0}
+  m_PlayfabManager: {fileID: 0}
   coinTitle: {fileID: 6699945055106144179}
   coinsPrice: 0
 --- !u!114 &641545046254183888
@@ -575,6 +576,7 @@ MonoBehaviour:
   normalScale: {x: 1, y: 1, z: 1}
   highlightedScale: {x: 1.1, y: 1.1, z: 1.1}
   animationDuration: 0.15
+  offSound: 0
 --- !u!1 &3056579993118741288
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

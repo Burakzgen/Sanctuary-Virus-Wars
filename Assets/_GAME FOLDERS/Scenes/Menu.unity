@@ -21391,7 +21391,29 @@ MonoBehaviour:
   gameBackgroundMusic: {fileID: 8300000, guid: 79f5e9c8607d1d54690f0d405a46ec74, type: 3}
   buttonClickSound: {fileID: 8300000, guid: 9a04b29db87262d41b1af5700303d5c9, type: 3}
   hoverClickSound: {fileID: 8300000, guid: e64b405d29b980b49a91ccff01c335b8, type: 3}
-  zombieSounds: []
+  zombieSounds:
+  - {fileID: 8300000, guid: 3281e0b37f33169428da9f6d87f7a40f, type: 3}
+  - {fileID: 8300000, guid: e1876aee77a5be84bad7874df920176c, type: 3}
+  - {fileID: 8300000, guid: 6071e43d7c81cfe4d8e7a60eab31c96f, type: 3}
+  - {fileID: 8300000, guid: 0242961c9d3f496458a6c13f4c6dfec8, type: 3}
+  - {fileID: 8300000, guid: 661b56a71912c624abca99b4da876ab8, type: 3}
+  - {fileID: 8300000, guid: 6bb2d08a132ff8a4b8bc2bcb01bed0cd, type: 3}
+  - {fileID: 8300000, guid: 2836254dc5b2c4348bbbdd3c170c8f58, type: 3}
+  - {fileID: 8300000, guid: b80e53a16e1005640a98ae487c7599c3, type: 3}
+  sfxSounds:
+  - {fileID: 8300000, guid: cb56fa09f686c2c488937baa7422ebc6, type: 3}
+  - {fileID: 8300000, guid: cdc5ff39fba6f5240992824b30365650, type: 3}
+  - {fileID: 8300000, guid: 1f6ebe2f950aef147ba49cadce25dc93, type: 3}
+  - {fileID: 8300000, guid: f3d364d5d4061f34b9e10ad3a2a0b26b, type: 3}
+  - {fileID: 8300000, guid: a64e1a61746d7f040a47a4547efb4561, type: 3}
+  - {fileID: 8300000, guid: 563c916502cf9c94d977b8f9046a8997, type: 3}
+  footstepSounds:
+  - {fileID: 8300000, guid: 682cd3e8b678b1448bef61437d888126, type: 3}
+  - {fileID: 8300000, guid: fead5cfe6593ab64dac60ff7b677fb86, type: 3}
+  - {fileID: 8300000, guid: b129e694a0fa16f498b497481befe169, type: 3}
+  - {fileID: 8300000, guid: a3eb761c67da86e4d95a714d5040e215, type: 3}
+  - {fileID: 8300000, guid: 49a4a47af61a25b4fb37c589359ef09c, type: 3}
+  jumpSound: {fileID: 8300000, guid: b1a433c3cf3a8cc49acde19dc7d588fe, type: 3}
 --- !u!4 &2072756026
 Transform:
   m_ObjectHideFlags: 0

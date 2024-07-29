@@ -55,6 +55,7 @@ public class StoreItem : MonoBehaviour
     private void OnSubtractCoinsSuccess(ModifyUserVirtualCurrencyResult result)
     {
         Debug.Log("Bought item! " + itemName);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[0]);
         m_PlayfabManager.GetVirtualCurrencies();
     }
     private void OnError(PlayFabError error)

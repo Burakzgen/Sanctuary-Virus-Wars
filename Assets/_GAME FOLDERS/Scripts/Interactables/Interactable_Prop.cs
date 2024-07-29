@@ -122,6 +122,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
     private void UI_Drop()
     {
         GameManager.Instance.ResumeChracterControls(false);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[5]);
         CloseNote();
     }
     #endregion
@@ -181,6 +182,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
 
     private void InteractiveModel_Drop()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[5]);
         // Transform defaul deðerlerinin alýnmasý ve deðiþtirilmesi.
         if (!_setTransformParent)
             transform.parent = _setTransformParent;

@@ -13,11 +13,16 @@ public class AudioManager : SingleReference<AudioManager>
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource uiSource;
 
-    [Header("Audio Clips")]
+    [Header("SFX Sounds")]
     public AudioClip gameBackgroundMusic;
     public AudioClip buttonClickSound;
     public AudioClip hoverClickSound;
     public AudioClip[] zombieSounds;
+    public AudioClip[] sfxSounds;
+
+    [Header("Character Sounds")]
+    public AudioClip[] footstepSounds;
+    public AudioClip jumpSound;
 
     protected override void Awake()
     {
@@ -40,7 +45,14 @@ public class AudioManager : SingleReference<AudioManager>
     {
         sfxSource.PlayOneShot(clip, sfxVolume * masterVolume);
     }
-
+    public void PlayFootstep()
+    {
+        if (footstepSounds.Length > 0)
+        {
+            AudioClip randomFootstep = footstepSounds[Random.Range(0, footstepSounds.Length)];
+            PlaySFX(randomFootstep);
+        }
+    }
     public void PlayUI(AudioClip clip)
     {
         uiSource.PlayOneShot(clip, uiVolume * masterVolume);

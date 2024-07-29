@@ -227,10 +227,11 @@ public class MenuManager : MonoBehaviour
     }
     private void LoadSettings()
     {
-        float defaultSensitivity = 0.5f;
-        float defaultMusicVolume = 0.5f;
-        float defaultSFXVolume = 0.5f;
-        float defaultUIVolume = 0.5f;
+        float defaultSensitivity = 2f;
+        float defaultMusicVolume = 0.01f;
+        float defaultSFXVolume = 0.15f;
+        float defaultUIVolume = 0.15f;
+        float defaultMasterVolume = 1f;
         int defaultQualityLevel = 2;
 
         if (PlayerPrefs.HasKey("CameraSensitivity"))
@@ -275,8 +276,8 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            masterVolumeSlider.value = defaultUIVolume;
-            masterVolumeText.text = ((int)(defaultUIVolume * 100)).ToString("0");
+            masterVolumeSlider.value = defaultMasterVolume;
+            masterVolumeText.text = ((int)(defaultMasterVolume * 100)).ToString("0");
         }
 
         if (PlayerPrefs.HasKey("UIVolume"))
