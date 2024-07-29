@@ -26,6 +26,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private Slider uiVolumeSlider;
+    [SerializeField] private Slider masterVolumeSlider;
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI qualityText;
@@ -33,6 +34,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI musicVolumeText;
     [SerializeField] private TextMeshProUGUI sfxVolumeText;
     [SerializeField] private TextMeshProUGUI uiVolumeText;
+    [SerializeField] private TextMeshProUGUI masterVolumeText;
 
     private int currentQualityLevel;
     [SerializeField] FirstPersonLook m_FirstPersonLook;
@@ -54,6 +56,7 @@ public class PauseManager : MonoBehaviour
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
         uiVolumeSlider.onValueChanged.AddListener(OnUIVolumeChanged);
+        masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
 
 
         LoadSettings();
@@ -82,25 +85,30 @@ public class PauseManager : MonoBehaviour
     {
         GameManager.Instance.ContinueGame();
         mainPausePanel.SetActive(false);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void OnQuitGameClicked(bool value)
     {
         childPausePanel.gameObject.SetActive(!value);
         quitGamePopupPanel.transform.parent.gameObject.SetActive(value);
         quitGamePopupPanel.gameObject.SetActive(value);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void ConfirmQuitGame()
     {
         Debug.Log("Game Quit!");
         Application.Quit();
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void ShowSettingPanel()
     {
         settingPanel.SetActive(true);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void HideSettingPanel()
     {
         settingPanel.SetActive(false);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void OnCameraSensitivityChanged(float value)
     {
@@ -108,6 +116,13 @@ public class PauseManager : MonoBehaviour
         cameraSensitivityText.text = (value).ToString("F2");
         m_FirstPersonLook.SetSensitivty();
         Debug.Log("Camera Sensitivity Changed: " + value);
+    }
+    private void OnMasterVolumeChanged(float value)
+    {
+        PlayerPrefs.SetFloat("MasterVolume", value);
+        masterVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetMasterVolume(value);
+        Debug.Log("UI Volume Changed: " + value);
     }
     private void OnMusicVolumeChanged(float value)
     {
@@ -131,6 +146,7 @@ public class PauseManager : MonoBehaviour
     {
         currentQualityLevel = (currentQualityLevel + 1) % QualitySettings.names.Length;
         UpdateQualitySettings();
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void OnQualityPreviousClicked()
     {
@@ -140,6 +156,7 @@ public class PauseManager : MonoBehaviour
             currentQualityLevel = QualitySettings.names.Length - 1;
         }
         UpdateQualitySettings();
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
 
     private void UpdateQualitySettings()
@@ -167,7 +184,17 @@ public class PauseManager : MonoBehaviour
             cameraSensitivitySlider.value = defaultSensitivity;
             cameraSensitivityText.text = (defaultSensitivity).ToString("F2");
         }
-
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            float uiVolume = PlayerPrefs.GetFloat("MasterVolume");
+            masterVolumeSlider.value = uiVolume;
+            AudioManager.Instance.SetMasterVolume(uiVolume);
+        }
+        else
+        {
+            masterVolumeSlider.value = defaultUIVolume;
+            masterVolumeText.text = ((int)(defaultUIVolume * 100)).ToString("0");
+        }
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
             float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
