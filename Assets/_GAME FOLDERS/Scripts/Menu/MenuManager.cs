@@ -228,7 +228,7 @@ public class MenuManager : MonoBehaviour
     private void LoadSettings()
     {
         float defaultSensitivity = 2f;
-        float defaultMusicVolume = 0.01f;
+        float defaultMusicVolume = 0.017f;
         float defaultSFXVolume = 0.15f;
         float defaultUIVolume = 0.15f;
         float defaultMasterVolume = 1f;

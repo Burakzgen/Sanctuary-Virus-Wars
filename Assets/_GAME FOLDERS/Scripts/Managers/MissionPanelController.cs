@@ -57,17 +57,17 @@ public class MissionPanelController : MonoBehaviour
     public void ShowMissionPanel()
     {
         hasMission = true;
-        tabInfoPanel.DOFade(1, animationDuration).SetUpdate(true);
+        tabInfoPanel.DOFade(1, animationDuration);
         isAutoOpened = true;
         if (!isPanelVisible)
         {
             ToggleMissionPanel();
-            StartCoroutine(CloseMissionPanelAfterDelay(5f));
+            StartCoroutine(CloseMissionPanelAfterDelay(4f));
         }
     }
     private IEnumerator CloseMissionPanelAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         if (isPanelVisible && isAutoOpened)
         {
             ToggleMissionPanel();

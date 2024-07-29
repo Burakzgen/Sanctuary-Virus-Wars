@@ -82,7 +82,7 @@ public class MissionManager : MonoBehaviour
         }
         else
         {
-            OnAllMissionsCompleted();
+            StartCoroutine(OnAllMissionsCompleted());
         }
     }
     private IEnumerator RevealTipsOverTime(Mission mission)
@@ -121,7 +121,7 @@ public class MissionManager : MonoBehaviour
         if (currentMissionIndex < missions.Count)
             StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
         else
-            OnAllMissionsCompleted();
+            StartCoroutine(OnAllMissionsCompleted());
     }
     public void OnTriggerMissionCompleted(MissionType missionType, string targetName)
     {
@@ -130,8 +130,9 @@ public class MissionManager : MonoBehaviour
             CompleteCurrentMission();
         }
     }
-    private void OnAllMissionsCompleted()
+    private IEnumerator OnAllMissionsCompleted()
     {
+        yield return new WaitForSecondsRealtime(0.5f);
         Debug.Log("All missions completed!");
         missionPanelController.HideTabInfo();
         missionPanelController.ShowCompletedGame();
@@ -222,10 +223,7 @@ public class Tip
         switch (Type)
         {
             case TipType.Object:
-                if (TipObject != null)
-                {
-                    TipObject.SetActive(false);
-                }
+                Debug.Log("Tip closed!");
                 break;
             case TipType.Popup:
                 tipPanelController.HideTabInfo();
