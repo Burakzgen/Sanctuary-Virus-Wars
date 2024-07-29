@@ -1941,6 +1941,7 @@ GameObject:
   - component: {fileID: 3017213496880558546}
   - component: {fileID: 3017213496880558550}
   - component: {fileID: 3017213496880558538}
+  - component: {fileID: 5891928369686540849}
   m_Layer: 7
   m_Name: Enemy Attacker
   m_TagString: Enemy
@@ -2028,6 +2029,7 @@ MonoBehaviour:
   poisonDamage: 5
   poisonDuration: 5
   poisonCooldown: 10
+  particalEffect: {fileID: 0}
 --- !u!114 &3017213496880558550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2046,6 +2048,7 @@ MonoBehaviour:
   dropBuff: 0
   buffPrefab: {fileID: 1998466318430720, guid: 6fbeeda97cbb4e84c9bb0180938aba76, type: 3}
   buffDropChance: 0.5
+  isMutantZombie: 0
 --- !u!114 &3017213496880558538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,6 +2064,18 @@ MonoBehaviour:
   iconPrefab: {fileID: 4922837886278913688, guid: 64491c38b1af452409456a53259a0f43,
     type: 3}
   clampOnRadar: 0
+--- !u!114 &5891928369686540849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017213496880558547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d16297e74ef634a8fa9d3a5e4f06f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3017213496915996441
 GameObject:
   m_ObjectHideFlags: 0

@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 2042122305956695604}
   - component: {fileID: 2042122305956695624}
   - component: {fileID: 2042122305956695628}
+  - component: {fileID: 6847040403136096029}
   m_Layer: 7
   m_Name: Enemy Patroller
   m_TagString: Enemy
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   poisonDamage: 5
   poisonDuration: 5
   poisonCooldown: 10
+  particalEffect: {fileID: 0}
 --- !u!114 &2042122305956695624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,6 +1214,7 @@ MonoBehaviour:
   buffPrefab: {fileID: 3776780869552391133, guid: 47f9f382ee531214cb5df05388555bde,
     type: 3}
   buffDropChance: 0.5
+  isMutantZombie: 0
 --- !u!114 &2042122305956695628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1230,18 @@ MonoBehaviour:
   iconPrefab: {fileID: 4922837886278913688, guid: 64491c38b1af452409456a53259a0f43,
     type: 3}
   clampOnRadar: 0
+--- !u!114 &6847040403136096029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042122305956695607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d16297e74ef634a8fa9d3a5e4f06f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2133026494229051479
 GameObject:
   m_ObjectHideFlags: 0

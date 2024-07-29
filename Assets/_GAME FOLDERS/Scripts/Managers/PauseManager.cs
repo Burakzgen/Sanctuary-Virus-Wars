@@ -128,18 +128,21 @@ public class PauseManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MusicVolume", value);
         musicVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetMusicVolume(value);
         Debug.Log("Music Volume Changed: " + value);
     }
     private void OnSFXVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("SFXVolume", value);
         sfxVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetSFXVolume(value);
         Debug.Log("SFX Volume Changed: " + value);
     }
     private void OnUIVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("UIVolume", value);
         uiVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetUIVolume(value);
         Debug.Log("UI Volume Changed: " + value);
     }
     private void OnQualityNextClicked()
@@ -199,6 +202,7 @@ public class PauseManager : MonoBehaviour
         {
             float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             musicVolumeSlider.value = musicVolume;
+            AudioManager.Instance.SetMusicVolume(musicVolume);
         }
         else
         {
@@ -210,6 +214,7 @@ public class PauseManager : MonoBehaviour
         {
             float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
             sfxVolumeSlider.value = sfxVolume;
+            AudioManager.Instance.SetSFXVolume(sfxVolume);
         }
         else
         {
@@ -221,6 +226,7 @@ public class PauseManager : MonoBehaviour
         {
             float uiVolume = PlayerPrefs.GetFloat("UIVolume");
             uiVolumeSlider.value = uiVolume;
+            AudioManager.Instance.SetUIVolume(uiVolume);
         }
         else
         {

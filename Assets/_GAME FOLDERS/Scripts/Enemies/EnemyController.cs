@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
     private float _lastActionTime;
     private int _currentPatrolIndex = 0;
     private Coroutine _poisonCoroutine;
+    private EnemyAudio _enemyAudio;
 
     private void Start()
     {
@@ -83,6 +84,7 @@ public class EnemyController : MonoBehaviour
         _myHealth = GetComponent<EnemyHealth>();
         _startPosition = transform.position;
         _agent.speed = moveSpeed;
+        _enemyAudio = GetComponent<EnemyAudio>();
 
         if (enemyType == EnemyType.Patroller)
         {
@@ -92,6 +94,7 @@ public class EnemyController : MonoBehaviour
         {
             _agent.isStopped = true;
         }
+        _enemyAudio.PlayIdleSound();
     }
     private void DetectPlayer()
     {
@@ -115,7 +118,6 @@ public class EnemyController : MonoBehaviour
             _isPlayerDetected = false;
             _agent.stoppingDistance = 0f;
             _agent.speed = moveSpeed;
-
             if (enemyType == EnemyType.Patroller)
             {
                 if (!_agent.pathPending && _agent.remainingDistance < 0.1f)
@@ -234,7 +236,7 @@ public class EnemyController : MonoBehaviour
     {
         _isAttacking = true;
         _animator.SetTrigger("IsAttack");
-
+        _enemyAudio.PlayAttackSound();
         yield return new WaitForSeconds(0.25f);
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
@@ -282,6 +284,7 @@ public class EnemyController : MonoBehaviour
         while (Vector3.Distance(transform.position, _player.position) <= poisonRadius)
         {
             _animator.SetTrigger("IsPoisoning");
+            // TODO Ses gelebilir
             _playerHealth.TakePoisonDamage(poisonDamage);
             yield return new WaitForSeconds(1f);
         }
@@ -309,6 +312,7 @@ public class EnemyController : MonoBehaviour
         bool isMoving = _agent.velocity.magnitude > 0.1f;
         _animator.SetBool("IsWalking", isMoving && !_isPlayerDetected);
         _animator.SetBool("IsRunning", isMoving && _isPlayerDetected);
+
     }
 
     private void OnDrawGizmosSelected()

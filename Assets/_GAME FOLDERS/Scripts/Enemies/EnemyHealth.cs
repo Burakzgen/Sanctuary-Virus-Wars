@@ -19,11 +19,13 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public float MaxHealth => maxHealth;
     public float CurrentHealth => _currentHealth;
     public bool IsDead => _isDead;
+    private EnemyAudio _enemyAudio;
 
     private void Start()
     {
         _currentHealth = maxHealth;
         _animator = GetComponentInChildren<Animator>();
+        _enemyAudio = GetComponent<EnemyAudio>();
         UpdateHealthBar();
     }
 
@@ -52,7 +54,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public void Die()
     {
         if (_isDead) return;
-
+        _enemyAudio.PlayDeathSound();
         Debug.Log("Enemy has died!");
         if (isMutantZombie)
             gameObject.GetComponent<MissionCompletionInteraction>().OnMissionCompleted();

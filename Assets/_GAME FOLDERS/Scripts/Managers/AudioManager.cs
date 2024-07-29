@@ -17,13 +17,21 @@ public class AudioManager : SingleReference<AudioManager>
     public AudioClip gameBackgroundMusic;
     public AudioClip buttonClickSound;
     public AudioClip hoverClickSound;
-    public AudioClip[] zombieSounds;
     public AudioClip[] sfxSounds;
-
+    [Header("SFX Enemy Sounds")]
+    public AudioClip attack;
+    public AudioClip bite;
+    public AudioClip death;
+    public AudioClip run;
+    public AudioClip throat;
+    public AudioClip[] enemiesRandomClip;
     [Header("Character Sounds")]
     public AudioClip[] footstepSounds;
     public AudioClip jumpSound;
 
+
+
+    public event System.Action<float> OnVolumeChanged;
     protected override void Awake()
     {
         base.Awake();
@@ -67,6 +75,7 @@ public class AudioManager : SingleReference<AudioManager>
     public void SetSFXVolume(float volume)
     {
         sfxVolume = volume;
+        OnVolumeChanged?.Invoke(sfxVolume * masterVolume);
     }
 
     public void SetUIVolume(float volume)
@@ -80,5 +89,6 @@ public class AudioManager : SingleReference<AudioManager>
         musicSource.volume = musicVolume * masterVolume;
         sfxSource.volume = sfxVolume * masterVolume;
         uiSource.volume = uiVolume * masterVolume;
+        OnVolumeChanged?.Invoke(sfxVolume * masterVolume);
     }
 }
