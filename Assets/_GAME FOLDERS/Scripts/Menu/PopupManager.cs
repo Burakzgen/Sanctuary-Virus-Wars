@@ -24,6 +24,7 @@ public class PopupManager : MonoBehaviour
 
     public void ShowPopup(string message, string title, Sprite iconSprite, System.Action confirmAction)
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         popupMessage.text = message;
         confirmCallback = confirmAction;
         popupIconImage.sprite = iconSprite;
@@ -34,6 +35,7 @@ public class PopupManager : MonoBehaviour
 
     private void OnConfirm()
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         confirmCallback?.Invoke();
         popupPanel.SetActive(false);
         popupPanel.transform.parent.gameObject.SetActive(false);
@@ -41,6 +43,7 @@ public class PopupManager : MonoBehaviour
 
     private void OnCancel()
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         popupPanel.SetActive(false);
         popupPanel.transform.parent.gameObject.SetActive(false);
     }

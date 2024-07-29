@@ -17,11 +17,14 @@ public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private Vector3 normalScale = Vector3.one;
     [SerializeField] private Vector3 highlightedScale = Vector3.one * 1.1f;
     [SerializeField] private float animationDuration = 0.2f;
-
+    [Header("Settings")]
+    [SerializeField] bool offSound = false;
     public void OnPointerEnter(PointerEventData eventData)
     {
         targetImage.color = highlightedColor;
         button.transform.DOScale(highlightedScale, animationDuration);
+        if (!offSound)
+            AudioManager.Instance.PlayUI(AudioManager.Instance.hoverClickSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -13,7 +13,8 @@ public class PanelController : MonoBehaviour
 
     private void Start()
     {
-        ShowPanel(0);
+        _currentPanel = panels[0];
+        _currentPanel.SetActive(true);
 
         for (int i = 0; i < showButtons.Length; i++)
         {
@@ -26,6 +27,7 @@ public class PanelController : MonoBehaviour
 
     private void ShowPanel(int index)
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         if (index < 0 || index >= panels.Length)
         {
             Debug.LogError("Invalid panel index");

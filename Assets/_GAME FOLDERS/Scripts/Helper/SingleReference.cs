@@ -3,6 +3,7 @@ using UnityEngine;
 public class SingleReference<T> : MonoBehaviour where T : MonoBehaviour
 {
     protected static T instance;
+    protected static bool dontDestroyOnLoad = false;
 
     public static T Instance
     {
@@ -11,7 +12,6 @@ public class SingleReference<T> : MonoBehaviour where T : MonoBehaviour
             if (instance == null)
             {
                 instance = (T)FindAnyObjectByType(typeof(T));
-
                 if (instance == null)
                 {
                     Debug.LogError("An instance of " + typeof(T) + " is needed in the scene, but there is none.");
@@ -21,7 +21,7 @@ public class SingleReference<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    public virtual void Awake()
+    protected virtual void AwakeInternal()
     {
         if (Instance != null && Instance != this)
         {
@@ -30,11 +30,30 @@ public class SingleReference<T> : MonoBehaviour where T : MonoBehaviour
         }
         else
         {
+            instance = this as T;
             Initialize();
+            if (dontDestroyOnLoad)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
         }
+    }
+
+    protected virtual void Awake()
+    {
+        AwakeInternal();
     }
 
     protected virtual void Initialize()
     {
+    }
+
+    public static void SetDontDestroyOnLoad(bool value)
+    {
+        dontDestroyOnLoad = value;
+        if (instance != null && dontDestroyOnLoad)
+        {
+            DontDestroyOnLoad(instance.gameObject);
+        }
     }
 }

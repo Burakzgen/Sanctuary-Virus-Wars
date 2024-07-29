@@ -15,8 +15,9 @@ public class InteractableManager : SingleReference<InteractableManager>
 
     [SerializeField] private float respawnDelay = 5f;
 
-    public override void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         occupiedSpawnPoints = new Dictionary<Transform, GameObject>();
     }
 

@@ -25,6 +25,7 @@ public class SplashScreenManager : MonoBehaviour
             yield return null;
         }
 
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         splashContent.GetComponent<CanvasGroup>().DOFade(0, 1f);
         splashContent.DOAnchorPosY(splashContent.anchoredPosition.y + 50, 1f).OnComplete(() =>
         {

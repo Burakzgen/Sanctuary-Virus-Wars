@@ -58,6 +58,7 @@ public class ColorChangeButton : MonoBehaviour, IPointerClickHandler, IPointerEn
         if (isSelected) return;
 
         SetHighlightState(true);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.hoverClickSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)

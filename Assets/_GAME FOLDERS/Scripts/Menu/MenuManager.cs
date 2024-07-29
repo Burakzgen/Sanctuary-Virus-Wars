@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private Slider uiVolumeSlider;
+    [SerializeField] private Slider masterVolumeSlider;
 
     [Header("Input Fields")]
     public TMP_InputField nicknameInputField;
@@ -39,6 +40,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI musicVolumeText;
     [SerializeField] private TextMeshProUGUI sfxVolumeText;
     [SerializeField] private TextMeshProUGUI uiVolumeText;
+    [SerializeField] private TextMeshProUGUI masterVolumeText;
 
     [Header("Panels")]
     [SerializeField] private GameObject leaderboardPanel;
@@ -72,12 +74,14 @@ public class MenuManager : MonoBehaviour
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
         uiVolumeSlider.onValueChanged.AddListener(OnUIVolumeChanged);
+        masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
 
 
         LoadSettings();
     }
     private void OnSubmitNicknameClicked()
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         string nickname = nicknameInputField.text;
 
         if (!string.IsNullOrEmpty(nickname))
@@ -96,6 +100,7 @@ public class MenuManager : MonoBehaviour
     }
     private void ChangeNickName()
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         nicknameInputField.text = string.Empty;
         inputPanel.transform.parent.gameObject.SetActive(true);
         inputPanel.SetActive(true);
@@ -133,6 +138,7 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MusicVolume", value);
         musicVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetMusicVolume(value);
         Debug.Log("Music Volume Changed: " + value);
     }
 
@@ -140,6 +146,7 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("SFXVolume", value);
         sfxVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetSFXVolume(value);
         Debug.Log("SFX Volume Changed: " + value);
     }
 
@@ -147,17 +154,26 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("UIVolume", value);
         uiVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetUIVolume(value);
         Debug.Log("UI Volume Changed: " + value);
     }
-
+    private void OnMasterVolumeChanged(float value)
+    {
+        PlayerPrefs.SetFloat("MasterVolume", value);
+        masterVolumeText.text = (value * 100).ToString("0");
+        AudioManager.Instance.SetMasterVolume(value);
+        Debug.Log("UI Volume Changed: " + value);
+    }
     private void OnQualityNextClicked()
     {
         currentQualityLevel = (currentQualityLevel + 1) % QualitySettings.names.Length;
         UpdateQualitySettings();
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
 
     private void OnQualityPreviousClicked()
     {
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
         currentQualityLevel--;
         if (currentQualityLevel < 0)
         {
@@ -177,31 +193,37 @@ public class MenuManager : MonoBehaviour
     {
         leaderboardPanel.transform.parent.gameObject.SetActive(true);
         leaderboardPanel.SetActive(true);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void CloseLeaderboardPanel()
     {
         leaderboardPanel.SetActive(false);
         leaderboardPanel.transform.parent.gameObject.SetActive(false);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void OpenCreditsPanel()
     {
         creditsPanel.transform.parent.gameObject.SetActive(true);
         creditsPanel.SetActive(true);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void CloseCreditsPanel()
     {
         creditsPanel.SetActive(false);
         creditsPanel.transform.parent.gameObject.SetActive(false);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void OpenControllerPanel()
     {
         controllerPanel.transform.parent.gameObject.SetActive(true);
         controllerPanel.SetActive(true);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void CloseControllerPanel()
     {
         controllerPanel.SetActive(false);
         controllerPanel.transform.parent.gameObject.SetActive(false);
+        AudioManager.Instance.PlayUI(AudioManager.Instance.buttonClickSound);
     }
     private void LoadSettings()
     {
@@ -226,6 +248,7 @@ public class MenuManager : MonoBehaviour
         {
             float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             musicVolumeSlider.value = musicVolume;
+            AudioManager.Instance.SetMusicVolume(musicVolume);
         }
         else
         {
@@ -237,17 +260,30 @@ public class MenuManager : MonoBehaviour
         {
             float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
             sfxVolumeSlider.value = sfxVolume;
+            AudioManager.Instance.SetSFXVolume(sfxVolume);
         }
         else
         {
             sfxVolumeSlider.value = defaultSFXVolume;
             sfxVolumeText.text = ((int)(defaultSFXVolume * 100)).ToString("0");
         }
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            float uiVolume = PlayerPrefs.GetFloat("MasterVolume");
+            masterVolumeSlider.value = uiVolume;
+            AudioManager.Instance.SetMasterVolume(uiVolume);
+        }
+        else
+        {
+            masterVolumeSlider.value = defaultUIVolume;
+            masterVolumeText.text = ((int)(defaultUIVolume * 100)).ToString("0");
+        }
 
         if (PlayerPrefs.HasKey("UIVolume"))
         {
             float uiVolume = PlayerPrefs.GetFloat("UIVolume");
             uiVolumeSlider.value = uiVolume;
+            AudioManager.Instance.SetUIVolume(uiVolume);
         }
         else
         {
