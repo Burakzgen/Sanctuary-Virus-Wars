@@ -38,7 +38,6 @@ public class PauseManager : MonoBehaviour
 
     private int currentQualityLevel;
     [SerializeField] FirstPersonLook m_FirstPersonLook;
-
     private void Start()
     {
         // Buttons

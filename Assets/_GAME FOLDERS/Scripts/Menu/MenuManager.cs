@@ -50,7 +50,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Popup Manager")]
     [SerializeField] private PopupManager popupManager;
-
+    [SerializeField] private LoadingScreenManager loadingScreenManager;
     private int currentQualityLevel;
 
     private void Start()
@@ -118,7 +118,7 @@ public class MenuManager : MonoBehaviour
     private void ConfirmNewGame()
     {
         Debug.Log("New Game Started!");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        loadingScreenManager.ShowGameLoadingScreen();
     }
 
     private void ConfirmQuitGame()

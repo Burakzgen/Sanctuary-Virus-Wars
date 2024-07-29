@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : SingleReference<GameManager>
 {
@@ -11,6 +10,7 @@ public class GameManager : SingleReference<GameManager>
 
     [Header("Character Referance")]
     [SerializeField] FirstPersonMovement m_firstPersonMovement;
+    [SerializeField] LoadingScreenManager m_LoadingScreenManager;
 
     private void Start()
     {
@@ -55,12 +55,13 @@ public class GameManager : SingleReference<GameManager>
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Game");
+        m_LoadingScreenManager.ShowGameLoadingScreenFromGame();
     }
     public void Menu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        m_LoadingScreenManager.ShowMenuLoadingScreenFromGame();
+        //SceneManager.LoadScene("Menu");
     }
     public bool IsGamePaused()
     {
