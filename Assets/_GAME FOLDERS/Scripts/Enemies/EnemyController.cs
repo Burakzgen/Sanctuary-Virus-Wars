@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float poisonDamage = 5f;
     [SerializeField] float poisonDuration = 5f;
     [SerializeField] float poisonCooldown = 10f;
+    [SerializeField] GameObject particalEffect;
 
     private NavMeshAgent _agent;
     private Animator _animator;
@@ -276,6 +277,8 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator ApplyPoisonOverTime()
     {
+        if (particalEffect != null)
+            particalEffect.SetActive(true);
         while (Vector3.Distance(transform.position, _player.position) <= poisonRadius)
         {
             _animator.SetTrigger("IsPoisoning");
@@ -289,6 +292,9 @@ public class EnemyController : MonoBehaviour
         if (_poisonCoroutine != null)
         {
             StopCoroutine(_poisonCoroutine);
+
+            if (particalEffect != null)
+                particalEffect.SetActive(false);
             _poisonCoroutine = null;
         }
         _playerHealth.ExitPoisonZone();
