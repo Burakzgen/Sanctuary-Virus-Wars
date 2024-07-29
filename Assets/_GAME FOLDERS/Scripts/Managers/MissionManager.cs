@@ -60,6 +60,13 @@ public class MissionManager : MonoBehaviour
                 missionObject.GetComponent<Collider>().enabled = true;
                 if (missions[currentMissionIndex].Type != MissionType.ZombieKill)
                     missionObject.layer = 6;
+                //if (currentMissionIndex == 3)
+                //{
+                //    foreach (Transform child in missionObject.GetComponentsInChildren<Transform>(true))
+                //    {
+                //        child.gameObject.layer = 6;
+                //    }
+                //}
             }
             if (currentMission.Tip != null)
             {
@@ -75,9 +82,7 @@ public class MissionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("All missions completed!");
-            missionPanelController.HideTabInfo();
-            // Tüm görevler tamamlandýðýnda yapýlacak iþlemler
+            OnAllMissionsCompleted();
         }
     }
     private IEnumerator RevealTipsOverTime(Mission mission)
@@ -88,8 +93,8 @@ public class MissionManager : MonoBehaviour
     }
     public void CompleteCurrentMission()
     {
-        missionPanelController.HideTabInfo();
         Debug.Log($"Mission: '{missions[currentMissionIndex].Description}' completed!");
+        missionPanelController.HideTabInfo();
         timerTextParent.DOFade(0, 0.15f);
 
         if (missionTimerCoroutine != null)
@@ -97,6 +102,7 @@ public class MissionManager : MonoBehaviour
 
         if (currentTipCoroutine != null)
             StopCoroutine(currentTipCoroutine);
+
         // Gorev tamamlandýðýnda diger gorev icin sirali kontrolu
         var missionObject = missions[currentMissionIndex].MissionObject;
         if (missionObject != null && missions[currentMissionIndex].setActiveOffCollider)
@@ -107,9 +113,15 @@ public class MissionManager : MonoBehaviour
         if (outline != null)
             outline.enabled = false;
 
+        missions[currentMissionIndex].Tip.CloseTip();
+
         missionPanelController.ShowMissionCompletePopup();
         currentMissionIndex++;
-        StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
+
+        if (currentMissionIndex < missions.Count)
+            StartCoroutine(StartMissionAfterDelay(nextMissionDelay));
+        else
+            OnAllMissionsCompleted();
     }
     public void OnTriggerMissionCompleted(MissionType missionType, string targetName)
     {
@@ -118,7 +130,12 @@ public class MissionManager : MonoBehaviour
             CompleteCurrentMission();
         }
     }
-
+    private void OnAllMissionsCompleted()
+    {
+        Debug.Log("All missions completed!");
+        missionPanelController.HideTabInfo();
+        missionPanelController.ShowCompletedGame();
+    }
     private IEnumerator MissionTimer(float duration)
     {
         timerTextParent.DOFade(0, 0.15f);
@@ -193,11 +210,29 @@ public class Tip
                 // Popup gösterme mantýðý
                 tipPanelController.SetMissionText(tip.Description);
                 tipPanelController.ShowTipPanel();
-
                 break;
             case TipType.None:
             default:
                 Debug.Log($"Generic tip revealed: {Description}");
+                break;
+        }
+    }
+    public void CloseTip()
+    {
+        switch (Type)
+        {
+            case TipType.Object:
+                if (TipObject != null)
+                {
+                    TipObject.SetActive(false);
+                }
+                break;
+            case TipType.Popup:
+                tipPanelController.HideTabInfo();
+                break;
+            case TipType.None:
+            default:
+                Debug.Log($"Generic tip closed: {Description}");
                 break;
         }
     }

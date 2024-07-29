@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 241591453825174389}
   - component: {fileID: 7682571357175303070}
   - component: {fileID: 7976856671274369135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NotredameSign_Door_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &241591453825174389
 Transform:
@@ -493,12 +493,12 @@ GameObject:
   - component: {fileID: 218288855300045627}
   - component: {fileID: 1563737796023228478}
   - component: {fileID: 4807800519572593789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &218288855300045627
 Transform:
@@ -664,12 +664,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2328597753963450051}
-  m_Layer: 0
+  - component: {fileID: 7872423115686270059}
+  - component: {fileID: 4483607998759903762}
+  m_Layer: 6
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2328597753963450051
 Transform:
@@ -688,6 +690,34 @@ Transform:
   m_Father: {fileID: 4843609015066546055}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7872423115686270059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103850970343832193}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9414921, y: 1.9959358, z: 0.120978385}
+  m_Center: {x: -0.46865433, y: 0, z: 0.0000000055879354}
+--- !u!114 &4483607998759903762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103850970343832193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1
 --- !u!1 &8133539385245632038
 GameObject:
   m_ObjectHideFlags: 0

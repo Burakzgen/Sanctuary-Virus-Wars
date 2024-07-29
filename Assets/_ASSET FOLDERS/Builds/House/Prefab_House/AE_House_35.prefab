@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2375271186323019124
 Transform:
@@ -118,7 +118,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5238860305009556473
 Transform:
@@ -196,12 +196,12 @@ GameObject:
   - component: {fileID: 206410989020576103}
   - component: {fileID: 3429112966224794065}
   - component: {fileID: 1533009202185977136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AE_Garage_Door_01_LOD1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &206410989020576103
 Transform:
@@ -287,7 +287,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6122925730577531915
 Transform:
@@ -404,12 +404,13 @@ GameObject:
   - component: {fileID: 8895238755718003683}
   - component: {fileID: 1280383007626667543}
   - component: {fileID: 7564201347857274720}
-  m_Layer: 0
+  - component: {fileID: 3652051127520648623}
+  m_Layer: 6
   m_Name: AE_Garage_Door_01_LOD0.002
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2076933499501335035
 Transform:
@@ -491,6 +492,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 120.28532, y: 23.639267, z: 249.99995}
   m_Center: {x: 59.859272, y: 3.004259, z: -124.999985}
+--- !u!114 &3652051127520648623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317554196574659195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &6642424644342839363
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,9 +519,10 @@ GameObject:
   - component: {fileID: 2400479548178891305}
   - component: {fileID: 2373781833830876424}
   - component: {fileID: 4791263630085193048}
-  m_Layer: 0
+  - component: {fileID: 981795673545756613}
+  m_Layer: 6
   m_Name: AE_Door_01_LOD0.001
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -588,8 +605,23 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.638023, y: 111.83444, z: 227.17221}
-  m_Center: {x: -2.6545358, y: 53.11172, z: -113.586105}
+  m_Size: {x: 122.63738, y: 111.83446, z: 227.1722}
+  m_Center: {x: -54.65421, y: 53.111725, z: -113.58613}
+--- !u!114 &981795673545756613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642424644342839363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &7259901423959411835
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +638,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &955350742620674881
 Transform:
@@ -689,7 +721,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7940918685682605920
 Transform:
@@ -752,7 +784,7 @@ GameObject:
   - component: {fileID: 2095494156502435959}
   - component: {fileID: 3223914179408255696}
   - component: {fileID: 5480704491614694276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AE_Door_01_LOD1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

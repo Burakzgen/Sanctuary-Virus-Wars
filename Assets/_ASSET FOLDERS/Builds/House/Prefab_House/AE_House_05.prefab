@@ -383,9 +383,10 @@ GameObject:
   - component: {fileID: 1393446522199093628}
   - component: {fileID: 1393446522200224700}
   - component: {fileID: 5551471683805127237}
-  m_Layer: 0
+  - component: {fileID: 3164594775106002468}
+  m_Layer: 6
   m_Name: AE_Door_04_LOD0
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -467,8 +468,23 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18786329, y: 2.172532, z: 1.0794744}
+  m_Size: {x: 0.48481327, y: 2.172532, z: 1.0794744}
   m_Center: {x: -0.027563855, y: 1.086266, z: 0.51379645}
+--- !u!114 &3164594775106002468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393446522198027644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &1393446522198027646
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 5987431620466037397}
   - component: {fileID: 2448111492851555716}
   - component: {fileID: 7276851072738055109}
-  m_Layer: 0
+  - component: {fileID: 8263468384078523609}
+  - component: {fileID: 4489990920056679442}
+  m_Layer: 6
   m_Name: MainDoor_Frame
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -83,6 +85,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8263468384078523609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547360589361427923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0134518, y: 2.134811, z: 0.51081115}
+  m_Center: {x: 0.4658656, y: 1.0674047, z: 0.20290604}
+--- !u!114 &4489990920056679442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547360589361427923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &2107825740249660288
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,8 +208,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.828, y: 16.15, z: 11.105001}
-  m_Center: {x: 0.00000023841858, y: 7.9749994, z: 0.07249951}
+  m_Size: {x: 6.828, y: 16.15, z: 10.972963}
+  m_Center: {x: 0.00000023841858, y: 7.9749994, z: 0.006480217}
 --- !u!1 &2456016167898636540
 GameObject:
   m_ObjectHideFlags: 0

@@ -503,12 +503,13 @@ GameObject:
   - component: {fileID: 8685878637443320336}
   - component: {fileID: 8685878637442353360}
   - component: {fileID: 7018999059133466810}
-  m_Layer: 0
+  - component: {fileID: 5769874298088457061}
+  m_Layer: 6
   m_Name: AE_Door_01_LOD0.001
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8685878637439928880
 Transform:
@@ -590,6 +591,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18638024, y: 2.2717226, z: 1.1183447}
   m_Center: {x: -0.02654536, y: 1.1358613, z: 0.53111726}
+--- !u!114 &5769874298088457061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685878637440095760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &8685878637440095762
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,12 +617,12 @@ GameObject:
   - component: {fileID: 8685878637439928882}
   - component: {fileID: 8685878637443320338}
   - component: {fileID: 8685878637442353362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AE_Door_01_LOD1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8685878637439928882
 Transform:
@@ -784,12 +800,13 @@ GameObject:
   - component: {fileID: 8685878637443320342}
   - component: {fileID: 8685878637442353366}
   - component: {fileID: 4456154611002844308}
-  m_Layer: 0
+  - component: {fileID: 5761866143605324473}
+  m_Layer: 6
   m_Name: AE_Garage_Door_01_LOD0.002
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8685878637439928886
 Transform:
@@ -871,6 +888,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2028532, y: 2.5, z: 0.2363927}
   m_Center: {x: 0.5985732, y: 1.25, z: 0.0300426}
+--- !u!114 &5761866143605324473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685878637440095766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1
 --- !u!1 &8685878637440095768
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,12 +914,12 @@ GameObject:
   - component: {fileID: 8685878637439928888}
   - component: {fileID: 8685878637443320344}
   - component: {fileID: 8685878637442353368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AE_Garage_Door_01_LOD1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8685878637439928888
 Transform:

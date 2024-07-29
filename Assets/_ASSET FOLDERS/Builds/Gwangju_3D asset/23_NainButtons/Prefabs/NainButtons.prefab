@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4920049758502174545}
   - component: {fileID: 4927872065823011850}
   - component: {fileID: 3529160167386389105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4920049758502174545
 Transform:
@@ -177,12 +177,12 @@ GameObject:
   - component: {fileID: 5989405309963417275}
   - component: {fileID: 6585455685773552122}
   - component: {fileID: 7250907680633868046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5989405309963417275
 Transform:
@@ -258,12 +258,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4520154220430825050}
-  m_Layer: 0
+  - component: {fileID: 7192762737289846613}
+  - component: {fileID: 6909062365562137205}
+  m_Layer: 6
   m_Name: Door_Open
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4520154220430825050
 Transform:
@@ -283,6 +285,34 @@ Transform:
   m_Father: {fileID: 5088829427296280434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7192762737289846613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169820810430465756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.88900805, y: 1.7916539, z: 0.14879456}
+  m_Center: {x: -0.44, y: -1.02, z: 0}
+--- !u!114 &6909062365562137205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169820810430465756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &4515003056116002828
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,12 +324,12 @@ GameObject:
   - component: {fileID: 5327033701093129895}
   - component: {fileID: 2826833452686987869}
   - component: {fileID: 833435983241078090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_Sticker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5327033701093129895
 Transform:

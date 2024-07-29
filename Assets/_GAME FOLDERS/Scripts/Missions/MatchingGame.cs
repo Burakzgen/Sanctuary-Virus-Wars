@@ -127,6 +127,7 @@ public class MatchingGame : MonoBehaviour
         {
             gameObject.SetActive(false);
             GameManager.Instance.ResumeChracterControls();
+            m_Light.gameObject.SetActive(true);
             m_Light.enabled = true;
             missionInteraction.OnMissionCompleted();
             ClearAllLines();

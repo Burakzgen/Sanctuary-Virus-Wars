@@ -31,6 +31,10 @@ public class MissionPanelController : MonoBehaviour
 
     private float cooldownTime = 0.5f; // sürekli týklamayý önlemek için eklendi
     private float lastToggleTime;
+
+    [SerializeField] GameObject completedGame;
+    [SerializeField] GameObject gamePanelsObject;
+    [SerializeField] GameObject quitButtonObject;
     private void Start()
     {
         missionPanel.anchoredPosition = offScreenPosition;
@@ -53,7 +57,7 @@ public class MissionPanelController : MonoBehaviour
     public void ShowMissionPanel()
     {
         hasMission = true;
-        tabInfoPanel.DOFade(1, animationDuration);
+        tabInfoPanel.DOFade(1, animationDuration).SetUpdate(true);
         isAutoOpened = true;
         if (!isPanelVisible)
         {
@@ -98,6 +102,13 @@ public class MissionPanelController : MonoBehaviour
     {
         GameManager.Instance.GameOver();
     }
+    public void ShowCompletedGame()
+    {
+        GameManager.Instance.PauseChracterControls();
+        gamePanelsObject.SetActive(false);
+        completedGame.SetActive(true);
+        quitButtonObject.SetActive(true);
+    }
     public void SetMissionText(string mission)
     {
         missionText.text = mission;
@@ -128,7 +139,7 @@ public class MissionPanelController : MonoBehaviour
     }
     public void HideTabInfo()
     {
-        tabInfoPanel.DOFade(0, animationDuration);
+        tabInfoPanel.DOFade(0, animationDuration).SetUpdate(true);
         hasMission = false;
     }
 }
