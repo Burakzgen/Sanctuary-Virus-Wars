@@ -329,7 +329,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5574464017990467216
 Transform:
@@ -409,12 +409,13 @@ GameObject:
   - component: {fileID: 5574464017993367218}
   - component: {fileID: 5574464017992367218}
   - component: {fileID: 5891325278910568647}
+  - component: {fileID: 6753403165988929686}
   m_Layer: 0
   m_Name: AE_Door_03_LOD0.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5574464017990467218
 Transform:
@@ -496,6 +497,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18887168, y: 2.2048094, z: 1.0583085}
   m_Center: {x: -0.028914958, y: 1.1024047, z: 0.52915424}
+--- !u!114 &6753403165988929686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574464017990361778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1
 --- !u!1 &5574464017990361780
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +787,7 @@ GameObject:
   - component: {fileID: 5574464017990467228}
   - component: {fileID: 5574464017993367228}
   - component: {fileID: 5574464017992367228}
+  - component: {fileID: 8891583930505970695}
   m_Layer: 0
   m_Name: AE_House_08_LOD0.002
   m_TagString: Untagged
@@ -844,6 +861,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8891583930505970695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574464017990361788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
+  openAngle: 90
+  openDuration: 1
 --- !u!1 &5574464017990361790
 GameObject:
   m_ObjectHideFlags: 0

@@ -183,12 +183,12 @@ GameObject:
   - component: {fileID: 1468240294560201379}
   - component: {fileID: 1468240294558874243}
   - component: {fileID: 1468240294557907011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AE_Door_02_LOD1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1468240294560201379
 Transform:
@@ -268,13 +268,13 @@ GameObject:
   - component: {fileID: 1468240294558874245}
   - component: {fileID: 1468240294557907013}
   - component: {fileID: 3673374966859002029}
-  - component: {fileID: 5257967019362764680}
-  m_Layer: 0
+  - component: {fileID: 4762259609971657865}
+  m_Layer: 6
   m_Name: AE_Door_02_LOD0.001
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1468240294560201381
 Transform:
@@ -356,19 +356,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.063992, y: 2.2166505, z: 0.19800547}
   m_Center: {x: -0.531996, y: 1.1083252, z: -0.021956354}
---- !u!65 &5257967019362764680
-BoxCollider:
+--- !u!114 &4762259609971657865
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468240294560097925}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.063992, y: 2.2166505, z: 1.7582593}
-  m_Center: {x: -0.531996, y: 1.1083252, z: -0.16426206}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1
 --- !u!1 &1468240294560097927
 GameObject:
   m_ObjectHideFlags: 0

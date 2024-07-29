@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyAudio : MonoBehaviour
 {
     private AudioSource audioSource;
-
+    private const float volumeMultiplier = 0.85f;
     private void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -21,7 +21,7 @@ public class EnemyAudio : MonoBehaviour
     }
     private void UpdateVolume(float volume)
     {
-        audioSource.volume = volume;
+        audioSource.volume = volume * volumeMultiplier;
     }
     private void InitializeAudioSource()
     {
