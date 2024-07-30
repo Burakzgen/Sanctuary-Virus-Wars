@@ -34,6 +34,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
 
     public event System.Action OnCollected; // IInteractable impleemtn edildi
     public UnityEvent OnMissionCompleted;
+    public UnityEvent OnDrop;
     #endregion
 
     #region UI TYPE CONTROLS
@@ -199,7 +200,7 @@ public class Interactable_Prop : MonoBehaviour, IInteractable
 
         _isPickUp = false;
         _isModelObject = false;
-
+        OnDrop?.Invoke();
         GameManager.Instance.ResumeChracterControls(false);
     }
     #endregion
