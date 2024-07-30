@@ -129,6 +129,7 @@ public class EnemyController : MonoBehaviour
             {
                 _agent.SetDestination(_startPosition);
             }
+
         }
     }
 
@@ -217,6 +218,7 @@ public class EnemyController : MonoBehaviour
                     if (_poisonCoroutine != null)
                     {
                         StopCoroutine(_poisonCoroutine);
+                        StartCoroutine(PoissonEffectDelay());
                         _poisonCoroutine = null;
                     }
                 }
@@ -231,7 +233,12 @@ public class EnemyController : MonoBehaviour
             StartCoroutine(AttackCoroutine());
         }
     }
-
+    private IEnumerator PoissonEffectDelay()
+    {
+        yield return new WaitForSeconds(2.8f);
+        if (particalEffect != null)
+            particalEffect.SetActive(false);
+    }
     private IEnumerator AttackCoroutine()
     {
         _isAttacking = true;

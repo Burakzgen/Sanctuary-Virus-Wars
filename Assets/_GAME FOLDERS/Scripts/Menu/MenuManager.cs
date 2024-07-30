@@ -78,6 +78,22 @@ public class MenuManager : MonoBehaviour
 
 
         LoadSettings();
+        CheckForNickname();
+    }
+    private void CheckForNickname()
+    {
+        if (PlayerPrefs.HasKey("Nickname"))
+        {
+            string nickname = PlayerPrefs.GetString("Nickname");
+            nickNameText.text = nickname;
+            inputPanel.transform.parent.gameObject.SetActive(false);
+            inputPanel.SetActive(false);
+        }
+        else
+        {
+            inputPanel.transform.parent.gameObject.SetActive(true);
+            inputPanel.SetActive(true);
+        }
     }
     private void OnSubmitNicknameClicked()
     {
