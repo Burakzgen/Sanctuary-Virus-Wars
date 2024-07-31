@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486570}
   - component: {fileID: 6508994}
+  - component: {fileID: 2302929364580902867}
   m_Layer: 0
   m_Name: fenced_barrier
   m_TagString: Untagged
@@ -131,6 +132,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.89012736, y: 4.42472, z: 4.7718053}
   m_Center: {x: 0.32201198, y: 2.2161264, z: -0.5702061}
+--- !u!208 &2302929364580902867
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.4450637, y: 2.21236, z: 2.3859024}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.322012, y: 2.216126, z: -0.5702061}
+  m_TimeToStationary: 0.5
 --- !u!1 &126496
 GameObject:
   m_ObjectHideFlags: 0
