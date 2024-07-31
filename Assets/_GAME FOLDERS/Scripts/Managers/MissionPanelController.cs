@@ -42,8 +42,8 @@ public class MissionPanelController : MonoBehaviour
         missionPanel.anchoredPosition = offScreenPosition;
         missionPanel.sizeDelta = offSize;
         tabInfoPanel.alpha = 0f;
+        fadeImage.DOFade(0, 2f);
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && Time.time > lastToggleTime + cooldownTime)
