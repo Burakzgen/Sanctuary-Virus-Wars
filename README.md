@@ -27,7 +27,6 @@ Sanctuary: Virus Wars
 ### Oyun Özellikleri
 - 3D Strateji ve Savunma
 - Tek Oyunculu
-- Game Analytics
 - IAP (Uygulama İçi Satın Alımlar)
 - Dinamik Düşmanlar
 - Çevrim İçi Liderlik Tablosu
