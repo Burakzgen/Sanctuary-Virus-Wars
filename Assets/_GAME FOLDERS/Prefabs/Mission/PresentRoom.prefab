@@ -230,6 +230,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1147661398531948608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9011988968732722425}
+  - component: {fileID: 6087441530223582174}
+  m_Layer: 0
+  m_Name: Cube_28
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9011988968732722425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147661398531948608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.979, y: 3.514, z: -5.293}
+  m_LocalScale: {x: 1.0833589, y: -0.19082595, z: 6.2086306}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8319037278386277260}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6087441530223582174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147661398531948608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7913893, y: 1, z: 0.6676008}
+  m_Center: {x: 0.104306415, y: 0, z: 0.17590079}
 --- !u!1 &1732347278967600168
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,12 +523,13 @@ GameObject:
   - component: {fileID: 7825395847708771978}
   - component: {fileID: 3312438171061855472}
   - component: {fileID: 1893571163665095565}
-  m_Layer: 0
+  - component: {fileID: 7577038004137923497}
+  m_Layer: 6
   m_Name: Door-Entry-Marvin-Commercial_1_Panel-Ultimate UCD3070 [1730102]
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1893571163665095562
 Transform:
@@ -563,6 +609,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.182292, y: 7.08854, z: 0.7574236}
   m_Center: {x: -1.5911465, y: -0.000000834465, z: -0.010286659}
+--- !u!114 &7577038004137923497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141521433063473019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1
 --- !u!1 &8319037277927415332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1265,7 @@ Transform:
   - {fileID: 8319037278332109951}
   - {fileID: 8319037279126349220}
   - {fileID: 8319037279486827230}
+  - {fileID: 9011988968732722425}
   m_Father: {fileID: 3347726631974240838}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2769,8 +2831,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.836124, y: 1, z: 0.3503684}
+  m_Center: {x: -0.4180616, y: 0, z: 0.32481584}
 --- !u!1 &8319037279525762944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,12 +3689,13 @@ GameObject:
   - component: {fileID: 2259105711866314422}
   - component: {fileID: 8905423502755214219}
   - component: {fileID: 2259105711866314377}
-  m_Layer: 0
+  - component: {fileID: 4279058681478206104}
+  m_Layer: 6
   m_Name: M_Door-Passage-Single-Flush 750 x 2000mm [1718610].002
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2340858330022246392
 Transform:
@@ -3712,3 +3775,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.083989, y: 6.889763, z: 0.49212596}
   m_Center: {x: 1.5419353, y: 0.0000003576278, z: 0.00000038743013}
+--- !u!114 &4279058681478206104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843335746674101935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9dbbabf3dfaa40beacc68b9701acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  openAngle: -90
+  openDuration: 1

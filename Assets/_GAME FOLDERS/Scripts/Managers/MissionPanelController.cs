@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissionPanelController : MonoBehaviour
 {
@@ -32,9 +33,10 @@ public class MissionPanelController : MonoBehaviour
     private float cooldownTime = 0.5f; // sürekli týklamayý önlemek için eklendi
     private float lastToggleTime;
 
-    [SerializeField] GameObject completedGame;
-    [SerializeField] GameObject gamePanelsObject;
-    [SerializeField] GameObject quitButtonObject;
+    [SerializeField] private GameObject completedGame;
+    [SerializeField] private GameObject gamePanelsObject;
+    [SerializeField] private GameObject quitButtonObject;
+    [SerializeField] private Image fadeImage;
     private void Start()
     {
         missionPanel.anchoredPosition = offScreenPosition;
@@ -108,6 +110,16 @@ public class MissionPanelController : MonoBehaviour
         gamePanelsObject.SetActive(false);
         completedGame.SetActive(true);
         quitButtonObject.SetActive(true);
+        StartCoroutine(ShowGameOverSequence());
+    }
+    private IEnumerator ShowGameOverSequence()
+    {
+        yield return fadeImage.DOFade(1, 1f).WaitForCompletion();
+
+        completedGame.SetActive(true);
+        quitButtonObject.SetActive(true);
+
+        yield return fadeImage.DOFade(0, 1f).WaitForCompletion();
     }
     public void SetMissionText(string mission)
     {
