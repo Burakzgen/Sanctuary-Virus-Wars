@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455394}
-  - component: {fileID: 6425340}
+  - component: {fileID: 7843410971824757182}
   m_Layer: 0
   m_Name: big_cone
   m_TagString: Untagged
@@ -33,8 +33,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &6425340
-MeshCollider:
+--- !u!65 &7843410971824757182
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -43,10 +43,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 986184c0486a268469b40747d975d949, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.96897036, y: 1.0159017, z: 0.9839169}
+  m_Center: {x: -0.0018217564, y: 0.50795084, z: -0.02027236}
 --- !u!1 &142234
 GameObject:
   m_ObjectHideFlags: 0
