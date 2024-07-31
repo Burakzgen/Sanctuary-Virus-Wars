@@ -24,7 +24,7 @@ Sanctuary: Virus Wars
 
 ### Oyun Özellikleri
 - 3D Strateji ve Savunma
-- Tek ve Çok Oyunculu Modlar
+- Tek Oyunculu
 - Game Analytics
 - IAP (Uygulama İçi Satın Alımlar)
 - Dinamik Düşmanlar
@@ -48,7 +48,9 @@ Sanctuary: Virus Wars
 - Trello (proje yönetimi)
 
 ## 🔸 Sprint 1
+
 <details>
+  
 **Sprint Tarihleri**: 24 Haziran 2024 - 7 Temmuz 2024
 
 **Sprint içi puan değerlendirmesi**: 55 puan
@@ -138,8 +140,11 @@ Sprint 2'de (8 Temmuz 2024 - 21 Temmuz 2024) odaklanılacak ana konular:
 4. Kullanıcı arayüzünün (UI) temel tasarımının yapılması
 
 </details>
+
 ## 🔸 Sprint 2
+
 <details>
+  
 **Sprint Tarihleri** : 8 Temmuz 2024 - 21 Temmuz 2024
 
 **Sprint içi puan değerlendirmesi**: 60 puan
@@ -239,4 +244,5 @@ Sprint 3'de (22 Temmuz 2024 - 03 Ağustos 2024) odaklanılacak ana konular:
 - Kullanıcı arayüzünün (UI) temel tasarımının geliştirilmesi
 - Düşman AI sisteminin geliştirilmesi
 - Animasyon ve efektlerin geliştirilmesi
+  
 </details>
