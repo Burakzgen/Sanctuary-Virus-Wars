@@ -4868,7 +4868,7 @@ PrefabInstance:
     - target: {fileID: 4501326737991025138, guid: 55bebc7db025b4043b027adfe0690b25,
         type: 3}
       propertyPath: itemName
-      value: Weapon_5
+      value: Weapon_999
       objectReference: {fileID: 0}
     - target: {fileID: 4501326737991025138, guid: 55bebc7db025b4043b027adfe0690b25,
         type: 3}
