@@ -697,5 +697,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  openAngle: -9
+  openAngle: 90
   openDuration: 1

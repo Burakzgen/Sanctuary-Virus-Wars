@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
@@ -7,6 +8,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private Camera _cam;
     [SerializeField] private GameObject crossImage;
     [SerializeField] private GameObject interactETextImage;
+    [SerializeField] private GameObject interactFullTextImage;
     PlayerHealth _playerHealth;
     private void Start()
     {
@@ -48,13 +50,40 @@ public class Interactor : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, effectiveRange, _layerMask))
         {
-            Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.TryGetComponent(out IInteractable interactable))
             {
-                interactable.Interact(_playerHealth);
-                AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[3]);
+                bool shouldInteract = true;
+
+                if (interactable is HealthKit healthKit)
+                {
+                    if (_playerHealth.CurrentHealth == _playerHealth.MaxHealth)
+                    {
+                        interactFullTextImage.gameObject.SetActive(true);
+                        interactFullTextImage.GetComponent<CanvasGroup>().DOFade(1, 0.5f);
+                        interactFullTextImage.GetComponent<RectTransform>().DOAnchorPosX(-850f, 0.5f);
+                        shouldInteract = false;
+                    }
+                }
+                else if (interactable is PoisonCure poisonCure)
+                {
+                    if (_playerHealth.CurrentPoisonLevel == _playerHealth.MaxPoisonLevel)
+                    {
+                        interactFullTextImage.gameObject.SetActive(true);
+                        interactFullTextImage.GetComponent<CanvasGroup>().DOFade(1, 0.5f);
+                        interactFullTextImage.GetComponent<RectTransform>().DOAnchorPosX(-850f, 0.5f); //842.6f
+                        shouldInteract = false;
+                    }
+                }
+
+                if (shouldInteract)
+                {
+                    interactable.Interact(_playerHealth);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.sfxSounds[3]);
+                    //crossImage.gameObject.SetActive(false);
+                }
             }
         }
+
     }
 
     private void OnDrawGizmos()

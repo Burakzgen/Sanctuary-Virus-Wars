@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  openAngle: -90
+  openAngle: 90
   openDuration: 1
 --- !u!1 &8133539385245632038
 GameObject:

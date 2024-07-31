@@ -9,7 +9,8 @@ public class HealthKit : MonoBehaviour, IInteractable
     public event System.Action OnCollected;
     public void Interact(PlayerHealth health)
     {
-        if (health.CurrentHealth >= health.MaxHealth) return;
+        if (health.CurrentHealth >= health.MaxHealth)
+            return;
 
         if (health != null)
         {

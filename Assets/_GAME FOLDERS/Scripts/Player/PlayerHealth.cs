@@ -168,7 +168,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     {
         GameManager.Instance.GameOver();
         Debug.Log("Player has died!");
-        // TODO: Ölüm animasyonu gelecek
+        // TODO: Ölüm animasyonu gelecek (third person)
     }
 
     public void SetAttacking(bool isAttacking)
