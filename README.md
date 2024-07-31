@@ -6,12 +6,14 @@
 U74 Unity Takımı
 
 ### Takım Üyeleri
-- Burak Özgen - Product Owner & Scrum Master
+- Burak Özgen - Product Owner & Scrum Master & Developer
 - Caner Süren - Developer
 - Duygu Dönmez - Tasarımcı
 - Ebrar Ağralı - Developer
 
 ## 🔸 Ürün Bilgileri
+
+<details>
 
 ### Oyun İsmi
 Sanctuary: Virus Wars
@@ -46,6 +48,8 @@ Sanctuary: Virus Wars
 - Git & GitHub (versiyon kontrolü)
 - Discord (iletişim)
 - Trello (proje yönetimi)
+
+</details>
 
 ## 🔸 Sprint 1
 
