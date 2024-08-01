@@ -36,13 +36,14 @@ public class MissionPanelController : MonoBehaviour
     [SerializeField] private GameObject completedGame;
     [SerializeField] private GameObject gamePanelsObject;
     [SerializeField] private GameObject quitButtonObject;
+    [SerializeField] private GameObject creditObject;
     [SerializeField] private Image fadeImage;
     private void Start()
     {
         missionPanel.anchoredPosition = offScreenPosition;
         missionPanel.sizeDelta = offSize;
         tabInfoPanel.alpha = 0f;
-        fadeImage.DOFade(0, 2f);
+        fadeImage.DOFade(0, 3f);
     }
     private void Update()
     {
@@ -104,22 +105,26 @@ public class MissionPanelController : MonoBehaviour
     {
         GameManager.Instance.GameOver();
     }
+    private IEnumerator CompletedGameDelay()
+    {
+        gamePanelsObject.SetActive(false);
+        GameManager.Instance.PauseChracterControls();
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(ShowGameOverSequence());
+    }
     public void ShowCompletedGame()
     {
-        GameManager.Instance.PauseChracterControls();
-        gamePanelsObject.SetActive(false);
-        completedGame.SetActive(true);
-        quitButtonObject.SetActive(true);
-        StartCoroutine(ShowGameOverSequence());
+        StartCoroutine(CompletedGameDelay());
     }
     private IEnumerator ShowGameOverSequence()
     {
-        yield return fadeImage.DOFade(1, 1f).WaitForCompletion();
+        yield return fadeImage.DOFade(1, 1.5f).WaitForCompletion();
 
         completedGame.SetActive(true);
         quitButtonObject.SetActive(true);
+        creditObject.SetActive(true);
 
-        yield return fadeImage.DOFade(0, 1f).WaitForCompletion();
+        yield return fadeImage.DOFade(0, 1.5f).WaitForCompletion();
     }
     public void SetMissionText(string mission)
     {
