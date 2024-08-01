@@ -7249,18 +7249,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 3
-  detectionRadius: 5
+  detectionRadius: 12
   moveSpeed: 2
   runSpeed: 4
   stoppingDistance: 3
   healthCanvasGroup: {fileID: 8675958741180773918}
-  attackRadius: 4
-  attackDamage: 2
+  attackRadius: 5
+  attackDamage: 1
   attackCooldown: 3
   patrolPoints: []
   patrolWaitTime: 5
-  poisonRadius: 4.9
-  poisonDamage: 20
+  poisonRadius: 7
+  poisonDamage: 5
   poisonDuration: 5
   poisonCooldown: 10
   particalEffect: {fileID: 1511407993979920573}

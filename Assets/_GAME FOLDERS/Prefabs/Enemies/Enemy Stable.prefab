@@ -1695,12 +1695,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 2
-  detectionRadius: 8
+  detectionRadius: 12
   moveSpeed: 2
   runSpeed: 4
   stoppingDistance: 3
   healthCanvasGroup: {fileID: 5146646885756067762}
-  attackRadius: 1.5
+  attackRadius: 2.7
   attackDamage: 20
   attackCooldown: 2
   patrolPoints: []

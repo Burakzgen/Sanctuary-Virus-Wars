@@ -2015,12 +2015,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  detectionRadius: 7
+  detectionRadius: 6
   moveSpeed: 1
   runSpeed: 3
   stoppingDistance: 3
   healthCanvasGroup: {fileID: 7007099494796684998}
-  attackRadius: 2.5
+  attackRadius: 4.5
   attackDamage: 20
   attackCooldown: 2
   patrolPoints: []
