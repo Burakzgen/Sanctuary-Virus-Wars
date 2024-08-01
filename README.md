@@ -6,7 +6,7 @@
 U74 Unity Takımı
 
 ### Takım Üyeleri
-- Burak Özgen - Product Owner & Scrum Master & Developer
+- Burak Özgen - Scrum Master & Developer
 - Caner Süren - Developer
 - Duygu Dönmez - Tasarımcı
 - Ebrar Ağralı - Developer
@@ -29,7 +29,7 @@ Sanctuary: Virus Wars
 - Tek Oyunculu
 - IAP (Uygulama İçi Satın Alımlar)
 - Dinamik Düşmanlar
-- Çevrim İçi Liderlik Tablosu
+- Çevrim İçi Liderlik Tablosu (PlayFab)
 
 ### Hedef Kitle
 - Strateji ve savunma oyunları sevenler
@@ -47,6 +47,7 @@ Sanctuary: Virus Wars
 - Git & GitHub (versiyon kontrolü)
 - Discord (iletişim)
 - Trello (proje yönetimi)
+- Goldwave
 
 </details>
 
@@ -248,4 +249,117 @@ Sprint 3'de (22 Temmuz 2024 - 03 Ağustos 2024) odaklanılacak ana konular:
 - Düşman AI sisteminin geliştirilmesi
 - Animasyon ve efektlerin geliştirilmesi
   
+</details>
+
+## 🔸 Sprint 3
+
+<details>
+
+**Sprint Tarihleri**: 22 Temmuz 2024 - 2 Ağustos 2024
+
+**Sprint içi puan değerlendirmesi**: 70 puan
+
+### Sprint Hedefi
+Oyunun tamamlanmasına yönelik olarak, tüm temel ve ek özelliklerin entegre edilmesi ve son testlerin yapılması.
+
+### Sprint Backlog
+
+1. Multiplayer sisteminin entegre edilmesinden vazgeçildi.
+2. Final seviyelerinin tasarımı ve uygulanması (15 puan)
+3. Oyuncu geri bildirimleri doğrultusunda düzeltmelerin yapılması (10 puan)
+4. Son düşman türlerinin eklenmesi ve AI geliştirmelerinin tamamlanması (10 puan)
+5. Oyun içi ses ve müziklerin eklenmesi (10 puan)
+6. Oyun içi tüm UI ve UX tasarımlarının son haline getirilmesi (5 puan)
+7. Son performans optimizasyonları ve hata düzeltmeleri (5 puan)
+
+### Daily Scrum
+Ekip, iletişim konusunda eksiklikler yaşadı. Son haftalarda Discord üzerinden yazılanlara geri dönüşler yapılmadı. 2-3 günde bir iletişim olmaya başladı. Ekip içinde kişilerin yoğunluğundan kaynaklı iletişim eksikliği oluştu. Görevlerin tamamlanması ile ilgili sorunlar yaşandı. Geri dönüşlerin geç yapılması, iş yükünün doğru ve eşit olmaması negatif etkenlerden biri oldu.
+
+### Sprint Review
+
+Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
+
+- Multiplayer sisteminin entegre edilmesinden vazgeçildi.
+- Final seviyelerinin tasarımı ve uygulanması
+- Oyuncu geri bildirimleri doğrultusunda düzeltmelerin yapılması
+- Son düşman türlerinin eklenmesi ve AI geliştirmelerinin tamamlanması 
+- Oyun içi ses ve müziklerin eklenmesi
+- Oyun içi tüm UI ve UX tasarımlarının son haline getirilmesi
+- Son performans optimizasyonları ve hata düzeltmeleri
+
+### Tamamlanan İşler
+
+- Final seviyelerinin tasarımı ve uygulanması (15 puan)
+- Oyuncu geri bildirimleri doğrultusunda düzeltmelerin yapılması (5 puan)
+- Son düşman türlerinin eklenmesi ve AI geliştirmelerinin tamamlanması (10 puan)
+- Oyun içi ses ve müziklerin eklenmesi (10 puan)
+- Oyun içi tüm UI ve UX tasarımlarının son haline getirilmesi (5 puan)
+- Son performans optimizasyonları ve hata düzeltmeleri (5 puan)
+- Görevler, ipuçları, oyun içi bitiş ekranı, loading ekranı, menü ekranları tamamlandı (5 puan)
+- Oyun videosu alındı (5 puan)
+- Genel oyun tasarımı yapıldı (5 puan)
+- Optimizasyon yüzeysel olarak yapıldı (5 puan)
+
+### Sprint Retrospective
+
+- Oyunun tamamlanması için yapılan çalışmalar değerlendirildi.
+- Product Owner rolü kararsız kaldı. Discord ve toplantılarda geri dönüşler olmadığı için Ebrar arkadaşımız Erasmus'a başlayacağı için Product Owner rolünü üstlenmek istemedi.
+
+### Engeller ve Çözümler
+
+- Engel: Bireysel işlerin yoğunluğu.
+- 	Çözüm: Ekip içi iş yükü dağılımı yeniden değerlendirildi. Bunun neticesinde iş yükü dengesiz bir şekilde dağıltıldı. 
+- Engel: Duygu Sönmez'in ekibe katkı sağlamaması.
+- 	Çözüm: Diğer ekip üyeleri görevlerini yeniden planladı. Bedava olan assetlere yönelindi bu doğrultuda kalan ekip üyeleriyle proje ilerlemesi sağlandı.
+- Engel: Caner Süren'in 21 Temmuz - 04 Ağustos tarihleri arasında yoğun olması.
+- 	Çözüm: Görev dağılımı bu yoğunluk göz önünde bulundurularak 2 kişi üzerine doğru yapıldı.
+- Engel: Tasarımsal zorluklar ve iş yükünün dengesizlikler oluşması.
+- 	Çözüm: -
+
+### Sprint Board Ekran Görüntüleri
+
+<details>
+
+![1](https://github.com/user-attachments/assets/b54fbf9b-0b87-4962-b548-c78b22766804)
+
+</details>
+
+### Ekran Görüntüleri
+
+<details>
+
+![22-24](https://github.com/user-attachments/assets/4c756aed-bc5c-438b-99f7-1a9784043ed0)
+![25-26](https://github.com/user-attachments/assets/57f510c6-39cb-4dc9-9785-3c7470ee6dbc)
+![27-30](https://github.com/user-attachments/assets/cc9edd2e-1068-4976-b0b5-89b2e8249cbc)
+![30](https://github.com/user-attachments/assets/08b7bfbe-01a4-4116-954e-e9c37d4e0296)
+![2](https://github.com/user-attachments/assets/efc9784d-82ac-4aa1-9df7-13f36584b97b)
+![6](https://github.com/user-attachments/assets/543c0d45-47cb-49c0-b0f1-81ea29cae8be)
+![7](https://github.com/user-attachments/assets/8191fb3a-2c0c-4c25-a8ad-afd636cd4f42)
+![8](https://github.com/user-attachments/assets/9b8f04b8-7153-45c2-8323-42b9e4d62737)
+![Ma_SpawnPoints](https://github.com/user-attachments/assets/a6f4abdf-29d0-4778-abd7-d5c3f6b1e03d)
+![Map_1](https://github.com/user-attachments/assets/bcabdb76-a7a0-4277-8a76-dc135d32bd58)
+![Map_2](https://github.com/user-attachments/assets/f87dae0d-f266-4180-a4fe-abe96ed4b2f5)
+![Map_4](https://github.com/user-attachments/assets/e6d4b26b-35e0-4a6a-8f40-70b206dbdd9c)
+![Map_5](https://github.com/user-attachments/assets/b1a94964-a488-41ba-96ff-b31d4131a4fc)
+![Map_End](https://github.com/user-attachments/assets/df926fd3-c2da-4f0f-8ecc-6e46f6d54bdd)
+![Map_NavMesh](https://github.com/user-attachments/assets/a64e1dc4-5716-4a22-855a-2d30b678e618)
+![Warning_Panel](https://github.com/user-attachments/assets/b365cdb6-c34d-4945-b52e-ca1dd7d2a6ee)
+
+
+</details>
+</details>
+
+## 🔸 Ek Bilgiler
+
+<details>
+  
+### Kullanılan Assetler
+[Kullanılan Assetler.pdf](https://github.com/user-attachments/files/16461844/Kullanilan.Assetler.pdf)
+
+### Oyun Videosu
+
+
+### Oyun Çıktısı
+https://drive.google.com/drive/folders/12QcJAzLuChklKLA_Tw1C0dh9lR_ydRM0?usp=drive_link
+
 </details>
