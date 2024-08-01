@@ -35,6 +35,7 @@ public class MissionPanelController : MonoBehaviour
 
     [SerializeField] private GameObject completedGame;
     [SerializeField] private GameObject gamePanelsObject;
+    [SerializeField] private GameObject radarObject;
     [SerializeField] private GameObject quitButtonObject;
     [SerializeField] private GameObject creditObject;
     [SerializeField] private Image fadeImage;
@@ -107,6 +108,7 @@ public class MissionPanelController : MonoBehaviour
     }
     private IEnumerator CompletedGameDelay()
     {
+        radarObject.SetActive(false);
         gamePanelsObject.SetActive(false);
         GameManager.Instance.PauseChracterControls();
         yield return new WaitForSeconds(1.5f);

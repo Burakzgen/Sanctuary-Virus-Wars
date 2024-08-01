@@ -1700,12 +1700,12 @@ MonoBehaviour:
   runSpeed: 4
   stoppingDistance: 3
   healthCanvasGroup: {fileID: 5146646885756067762}
-  attackRadius: 2.7
+  attackRadius: 2
   attackDamage: 20
   attackCooldown: 2
   patrolPoints: []
   patrolWaitTime: 5
-  poisonRadius: 3
+  poisonRadius: 1.6
   poisonDamage: 5
   poisonDuration: 5
   poisonCooldown: 10
