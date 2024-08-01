@@ -21,6 +21,7 @@ public class MatchingGame : MonoBehaviour
     public Light m_Light;
 
     public MissionCompletionInteraction missionInteraction;
+    public GameObject radarSystem;
     private void Start()
     {
         correctMatches.Add("Red Cable", "Red Socket");
@@ -130,6 +131,7 @@ public class MatchingGame : MonoBehaviour
             m_Light.gameObject.SetActive(true);
             m_Light.enabled = true;
             missionInteraction.OnMissionCompleted();
+            radarSystem.gameObject.SetActive(true);
             ClearAllLines();
         }
     }

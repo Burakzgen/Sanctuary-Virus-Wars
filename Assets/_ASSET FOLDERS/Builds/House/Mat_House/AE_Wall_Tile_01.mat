@@ -122,7 +122,7 @@ Material:
     - _AOpPower: 1
     - _AlphaClip: 0
     - _Blend: 0
-    - _BumpScale: 0.7
+    - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -148,7 +148,7 @@ Material:
     - _Power_Normals_Detail: 2.32
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _Smoothness: 0.541
     - _SmoothnessPower: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
