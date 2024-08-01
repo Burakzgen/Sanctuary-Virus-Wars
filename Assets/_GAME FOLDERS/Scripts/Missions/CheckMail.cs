@@ -16,7 +16,7 @@ public class CheckMail : MonoBehaviour
     }
     public void OnCompletedButtonClick()
     {
-        GameManager.Instance.ResumeChracterControls();
+        GameManager.Instance.ResumeChracterControls(true);
         m_MissionInteraction.OnMissionCompleted();
     }
 }

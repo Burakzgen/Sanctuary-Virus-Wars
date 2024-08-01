@@ -38,6 +38,7 @@ public class MissionPanelController : MonoBehaviour
     [SerializeField] private GameObject radarObject;
     [SerializeField] private GameObject quitButtonObject;
     [SerializeField] private GameObject creditObject;
+    [SerializeField] private GameObject curserObject;
     [SerializeField] private Image fadeImage;
     private void Start()
     {
