@@ -357,7 +357,7 @@ Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
 [Kullanılan Assetler.pdf](https://github.com/user-attachments/files/16461844/Kullanilan.Assetler.pdf)
 
 ### Oyun Videosu
-
+https://youtu.be/amapdOjuWmA
 
 ### Oyun Çıktısı
 https://drive.google.com/drive/folders/12QcJAzLuChklKLA_Tw1C0dh9lR_ydRM0?usp=drive_link
