@@ -308,13 +308,10 @@ Katılımcılar: Burak Özgen, Caner Süren, Duygu Dönmez, Ebrar Ağralı
 ### Engeller ve Çözümler
 
 - Engel: Bireysel işlerin yoğunluğu.
-- 	Çözüm: Ekip içi iş yükü dağılımı yeniden değerlendirildi. Bunun neticesinde iş yükü dengesiz bir şekilde dağıltıldı. 
-- Engel: Duygu Sönmez'in ekibe katkı sağlamaması.
-- 	Çözüm: Diğer ekip üyeleri görevlerini yeniden planladı. Bedava olan assetlere yönelindi bu doğrultuda kalan ekip üyeleriyle proje ilerlemesi sağlandı.
-- Engel: Caner Süren'in 21 Temmuz - 04 Ağustos tarihleri arasında yoğun olması.
-- 	Çözüm: Görev dağılımı bu yoğunluk göz önünde bulundurularak 2 kişi üzerine doğru yapıldı.
+- 	Çözüm: Ekip içi iş yükü dağılımı yeniden değerlendirildi. Görev dağılımı bu yoğunluk göz önünde bulundurularak 2 kişi üzerine doğru yapıldı.
 - Engel: Tasarımsal zorluklar ve iş yükünün dengesizlikler oluşması.
-- 	Çözüm: -
+- 	Çözüm: Diğer ekip üyeleri görevlerini yeniden planladı. Bedava olan assetlere yönelindi bu doğrultuda kalan ekip üyeleriyle proje ilerlemesi sağlandı.
+
 
 ### Sprint Board Ekran Görüntüleri
 
