@@ -358,5 +358,6 @@ https://youtu.be/amapdOjuWmA
 
 ### Oyun Çıktısı
 https://drive.google.com/drive/folders/12QcJAzLuChklKLA_Tw1C0dh9lR_ydRM0?usp=drive_link
+https://drive.google.com/file/d/1_oku4WrrUbP3p-6Ou3bCSnVXolueQBZk/view?usp=drive_link
 
 </details>
