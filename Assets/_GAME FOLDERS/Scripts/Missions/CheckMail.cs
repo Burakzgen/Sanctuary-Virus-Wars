@@ -13,6 +13,7 @@ public class CheckMail : MonoBehaviour
     void OnCloseButtonClick()
     {
         gameObject.SetActive(false);
+        GameManager.Instance.ResumeChracterControls(true);
     }
     public void OnCompletedButtonClick()
     {
